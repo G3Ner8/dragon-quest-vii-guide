@@ -1,0 +1,2508 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="คู่มือ Dragon Quest VII Reimagined ฉบับสมบูรณ์ เจาะลึกสเตตัส สายอาชีพ อุปกรณ์ระดับตำนาน กลยุทธ์การเล่น และบทสรุปเนื้อเรื่อง" />
+    <title>Dragon Quest VII Reimagined: เจาะลึกตัวละครและสายอาชีพ</title>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts: include all used weights (400,600,700,900) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=auto_awesome,balance,bar_chart,bolt,category,check_circle,cyclone,diamond,favorite,fitness_center,groups,local_fire_department,shield,speed,stars,swords,timer,water_drop"
+    />
+
+    <style>
+      :root {
+        --apple-bg: #fbfbfd;
+        --apple-card: rgba(255, 255, 255, 0.85);
+        --apple-glass: rgba(255, 255, 255, 0.75);
+        --zinc-950: #09090b;
+        --zinc-900: #18181b;
+        --zinc-500: #71717a;
+        --zinc-100: #f4f4f5;
+
+        /* Vibrant Apple Palette */
+        --blue: #007aff;
+        --green: #34c759;
+        --red: #ff3b30;
+        --purple: #af52de;
+        --orange: #ff9500;
+        --indigo: #5856d6;
+        --pink: #ff2d55;
+        --cyan: #32ade6;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
+      body {
+        font-family:
+          "Prompt",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        font-weight: 400;
+        background-color: var(--apple-bg);
+        color: var(--zinc-900);
+        letter-spacing: 0;
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+      .mesh-gradient {
+        background-image: linear-gradient(
+          -45deg,
+          #007aff,
+          #24a0ff,
+          #5856d6,
+          #8a46e3,
+          #af52de,
+          #d63fb9,
+          #ff2d55,
+          #ff6b00,
+          #ff9500,
+          #007aff
+        );
+        background-size: 400% 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: gradient-flow 15s ease infinite;
+        padding: 0.1em 0;
+        line-height: 1.2;
+      }
+      @keyframes gradient-flow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .glass {
+        background: var(--apple-glass);
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transform: translate3d(0, 0, 0);
+      }
+      .card-apple {
+        background: var(--apple-card);
+        border-radius: 2.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-apple:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        background: white;
+      }
+      .segmented-control {
+        background: rgba(0, 0, 0, 0.05);
+        padding: 4px;
+        border-radius: 16px;
+        display: flex;
+        gap: 2px;
+      }
+      .segmented-control button {
+        flex: 1;
+        padding: 10px 20px;
+        min-height: 44px; /* WCAG 2.5.5 touch target */
+        border-radius: 12px;
+        font-size: 0.875rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        color: var(--zinc-500);
+        cursor: pointer;
+      }
+      .segmented-control button.active {
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        color: var(--zinc-900);
+        font-weight: 600;
+      }
+      .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 650px;
+        height: 300px;
+        margin: 0 auto;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .float-animation {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .dashboard-fade-in {
+        animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hide-scroll::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scroll {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Mobile Menu Toggle */
+      #mobile-menu.active {
+        display: flex;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px) saturate(200%);
+      }
+      .hero-glow {
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%) translate3d(0, 0, 0);
+        width: 120%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(0, 122, 255, 0.1) 0%,
+          rgba(0, 122, 255, 0.04) 40%,
+          rgba(0, 122, 255, 0) 70%
+        );
+        filter: blur(60px);
+        pointer-events: none;
+        z-index: -1;
+        will-change: transform;
+      }
+
+      /* Walkthrough Styles */
+      .walkthrough-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      @media (min-width: 1024px) {
+        .walkthrough-grid {
+          grid-template-columns: 350px 1fr;
+        }
+      }
+      .timeline-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--blue);
+        position: relative;
+        z-index: 10;
+        margin-right: 1.5rem;
+        margin-top: 0.5rem;
+        flex-shrink: 0;
+      }
+      .timeline-item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 1.5rem;
+        bottom: -0.5rem;
+        width: 2px;
+        background: #f1f5f9;
+      }
+      .location-card {
+        background: white;
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        border: 1px solid #f1f5f9;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .location-card:hover {
+        border-color: var(--blue);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+      /* Reusable label style */
+      .label-caps {
+        font-size: 0.75rem; /* 12px */
+        font-weight: 900;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+      }
+
+      /* ── Skip navigation link (WCAG 2.4.1) ────────────────── */
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 1rem;
+        z-index: 9999;
+        padding: 0.75rem 1.25rem;
+        background: var(--blue);
+        color: white;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border-radius: 0 0 0.75rem 0.75rem;
+        text-decoration: none;
+        transition: top 0.2s ease;
+      }
+      .skip-link:focus {
+        top: 0;
+        outline: 3px solid white;
+        outline-offset: 2px;
+      }
+
+      /* ── Global keyboard focus indicator (WCAG 2.4.11) ─────── */
+      :focus-visible {
+        outline: 2.5px solid var(--blue);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      /* ── Back-to-top button ─────────────────────────────────── */
+      .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 40;
+        width: 48px;
+        height: 48px;
+        background: white;
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease;
+        pointer-events: none;
+      }
+      .back-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .back-to-top:hover {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        background: var(--blue);
+        color: white;
+        border-color: transparent;
+      }
+
+      /* ── Reduce motion for users who prefer it (WCAG 2.3.3) ── */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased min-h-screen flex flex-col">
+    <!-- Skip navigation link (WCAG 2.4.1) -->
+    <a href="#main-content" class="skip-link">ข้ามไปเนื้อหาหลัก</a>
+
+    <!-- Navbar -->
+    <nav class="fixed top-6 left-0 right-0 z-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="glass rounded-3xl shadow-2xl">
+        <div class="flex justify-between items-center h-16 px-8">
+          <div class="flex items-center">
+            <span class="text-2xl font-bold tracking-tighter text-zinc-900"
+              >DQ<span class="text-blue-600">7</span></span
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-10">
+            <a
+              href="#attributes"
+              class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+              >คุณสมบัติ</a
+            >
+            <a
+              href="#characters"
+              class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+              >ตัวละคร</a
+            >
+            <a
+              href="#comparison"
+              class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+              >การจัดอันดับ</a
+            >
+            <a
+              href="#strategy"
+              class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+              >กลยุทธ์</a
+            >
+            <a
+              href="#walkthrough"
+              class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+              >บทสรุป</a
+            >
+          </div>
+          <div class="md:hidden flex items-center">
+            <button
+              id="menu-btn"
+              class="p-2 text-zinc-900 cursor-pointer rounded-lg focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1"
+              aria-label="เปิดเมนู"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <span class="text-3xl" aria-hidden="true">☰</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Links -->
+      <div
+        id="mobile-menu"
+        class="hidden flex-col absolute top-24 left-6 right-6 glass rounded-3xl p-6 shadow-2xl md:hidden overflow-hidden"
+      >
+        <a
+          href="#attributes"
+          class="p-4 text-zinc-600 font-medium border-b border-zinc-100/50 hover:bg-zinc-50/50 transition-colors"
+          >คุณสมบัติ</a
+        >
+        <a
+          href="#characters"
+          class="p-4 text-zinc-600 font-medium border-b border-zinc-100/50 hover:bg-zinc-50/50 transition-colors"
+          >ตัวละคร</a
+        >
+        <a
+          href="#comparison"
+          class="p-4 text-zinc-600 font-medium border-b border-zinc-100/50 hover:bg-zinc-50/50 transition-colors"
+          >การจัดอันดับ</a
+        >
+        <a
+          href="#strategy"
+          class="p-4 text-zinc-600 font-medium border-b border-zinc-100/50 hover:bg-zinc-50/50 transition-colors"
+          >กลยุทธ์</a
+        >
+        <a
+          href="#walkthrough"
+          class="p-4 text-zinc-600 font-medium hover:bg-zinc-50/50 transition-colors"
+          >บทสรุป</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-48 pb-24 px-6 text-center relative overflow-hidden">
+      <div class="hero-glow"></div>
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 mesh-gradient max-w-5xl mx-auto"
+      >
+        คู่มือ Dragon Quest VII Reimagined
+      </h1>
+      <p
+        class="text-lg md:text-xl max-w-2xl mx-auto text-zinc-600 font-normal leading-relaxed px-4"
+      >
+        เจาะลึกข้อมูลสเตตัส เส้นทางอาชีพ อุปกรณ์ระดับตำนาน กลยุทธ์การเล่น
+        และบทสรุปเนื้อเรื่องฉบับสมบูรณ์ เพื่อการผจญภัยที่ไร้ขีดจำกัด
+      </p>
+    </header>
+
+    <main id="main-content" class="flex-grow w-full max-w-6xl mx-auto px-4 py-8 space-y-16">
+      <!-- Section 1: Attribute Encyclopedia -->
+      <section id="attributes">
+        <div class="mb-12 text-center">
+          <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+            คุณสมบัติพื้นฐาน (Core Attributes)
+          </h2>
+          <p class="text-zinc-500 mt-2 font-normal">
+            ค่าพลังพื้นฐานที่มีผลต่อการประสิทธิภาพการต่อสู้
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+          id="attr-grid"
+        >
+          <!-- Injected via JS -->
+        </div>
+      </section>
+
+      <!-- Section 2: Character Dashboard -->
+      <section id="characters" class="card-apple overflow-hidden">
+        <div class="p-8 md:p-12 border-b border-gray-100">
+          <div class="max-w-2xl mx-auto text-center mb-6">
+            <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+              วิเคราะห์เจาะลึกตัวละคร (Deep Analysis)
+            </h2>
+            <p class="text-zinc-500 mt-3 font-normal">
+              การวิเคราะห์ตัวละครและเส้นทางการพัฒนาสายอาชีพอย่างละเอียด
+            </p>
+          </div>
+
+          <!-- Apple Style Segmented Control -->
+          <div class="max-w-none mx-auto">
+            <div
+              class="segmented-control overflow-x-auto hide-scroll flex-nowrap"
+              id="char-tabs"
+              role="tablist"
+              aria-label="Character selection"
+            >
+              <!-- Tabs injected via JS -->
+            </div>
+          </div>
+        </div>
+
+        <div class="walkthrough-grid dashboard-fade-in">
+          <!-- Left Sidebar: Visuals -->
+          <div
+            class="bg-zinc-50/50 border-r border-gray-100 flex flex-col pt-12 space-y-16"
+          >
+            <!-- Image Area -->
+            <div
+              class="relative float-animation min-h-0 flex items-start justify-center px-8"
+            >
+              <div
+                id="char-glow"
+                class="absolute inset-0 blur-[100px] opacity-20 scale-50 rounded-full transition-all duration-1000"
+              ></div>
+              <img
+                id="char-image"
+                src=""
+                alt=""
+                class="relative w-full h-full object-contain filter drop-shadow-2xl transition-all duration-500 z-10"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Graph Area -->
+            <div class="pb-12">
+              <div class="px-8 mb-6">
+                <h4
+                  class="label-caps flex items-center"
+                >
+                  <span class="material-symbols-outlined text-[16px] mr-2"
+                    >bar_chart</span
+                  >
+                  Combat Potential
+                </h4>
+              </div>
+              <div class="w-full px-8">
+                <div
+                  class="chart-container"
+                  style="height: 300px; width: 100%; max-width: none"
+                >
+                  <canvas id="radarChart"></canvas>
+                </div>
+                <p
+                  class="text-center text-xs text-gray-400 mt-6 font-medium uppercase tracking-wider opacity-50"
+                >
+                  *ประเมินจากศักยภาพสูงสุด (Max Potential)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content: Information -->
+          <div class="p-8 md:p-12 space-y-12 bg-white">
+            <!-- Bio Section -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span
+                  id="char-tier"
+                  class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase border"
+                ></span>
+                <div
+                  id="char-role"
+                  class="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]"
+                ></div>
+              </div>
+              <h3
+                id="char-name"
+                class="text-5xl md:text-7xl font-black leading-none mb-6"
+              >
+                Character Name
+              </h3>
+              <p
+                id="char-analysis"
+                class="text-zinc-600 text-base md:text-lg leading-relaxed font-normal"
+              ></p>
+            </div>
+
+            <!-- Highlights -->
+            <div>
+              <h4
+                class="label-caps mb-6 flex items-center"
+              >
+                <span class="material-symbols-outlined text-[16px] mr-2"
+                  >bolt</span
+                >
+                จุดเด่นสำคัญ (Key Highlights)
+              </h4>
+              <div
+                class="bg-blue-50/30 border border-blue-100/50 rounded-3xl p-8"
+              >
+                <ul
+                  id="char-highlights"
+                  class="grid grid-cols-1 md:grid-cols-2 gap-4 text-zinc-700 font-bold"
+                >
+                  <!-- Injected via JS -->
+                </ul>
+              </div>
+            </div>
+
+            <!-- Vocation path -->
+            <div>
+              <h4
+                class="label-caps mb-8 flex items-center"
+              >
+                <span class="material-symbols-outlined text-[16px] mr-2"
+                  >category</span
+                >
+                เส้นทางสายอาชีพ (Build Order)
+              </h4>
+              <div id="vocation-container" class="space-y-0">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- Gear -->
+            <div>
+              <h4
+                class="label-caps mb-8 flex items-center"
+              >
+                <span class="material-symbols-outlined text-[16px] mr-2"
+                  >shield</span
+                >
+                อุปกรณ์ระดับตำนาน (Legendary Setup)
+              </h4>
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"
+                id="equipment-container"
+              >
+                <!-- Injected via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Comparison -->
+      <section id="comparison">
+        <div class="card-apple p-8 md:p-12">
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12"
+          >
+            <div>
+              <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+                อันดับค่าพลัง (Stat Ranking)
+              </h2>
+              <p class="text-zinc-500 mt-1 font-normal">
+                การเปรียบเทียบศักยภาพตัวละครในด้านต่างๆ
+              </p>
+            </div>
+            <div class="md:w-64">
+              <label for="stat-selector" class="sr-only">เลือกสถิติที่ต้องการเปรียบเทียบ</label>
+              <select
+                id="stat-selector"
+                class="w-full bg-white border border-zinc-200 text-sm p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-100"
+              >
+                <!-- Options injected via JS -->
+              </select>
+            </div>
+          </div>
+
+          <div class="chart-container" style="max-width: 900px; height: 450px">
+            <canvas id="barChart"></canvas>
+          </div>
+          <div
+            class="mt-8 p-6 bg-zinc-50 rounded-2xl text-sm text-zinc-500 border border-zinc-100"
+            id="comparison-desc"
+          >
+            <!-- Dynamic description -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Walkthrough (Summarized) -->
+      <section id="walkthrough" class="card-apple overflow-hidden">
+        <div class="p-8 md:p-12 border-b border-gray-100">
+          <div class="max-w-2xl mx-auto text-center mb-8">
+            <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+              บทสรุปเนื้อเรื่อง (Walkthrough Summary)
+            </h2>
+            <p class="text-zinc-500 mt-3 font-normal">
+              เจาะลึกเนื้อหา บทที่ 1 จนถึงฉากจบ พร้อมตำแหน่ง Fragment
+              และไอเทมสำคัญ
+            </p>
+          </div>
+
+          <!-- Chapter Selector -->
+          <div
+            class="segmented-control overflow-x-auto hide-scroll flex-nowrap mb-4"
+            id="chapter-tabs"
+            role="tablist"
+            aria-label="Chapter selection"
+          >
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <div id="walkthrough-display" class="p-0">
+          <!-- Dynamic Chapter Content Injected via JS -->
+        </div>
+      </section>
+
+      <!-- Section 4: Strategy & Tips -->
+      <section id="strategy">
+        <div class="mb-12 text-center">
+          <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+            ทริคเสริมเพื่อความไร้เทียมทาน
+          </h2>
+          <p class="text-zinc-500 mt-2 font-normal">
+            กลยุทธ์ขั้นสูงสำหรับการเพิ่มประสิทธิภาพทีมและการผ่านด่านยากๆ
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Tip 1 -->
+          <div class="card-apple p-10 group relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-all duration-700"
+            ></div>
+            <div
+              class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[28px]"
+                >auto_awesome</span
+              >
+            </div>
+            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+              Monster Legacies
+            </h3>
+            <p class="text-zinc-600 leading-relaxed font-medium">
+              หัวใจของการผ่านบอสลับคือการ Master อาชีพมอนสเตอร์ เช่น Healslime
+              (เพื่อปลดล็อก Omniheal แบบ Skill ติดตัวถาวร) และ Platinum King
+              Jewel เพื่อรับค่า Defense และ Resistance สูงสุดในเกม
+            </p>
+          </div>
+
+          <!-- Tip 2 -->
+          <div class="card-apple p-10 group relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-sky-500/10 transition-all duration-700"
+            ></div>
+            <div
+              class="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 mb-8 group-hover:bg-sky-600 group-hover:text-white transition-all duration-500 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[28px]">cyclone</span>
+            </div>
+            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+              Efficient Farming
+            </h3>
+            <p class="text-zinc-600 leading-relaxed font-medium">
+              ทุกตัวละครควรแวะเรียนท่า <strong>Thin Air</strong> จากอาชีพ
+              Paladin เพราะเป็นท่าโจมตีหมู่ที่รุนแรงและ
+              <strong>ไม่เสีย MP</strong> แม้แต่หน่วยเดียว
+              ช่วยให้เก็บเลเวลได้ยาวนานโดยไม่ต้องกังวลเรื่องทรัพยากร
+            </p>
+          </div>
+
+          <!-- Tip 3 -->
+          <div class="card-apple p-10 group relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-emerald-500/10 transition-all duration-700"
+            ></div>
+            <div
+              class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[28px]">groups</span>
+            </div>
+            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+              Formation of the Gods
+            </h3>
+            <p class="text-zinc-600 leading-relaxed font-medium">
+              สูตรทัพที่เสถียรที่สุดคือ <strong>2-1-1</strong>: สายกายภาพ 2 คน
+              (Hero/Champion), จอมเวทย์ 1 คน (Druid) และสายสนับสนุน/แทงค์ 1 คน
+              (Paladin) เพื่อรับมือกับทุกสถานการณ์ได้อย่างครอบคลุม
+            </p>
+          </div>
+
+          <!-- Tip 4 -->
+          <div class="card-apple p-10 group relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-orange-500/10 transition-all duration-700"
+            ></div>
+            <div
+              class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 mb-8 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[28px]">timer</span>
+            </div>
+            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+              Initiative Mastery
+            </h3>
+            <p class="text-zinc-600 leading-relaxed font-medium">
+              สวมใส่ <strong>Meteorite Bracer</strong> ให้ Healer
+              เพื่อแก้สถานการณ์คับขันได้ทันที หรือใส่ให้ Buffer เพื่อบัฟป้องกัน
+              (Kabuff/Magic Barrier)
+              ให้ทีมก่อนที่ศัตรูจะเริ่มเปิดฉากโจมตีในแต่ละเทิร์น
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer
+        class="mt-16 border-t border-gray-200 py-8 text-center text-gray-500 text-sm"
+      >
+        <p>&copy; 2025 Dragon Quest VII Reimagined Guide Visualization.</p>
+        <p class="mt-2">
+          สร้างขึ้นเพื่อช่วยวิเคราะห์ข้อมูลตัวละครในรูปแบบ Single Page
+          Application.
+        </p>
+      </footer>
+    </main>
+
+    <!-- Back to top button -->
+    <button
+      id="back-to-top"
+      class="back-to-top"
+      aria-label="กลับขึ้นด้านบน"
+      title="กลับขึ้นด้านบน"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <!-- JS Logic -->
+    <script>
+      // --- Data Source ---
+      const attributes = [
+        {
+          key: "HP",
+          name: "HP",
+          desc: "พลังชีวิต หากเหลือ 0 จะไม่สามารถต่อสู้ได้",
+          icon: "favorite",
+          color: "var(--red)",
+        },
+        {
+          key: "Str",
+          name: "Strength",
+          desc: "พลังกายพื้นฐาน ส่งผลโดยตรงต่อความแรงในการโจมตี",
+          icon: "fitness_center",
+          color: "var(--orange)",
+        },
+        {
+          key: "Res",
+          name: "Resilience",
+          desc: "ความอึดพื้นฐานของร่างกายในการรับแรงกระแทก",
+          icon: "shield",
+          color: "var(--green)",
+        },
+        {
+          key: "Agi",
+          name: "Agility",
+          desc: "ลำดับการออกคำสั่ง และโอกาสในการหลบหลีก",
+          icon: "speed",
+          color: "var(--cyan)",
+        },
+        {
+          key: "Deft",
+          name: "Deftness",
+          desc: "โอกาสในการชิงลงมือก่อน และโอกาสหนีสำเร็จ",
+          icon: "bolt",
+          color: "var(--indigo)",
+        },
+        {
+          key: "Might",
+          name: "M. Might",
+          desc: "ความแรงของเวทย์โจมตี และโอกาสติดสถานะผิดปกติ",
+          icon: "local_fire_department",
+          color: "var(--purple)",
+        },
+        {
+          key: "Mend",
+          name: "M. Mend",
+          desc: "ประสิทธิภาพของเวทย์ฮีล และการชุบชีวิต",
+          icon: "auto_awesome",
+          color: "var(--pink)",
+        },
+        {
+          key: "Charm",
+          name: "Charm",
+          desc: "เสน่ห์ที่ทำให้ศัตรูตะลึงหรือติด Stun",
+          icon: "diamond",
+          color: "var(--purple)",
+        },
+        {
+          key: "MP",
+          name: "MP",
+          desc: "พลังมานาสำหรับใช้ Skills และเวทมนตร์",
+          icon: "water_drop",
+          color: "var(--blue)",
+        },
+      ];
+
+      // Numerical approximations based on "High/Low/Highest" descriptions
+      const characters = [
+        {
+          id: "hero",
+          name: "The Hero",
+          role: "Balanced Leader",
+          tier: "S-Tier",
+          color: "#34C759",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/0/08/DQ7R_Arus.png?width=2240",
+          stats: {
+            HP: 95,
+            MP: 60,
+            Str: 95,
+            Res: 90,
+            Agi: 65,
+            Might: 50,
+            Mend: 75,
+            Deft: 65,
+            Charm: 55,
+          },
+          focus: ["HP", "Str", "Res"],
+          highlights: [
+            "สมดุลที่สุด",
+            "HP & Strength สูงมาก",
+            "Auto-HP Recovery",
+          ],
+          path: [
+            "Warrior + Martial Artist",
+            "Priest + Mage",
+            "Gladiator",
+            "Sage",
+            "Hero",
+          ],
+          gear: [
+            { slot: "Weapon", item: "Okeanos Sword" },
+            { slot: "Armor", item: "Okeanos Armour" },
+            { slot: "Accessory", item: "Meteorite Bracer" },
+          ],
+          analysis:
+            "เนื่องจาก Stat ของเขาสมดุลที่สุด เขาจึงเป็นคนเดียวที่ควรค่าแก่การเป็น Hero เพราะอาชีพนี้ต้องการค่าพลังรอบด้าน การเป็น Sage ช่วงสั้นๆ จะช่วยเพิ่ม MP ให้เขาพอสำหรับการใช้ Omniheal ในอนาคต เมื่อจบที่อาชีพ Hero เขาจะมีอัตรา Regen เลือดที่คำนวณจาก HP พื้นฐานที่สูงของเขา ทำให้เขาตายยากมาก",
+        },
+        {
+          id: "maribel",
+          name: "Maribel",
+          role: "Magic Nuke",
+          tier: "S-Tier",
+          color: "#FF2D55",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/e/e1/DQ7R_Maribel.png?width=2240",
+          stats: {
+            HP: 45,
+            MP: 100,
+            Str: 35,
+            Res: 45,
+            Agi: 85,
+            Might: 100,
+            Mend: 85,
+            Deft: 65,
+            Charm: 85,
+          },
+          focus: ["Might", "MP", "Agi"],
+          highlights: ["MP & Might สูงที่สุด", "Glass Cannon", "Agility สูง"],
+          path: ["Mage + Priest", "Sage", "Luminary", "Druid"],
+          gear: [
+            { slot: "Weapon", item: "Solar Staff" },
+            { slot: "Armor", item: "Princess Robe" },
+            { slot: "Accessory", item: "Goddess Ring" },
+          ],
+          analysis:
+            "ด้วย MP และ Wisdom ที่สูงที่สุด เธอต้องมุ่งสู่สายที่ใช้พลังเวทย์ทำลายล้างเท่านั้น อาชีพ Druid จะมอบโบนัส Wisdom มหาศาล ซึ่งเมื่อคูณกับค่าพลังพื้นฐานของเธอ จะทำให้เวทย์ Kafrizzle หรือ Maelstrom ของเธอกลายเป็นระเบิดนิวเคลียร์ที่เคลียร์ศัตรูได้ในเทิร์นเดียว",
+        },
+        {
+          id: "ruff",
+          name: "Ruff",
+          role: "Speedster",
+          tier: "S-Tier",
+          color: "#30B0C7",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/9/96/DQ7R_Gabo.png?width=2240",
+          stats: {
+            HP: 85,
+            MP: 35,
+            Str: 90,
+            Res: 65,
+            Agi: 100,
+            Might: 25,
+            Mend: 25,
+            Deft: 100,
+            Charm: 45,
+          },
+          focus: ["Agi", "Deft", "Str"],
+          highlights: ["Agility สูงที่สุด", "Deftness สูงสุด", "Strength สูง"],
+          path: [
+            "Shepherd + Thief",
+            "Warrior + Martial Artist",
+            "Monster Masher",
+            "Gladiator",
+            "Champion",
+          ],
+          gear: [
+            { slot: "Weapon", item: "Wrecking Flail" },
+            { slot: "Armor", item: "Liquid Metal Armour" },
+            { slot: "Accessory", item: "Meteorite Bracer" },
+          ],
+          analysis:
+            "จุดเด่นคือ Agility ดังนั้นต้องเน้นอาชีพที่ให้ผลลัพธ์ทันที (Instant Effect) Ruff มี Agility สูงจนมักจะได้ออกตัวก่อนบอส การเป็น Champion ทำให้เขาสามารถใช้ท่าตัดกำลังบอส หรือใช้ท่าไม้ตายปิดฉากได้ก่อนที่บอสจะทันได้ร่ายบัฟป้องกัน",
+        },
+        {
+          id: "mervyn",
+          name: "Sir Mervyn",
+          role: "Tank Healer",
+          tier: "A-Tier",
+          color: "#AF52DE",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/1/1b/DQ7R_Melvin.png?width=2240",
+          stats: {
+            HP: 85,
+            MP: 85,
+            Str: 75,
+            Res: 100,
+            Agi: 25,
+            Might: 65,
+            Mend: 100,
+            Deft: 35,
+            Charm: 55,
+          },
+          focus: ["Mend", "Res", "MP"],
+          highlights: ["Resilience สูงมาก", "Mending สูงสุด", "ช้าที่สุด"],
+          path: ["Priest + Martial Artist", "Paladin", "Sage", "Paladin/Druid"],
+          gear: [
+            { slot: "Weapon", item: "Sword of Miracles" },
+            { slot: "Armor", item: "Metal King Armour" },
+            { slot: "Accessory", item: "Recovery Ring" },
+          ],
+          analysis:
+            "เขาช้าแต่ถึก และมี Wisdom สูง เหมาะกับการเป็นสายสนับสนุนที่ไม่มีวันตาย เนื่องจากเขาช้าที่สุด การเป็น Paladin จะทำให้เขาเป็น 'Back-row Healer' ที่ดีที่สุด เมื่อมอนสเตอร์ตีเสร็จ เมลวินจะปิดท้ายด้วยการฮีลฟูลทีม ทำให้เทิร์นถัดไปเพื่อนๆ เริ่มต้นด้วยเลือดเต็มเสมอ",
+        },
+        {
+          id: "aishe",
+          name: "Aishe",
+          role: "Hybrid DPS",
+          tier: "A-Tier",
+          color: "#FF9500",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/d/dc/DQ7R_Aira.png?width=2240",
+          stats: {
+            HP: 75,
+            MP: 65,
+            Str: 85,
+            Res: 70,
+            Agi: 80,
+            Might: 55,
+            Mend: 45,
+            Deft: 65,
+            Charm: 95,
+          },
+          focus: ["Charm", "Str", "Agi"],
+          highlights: [
+            "Strength & Agility สมดุล",
+            "Charm สูงสุด",
+            "Hybrid Damage",
+          ],
+          path: [
+            "Dancer + Troubadour + Warrior",
+            "Luminary",
+            "Gladiator",
+            "Champion",
+          ],
+          gear: [
+            { slot: "Weapon", item: "Gringham Whip" },
+            { slot: "Armor", item: "Angelic Robe" },
+            { slot: "Accessory", item: "Bunny Tail" },
+          ],
+          analysis:
+            "เธอมีค่า Style และ Str สูง เหมาะกับสาย Hybrid ที่ทำ Damage ได้และป่วนได้ด้วย Aishe ควรเน้นไปที่อาชีพที่ใช้ค่า Strength และ Agility ร่วมกัน การที่เธอเริ่มต้นด้วยท่า Sword Dance ทำให้เธอเป็นตัวทำ Damage ที่เสถียรมากในอาชีพ Champion",
+        },
+        {
+          id: "kiefer",
+          name: "Kiefer",
+          role: "Early Tank",
+          tier: "Early-Game",
+          color: "#FF3B30",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/2/22/DQ7R_Kiefer.png?width=2240",
+          stats: {
+            HP: 100,
+            MP: 0,
+            Str: 100,
+            Res: 85,
+            Agi: 45,
+            Might: 0,
+            Mend: 0,
+            Deft: 45,
+            Charm: 55,
+          },
+          focus: ["Str", "HP"],
+          highlights: ["HP & Strength สูงสุด", "MP เป็น 0", "ห้ามใช้ Seeds"],
+          path: ["Warrior + Martial Artist", "Gladiator", "Champion"],
+          gear: [
+            { slot: "Weapon", item: "Best Sword" },
+            { slot: "Armor", item: "Best Armor" },
+            { slot: "Accessory", item: "Strength Ring" },
+          ],
+          analysis:
+            "สเตตัสเขาคือเบอร์ 1 ด้านกายภาพ แต่ MP เป็น 0 ดังนั้นห้ามเสียเวลากับสายเวทย์เด็ดขาด หากเขาอยู่จนจบเกม เขาจะเป็น Champion ที่รุนแรงที่สุด ท่า Blade of Ultimate Power ของเขาจะสร้างความเสียหายมหาศาลจาก Strength พื้นฐานที่สูงสุดในบรรดาทั้ง 6 ตัวละคร",
+        },
+      ];
+
+      // --- Global Charts ---
+      let radarChartInstance = null;
+      let barChartInstance = null;
+
+      // --- Helper Functions ---
+
+      // Label wrapping logic for Chart.js (Mandatory)
+      function formatLabel(str, maxLen = 16) {
+        if (str.length <= maxLen) return str;
+        const words = str.split(" ");
+        const lines = [];
+        let currentLine = words[0];
+
+        for (let i = 1; i < words.length; i++) {
+          if (currentLine.length + 1 + words[i].length <= maxLen) {
+            currentLine += " " + words[i];
+          } else {
+            lines.push(currentLine);
+            currentLine = words[i];
+          }
+        }
+        lines.push(currentLine);
+        return lines;
+      }
+
+      // --- Rendering Logic ---
+
+      function renderAttributes() {
+        const container = document.getElementById("attr-grid");
+        container.innerHTML = attributes
+          .map(
+            (attr) => `
+                <div class="card-apple p-6 hover:border-zinc-200 transition duration-300 relative group overflow-hidden">
+                    <div class="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none" style="background-color: ${attr.color}"></div>
+                    <div class="flex flex-col items-center text-center relative z-10">
+                        <span class="material-symbols-outlined text-3xl mb-4 transition duration-300 transform group-hover:scale-105" style="color: ${attr.color}">${attr.icon}</span>
+                        <h3 class="font-semibold text-zinc-900 mb-1 text-sm tracking-normal">${attr.name}</h3>
+                        <p class="text-xs text-zinc-500 font-normal leading-snug">${attr.desc}</p>
+                    </div>
+                </div>
+            `,
+          )
+          .join("");
+      }
+
+      function renderTabs(activeId) {
+        const container = document.getElementById("char-tabs");
+        container.innerHTML = characters
+          .map((char) => {
+            const isActive = char.id === activeId;
+            return `
+                <button onclick="updateDashboard('${char.id}')" role="tab" aria-selected="${isActive}" class="px-4 py-2 text-sm font-medium transition-all duration-300 ${isActive ? "active bg-white shadow-sm rounded-lg text-zinc-900" : "text-zinc-500 hover:text-zinc-800"}">
+                    ${char.name}
+                </button>
+            `;
+          })
+          .join("");
+      }
+
+      function updateDashboard(charId) {
+        const char = characters.find((c) => c.id === charId);
+        if (!char) return;
+
+        // Update Tabs UI
+        renderTabs(charId);
+
+        // Update Text Info
+        const charImg = document.getElementById("char-image");
+        const charGlow = document.getElementById("char-glow");
+        if (charImg) {
+          charImg.src = char.image;
+          charImg.alt = char.name;
+        }
+        if (charGlow) {
+          charGlow.style.backgroundColor = char.color;
+        }
+
+        document.getElementById("char-name").style.color = char.color;
+        document.getElementById("char-name").innerText = char.name;
+        document.getElementById("char-role").innerText = char.role;
+        const tierBadge = document.getElementById("char-tier");
+        tierBadge.innerText = char.tier;
+        tierBadge.style.backgroundColor = char.color + "10";
+        tierBadge.style.color = char.color;
+        tierBadge.style.borderColor = char.color + "30";
+
+        const highlights = document.getElementById("char-highlights");
+        highlights.innerHTML = char.highlights
+          .map(
+            (h) => `
+            <li class="flex items-center">
+              <span class="material-symbols-outlined normal-case text-[20px] mr-3" style="color: ${char.color}">check_circle</span>
+              <span class="text-gray-800">${h}</span>
+            </li>
+        `,
+          )
+          .join("");
+
+        // Update Vocation Path (Vertical Timeline Style)
+        const vocationContainer = document.getElementById("vocation-container");
+        vocationContainer.innerHTML = char.path
+          .map((p, idx) => {
+            const isLast = idx === char.path.length - 1;
+            return `
+            <div class="timeline-item relative flex items-start ${isLast ? "" : "pb-6"}">
+                <div class="timeline-dot" style="${isLast ? "background: var(--blue); shadow: 0 0 15px var(--blue);" : "background: #e2e8f0;"}"></div>
+                <div class="flex-grow">
+                    <div class="inline-flex flex-col">
+                        <span class="px-5 py-2.5 font-bold ${isLast ? "text-blue-700 bg-blue-50 border-blue-100" : "text-zinc-700 bg-white border-zinc-100"} rounded-2xl shadow-sm border text-sm transition-all duration-300 hover:translate-x-1 hover:shadow-md cursor-default">
+                            ${p}
+                        </span>
+                        ${idx === 0 ? `<span class="text-xs text-zinc-400 font-black uppercase mt-2 ml-1 tracking-wider">Starting Vocation</span>` : ""}
+                        ${isLast ? `<span class="text-xs text-blue-500 font-black uppercase mt-2 ml-1 tracking-widest">Ultimate Class Goal</span>` : ""}
+                    </div>
+                </div>
+            </div>`;
+          })
+          .join("");
+
+        // Update Equipment
+        const gearIcons = {
+          Weapon: "swords",
+          Armor: "shield",
+          Accessory: "category",
+        };
+        document.getElementById("equipment-container").innerHTML = char.gear
+          .map((g) => {
+            const icon = gearIcons[g.slot] || "settings";
+            return `
+                <div class="location-card group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-zinc-50 flex items-center justify-center group-hover:bg-blue-50 transition-colors duration-500">
+                            <span class="material-symbols-outlined normal-case text-[22px] text-zinc-400 group-hover:text-blue-500 transition-all duration-500">${icon}</span>
+                        </div>
+                        <div class="label-caps">${g.slot}</div>
+                    </div>
+                    <div class="text-lg font-bold text-zinc-900 leading-none">${g.item}</div>
+                </div>
+            `;
+          })
+          .join("");
+
+        document.getElementById("char-analysis").innerText = char.analysis;
+
+        // Update Radar Chart
+        updateRadarChart(char);
+      }
+
+      function updateRadarChart(char) {
+        const ctx = document.getElementById("radarChart").getContext("2d");
+        const labels = attributes.map((a) => a.name);
+        const dataValues = attributes.map((a) => char.stats[a.key]);
+
+        if (radarChartInstance) radarChartInstance.destroy();
+
+        radarChartInstance = new Chart(ctx, {
+          type: "radar",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: char.name,
+                data: dataValues,
+                backgroundColor: char.color + "20",
+                borderColor: char.color,
+                pointBackgroundColor: char.color,
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: char.color,
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+              r: {
+                angleLines: { color: "rgba(0,0,0,0.05)" },
+                grid: { color: "rgba(0,0,0,0.05)" },
+                pointLabels: {
+                  font: {
+                    family: "'Prompt', sans-serif",
+                    size: 11,
+                    weight: 600,
+                  },
+                  color: (context) => {
+                    if (char && char.focus) {
+                      const attr = attributes.find(
+                        (a) => a.name === context.label,
+                      );
+                      if (attr && char.focus.includes(attr.key))
+                        return char.color;
+                    }
+                    return "#94a3b8";
+                  },
+                  padding: 8,
+                },
+                ticks: { display: false, stepSize: 20 },
+                suggestedMin: 0,
+                suggestedMax: 105,
+              },
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                titleColor: "#1e293b",
+                bodyColor: "#475569",
+                borderColor: "rgba(0,0,0,0.05)",
+                borderWidth: 1,
+                padding: 12,
+                boxPadding: 4,
+                usePointStyle: true,
+                callbacks: {
+                  label: function (context) {
+                    return ` ${context.dataset.label}: ${context.parsed.r}%`;
+                  },
+                },
+              },
+            },
+            layout: {
+              padding: 0,
+            },
+          },
+        });
+      }
+
+      function initComparison() {
+        const selector = document.getElementById("stat-selector");
+        attributes.forEach((attr) => {
+          const opt = document.createElement("option");
+          opt.value = attr.key;
+          opt.text = attr.name;
+          selector.add(opt);
+        });
+
+        selector.addEventListener("change", (e) =>
+          updateComparisonChart(e.target.value),
+        );
+
+        // Initial load
+        updateComparisonChart("HP");
+      }
+
+      function updateComparisonChart(statKey) {
+        const ctx = document.getElementById("barChart").getContext("2d");
+
+        const labels = characters.map((c) => c.name);
+        const data = characters.map((c) => c.stats[statKey]);
+        const colors = characters.map((c) => c.color);
+        const sortedChars = [...characters].sort(
+          (a, b) => b.stats[statKey] - a.stats[statKey],
+        );
+        const topChar = sortedChars[0];
+        const avg =
+          characters.reduce((acc, c) => acc + c.stats[statKey], 0) /
+          characters.length;
+
+        const statInfo = attributes.find((a) => a.key === statKey);
+        const desc = document.getElementById("comparison-desc");
+        desc.innerHTML = `
+          <div class="flex items-start gap-4">
+            <div class="material-symbols-outlined text-3xl mt-1 text-blue-600">bar_chart</div>
+            <div>
+              <p class="text-zinc-900 font-semibold mb-1">บทวิเคราะห์การจัดอันดับ ${statInfo.name}</p>
+              <p class="leading-relaxed">
+                ในด้าน ${statInfo.name}, <strong>${topChar.name}</strong> ครองอันดับสูงสุดที่ <strong>${topChar.stats[statKey]}%</strong> 
+                เทียบกับค่าเฉลี่ยของทีมที่ <strong>${avg.toFixed(1)}%</strong>. 
+                ซึ่งหมายความว่า ${topChar.name} มีความโดดเด่นมากกว่าค่าเฉลี่ยถึง <strong>${(topChar.stats[statKey] - avg).toFixed(0)}%</strong> ในด้านนี้.
+              </p>
+            </div>
+          </div>
+        `;
+
+        if (barChartInstance) barChartInstance.destroy();
+
+        barChartInstance = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: labels.map((l) => formatLabel(l)),
+            datasets: [
+              {
+                label: statInfo.name,
+                data: data,
+                backgroundColor: colors,
+                borderRadius: 12,
+                barThickness: 24,
+              },
+            ],
+          },
+          options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            indexAxis: "y", // Horizontal bar for better label readability
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                titleColor: "#1e293b",
+                bodyColor: "#475569",
+                borderColor: "rgba(0,0,0,0.05)",
+                borderWidth: 1,
+                padding: 12,
+                boxPadding: 4,
+                usePointStyle: true,
+                callbacks: {
+                  title: function (tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(" ") : label;
+                  },
+                  label: function (context) {
+                    return ` ${context.label}: ${context.parsed.x}%`;
+                  },
+                },
+              },
+            },
+            scales: {
+              x: {
+                beginAtZero: true,
+                max: 100,
+                grid: { color: "#F1F5F9" },
+                ticks: {
+                  font: { family: "'Prompt', sans-serif", weight: 400 },
+                },
+              },
+              y: {
+                grid: { display: false },
+                ticks: {
+                  font: { family: "'Prompt', sans-serif", weight: 400 },
+                },
+              },
+            },
+          },
+        });
+      }
+
+      // --- Walkthrough Data ---
+      const walkthroughData = [
+        {
+          id: 1,
+          title: "1. การเริ่มต้นของการผจญภัย",
+          summary:
+            "เริ่มต้นการเดินทางที่ Pilchard Bay และ Estard Castle เพื่อค้นหาความลับของเกาะ Estard และรับแผ่นศิลาชิ้นแรก",
+          fragments: [
+            "Yellow Fragment (Kiefer)",
+            "Yellow Fragment (Pollock)",
+            "Yellow Fragment (Underground)",
+            "Yellow Fragment (Rainbow Cove)",
+          ],
+          medals: ["Mini Medal #1"],
+          steps: [
+            {
+              loc: "Pilchard Bay",
+              action: "รับ Pilchard Sandwich จาก Pearl และชวน มาริเบล ร่วมทีม",
+            },
+            { loc: "Estard", action: "คุยกับ Pike เรื่อง Sizzling Stone" },
+            {
+              loc: "Estard Castle",
+              action: "พบ King Donald และรับ Medal Album",
+            },
+            {
+              loc: "Shrine of Mysteries",
+              action: "รวบรวม Yellow Fragments ทั้ง 4 ชิ้นเพื่อเปิดประตูบานแรก",
+            },
+          ],
+          locations: [
+            {
+              name: "Pilchard Bay",
+              items: ["Pilchard Crackers", "Wayfarer's Clothes"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle",
+              items: ["Bow Tie", "Mini Medal #1"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "2. วีรบุรุษแห่ง Ballymolloy",
+          summary:
+            "เดินทางสู่อดีตเพื่อช่วยเหลือเมือง Ballymolloy จากคำสาปหินและช่วย Patrick คลี่คลายวิกฤต",
+          fragments: [
+            "Green Fragment (Golem)",
+            "Red Fragment (Tower)",
+            "Green Fragment (Present)",
+            "Red Fragment (Mines)",
+            "Red Fragment (Estard)",
+          ],
+          medals: ["Mini Medal #2, #4"],
+          steps: [
+            {
+              loc: "Ballymolloy (อดีต)",
+              action: "Maeve ร่วมทีมเพื่อไป Rainbow Mines",
+            },
+            {
+              loc: "Rainbow Mines",
+              action: "เก็บ Glowing Green Gem เพื่อทำลายคำสาป",
+            },
+            {
+              loc: "The Tower",
+              action: "สู้ Golem เพื่อชิง Green Fragment และช่วย Hanlon",
+            },
+            {
+              loc: "Estard Castle",
+              action: "เก็บ Mini Medal #4 และ Red Fragment ในคุกชั้นล่าง",
+            },
+          ],
+          locations: [
+            {
+              name: "Ballymolloy",
+              items: ["Wooden Doll", "Mini Medal #2"],
+              monsters: ["Vicious Hammerhood"],
+            },
+            {
+              name: "Rainbow Mines",
+              items: ["Leather Shield", "Pointy Hat"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "3. การปะทุครั้งใหญ่",
+          summary:
+            "ดับภูเขาไฟในหมู่บ้าน Emberdale และช่วย Palmela ทำพิธีกรรมเพื่อความสงบสุข",
+          fragments: [
+            "Red Fragment (Inferno)",
+            "Green Fragment (Palmela)",
+            "Green Fragment (Present)",
+            "Grey Fragment (Burnmount)",
+          ],
+          medals: ["Mini Medal #5, #6, #7"],
+          steps: [
+            {
+              loc: "Emberdale (อดีต)",
+              action: "เข้าร่วมเทศกาลดอกไม้ไฟและพบ Palmela",
+            },
+            {
+              loc: "Burnmount",
+              action: "สู้ Glowering Inferno ในปล่องภูเขาไฟ",
+            },
+            {
+              loc: "Emberdale (ปัจจุบัน)",
+              action: "คืนกระดุมให้เด็กเพื่อรับ Seed of Life",
+            },
+            {
+              loc: "Burnmount (ปัจจุบัน)",
+              action: "เก็บ Grey Fragment และ Mini Medal #7",
+            },
+          ],
+          locations: [
+            {
+              name: "Emberdale",
+              items: ["Boxer Shorts", "Mini Medal #6"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount",
+              items: ["Yggdrasil Leaf", "Mini Medal #5"],
+              monsters: ["Glowering Inferno"],
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "4. น้ำตาที่หลั่งรินใน Regenstein",
+          summary:
+            "ไขปริศนาเมืองร้าง Regenstein และช่วยเหลือ Felix จากความเศร้าโศก",
+          fragments: ["Missing Fragment (Logic)"],
+          medals: ["Mini Medal #8, #9"],
+          steps: [
+            {
+              loc: "Regenstein (อดีต)",
+              action: "ใช้ Angel's Tears เพื่อดูความทรงจำของชาวเมือง",
+            },
+            { loc: "Felix's House", action: "รับ Mini Medal #8 และทอง 200 g" },
+            {
+              loc: "Unnamed Island",
+              action: "เก็บ Mini Medal #9 ทางใต้ของ Pilchard Bay",
+            },
+          ],
+          locations: [
+            {
+              name: "Regenstein",
+              items: ["Shellmet", "Boomerang"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "5. Ruff ผู้พร้อมลุย",
+          summary:
+            "ช่วยเหลือ Ruff หมาป่าในคราบมนุษย์ และปลดคำสาปใบ้ของเมือง L'Arca",
+          fragments: [
+            "Red Fragment (Grotta)",
+            "Yellow Fragment (Mayor)",
+            "Red Fragment (Grotto B1)",
+            "Red Fragment (Sarcophagus)",
+          ],
+          medals: ["Mini Medal #10, #11, #12, #13"],
+          steps: [
+            {
+              loc: "L'Arca (อดีต)",
+              action: "ตามหมาป่าไปที่ Grotta del Sigillo",
+            },
+            {
+              loc: "Grotta del Sigillo",
+              action: "สู้บอส Hackrobat เพื่อคลายคำสาป",
+            },
+            { loc: "L'Arca (ปัจจุบัน)", action: "Ruff เข้าร่วมทีมอย่างถาวร" },
+            {
+              loc: "Grotto (ปัจจุบัน)",
+              action: "สู้มอนสเตอร์ในโลงหินเพื่อชิง Red Fragment",
+            },
+          ],
+          locations: [
+            {
+              name: "L'Arca",
+              items: ["Collar Key", "Mini Medal #10"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta del Sigillo",
+              items: ["Wizard Staff", "Mini Medal #11"],
+              monsters: ["Hackrobat"],
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "6. หุ่นยนต์ข้ามกาลเวลา",
+          summary:
+            "การต่อสู้กับกองทัพหุ่นยนต์ใน Faraday Castle และการหายตัวไปชั่วคราวของ Kiefer",
+          fragments: [
+            "Yellow Fragment (Institute)",
+            "Blue Fragment (Stronghold)",
+            "Grey Fragment (Faraday Cell)",
+            "Yellow Fragment (Ambrose)",
+          ],
+          medals: ["Mini Medal #14, #15, #16, #17"],
+          steps: [
+            {
+              loc: "Faraday Castle (อดีต)",
+              action: "คุยกับพระราชาและดูการทดสอบหุ่นยนต์",
+            },
+            {
+              loc: "Institute (อดีต)",
+              action: "ตามหา Autonymus เพื่อช่วยซ่อมแซมหุ่นยนต์",
+            },
+            {
+              loc: "Automaton Stronghold (อดีต)",
+              action: "สู้บอส Tinpot Dictator และ Slaughtomaton",
+            },
+            {
+              loc: "Faraday (ปัจจุบัน)",
+              action: "ตามเรื่อง Ambrose จนได้รับ Yellow Fragment",
+            },
+          ],
+          locations: [
+            {
+              name: "Frobisher",
+              items: ["Scale Armour", "Mini Medal #14"],
+              monsters: ["Automaton"],
+            },
+            {
+              name: "Faraday Castle",
+              items: ["Strength Ring", "Grey Fragment"],
+              monsters: ["Walking Corpse"],
+            },
+            {
+              name: "Institute",
+              items: ["Yellow Fragment", "Mini Medal #16"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "7. ชนเผ่าเร่ร่อน",
+          summary:
+            "การเดินทางของชนเผ่า Roamers และการลาจากครั้งใหญ่ของ Kiefer ผู้เลือกอยู่กับเผ่าตลอดกาล",
+          fragments: [
+            "Grey Fragment (Roamer)",
+            "Yellow Fragment (Cave)",
+            "Blue Fragment (Estard)",
+            "Blue Fragment (Dig Site)",
+          ],
+          medals: ["Mini Medal #18, #19, #20, #21"],
+          steps: [
+            {
+              loc: "Roamer Encampment (อดีต)",
+              action: "คุยกับ Kiefer และ Lala เตรียมตัวทำพิธี",
+            },
+            {
+              loc: "Poolside Cave (อดีต)",
+              action: "วาง Chimes of the Chosen ที่แท่น B4",
+            },
+            {
+              loc: "Cape Overlook",
+              action: "ฉากลาจากของ Kiefer ที่เลือกอยู่กับชนเผ่า",
+            },
+            {
+              loc: "Dig Site (ปัจจุบัน)",
+              action: "จ่ายเงินเข้าเต็นท์เพื่อเก็บ Blue Fragment",
+            },
+          ],
+          locations: [
+            {
+              name: "Roamer Camp",
+              items: ["Spirit of Dance", "Mini Medal #18"],
+              monsters: ["Metal Slime"],
+            },
+            {
+              name: "Poolside Cave",
+              items: ["Silver Platter", "Mini Medal #19"],
+              monsters: ["Clawcerer"],
+            },
+          ],
+        },
+        {
+          id: 8,
+          title: "8. บูรณะวิหาร",
+          summary:
+            "คืนพลังให้กับ Alltrades Abbey ปราบจอมมาร Cardinal Sin และปลดล็อกระบบอาชีพ",
+          fragments: [
+            "Blue Fragment (Perdition)",
+            "Yellow Fragment (Abbey)",
+            "Silver Fragment (Perdition)",
+            "Yellow Fragment (Jacqui)",
+          ],
+          medals: ["Mini Medal #22 - #33"],
+          steps: [
+            {
+              loc: "Alltrades Abbey (อดีต)",
+              action: "ถูกขโมยพลังที่ Abbey และถูกส่งไป Pilgrim's Perdition",
+            },
+            {
+              loc: "Pit of Silence",
+              action: "สู้ Rashers และ Stripes เพื่อรับอาวุธคืน",
+            },
+            {
+              loc: "Alltrades B1",
+              action: "สู้ Cardinal Sin เพื่อคืนความสงบสุขให้ Abbey",
+            },
+            {
+              loc: "Bandit’s Base (ปัจจุบัน)",
+              action: "สู้ The Mighty Pip เพื่อรับ Yellow Fragment",
+            },
+          ],
+          locations: [
+            {
+              name: "Pilgrim's Rest",
+              items: ["Lucky Panel V1", "Mini Medal #22"],
+              monsters: ["Slime Knight"],
+            },
+            {
+              name: "Bandit's Base",
+              items: ["Bandit's Key", "Mini Medal #33"],
+              monsters: ["The Mighty Pip"],
+            },
+          ],
+        },
+        {
+          id: 9,
+          title: "9. ความมืดในทะเลทราย",
+          summary:
+            "ปลดล็อกคำสาปของ Al-Balad ช่วยเหลือราชินี Fertiti และตามหาพรมวิเศษ",
+          fragments: [
+            "Blue Fragment (Bravoure)",
+            "Grey Fragment (Temple)",
+            "Blue Fragment (Al-Balad)",
+            "Gold Fragment (Al-Shallal)",
+          ],
+          medals: ["Mini Medal #34 - #39"],
+          steps: [
+            {
+              loc: "La Bravoure (ปัจจุบัน)",
+              action: "รับ Magic Carpet จาก Honore (แต่ยังใช้ไม่ได้)",
+            },
+            {
+              loc: "Likeness of Evil",
+              action: "เหยียบสวิตช์ Lion-Turtle-Bird-Snake และสู้ Setesh",
+            },
+            {
+              loc: "Temple Palace (อดีต)",
+              action: "รับ Care Package จาก Dr. Doug Digby",
+            },
+            {
+              loc: "Roamer Camp (ปัจจุบัน)",
+              action: "เก็บ Mini Medal #39 ในไห NW",
+            },
+          ],
+          locations: [
+            {
+              name: "Al-Balad",
+              items: ["Seal of the Sands", "Mini Medal #35"],
+              monsters: ["Great Sabrecat"],
+            },
+            {
+              name: "Temple Palace",
+              items: ["Letter of Amity", "Mini Medal #36"],
+              monsters: ["Skeleton Squire"],
+            },
+          ],
+        },
+        {
+          id: 10,
+          title: "10. การพบกับไอช่า",
+          summary:
+            "การพบกับ Aishe ทายาทชนเผ่า Roamers และการปลดล็อกพรมวิเศษตัวจริง",
+          fragments: ["Blue Fragment (Aishe)"],
+          medals: ["Mini Medal #40"],
+          steps: [
+            {
+              loc: "Roamer Camp (ปัจจุบัน)",
+              action: "Aishe เข้าร่วมทีมและมอบ Sword of the Roamers",
+            },
+            {
+              loc: "Shrine of Mysteries",
+              action: "พบ Jacqui และปลดล็อกระบบ Moonlighting (2 อาชีพ)",
+            },
+          ],
+          locations: [
+            {
+              name: "Roamer Camp",
+              items: ["Sunstone Ring", "Mini Medal #40"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 11,
+          title: "11. เกาะใต้บาดาล",
+          summary:
+            "กอบกู้เมือง Wetlock จากน้ำท่วมใหญ่ด้วยการสู้กับ Gracos ใต้ทะเล",
+          fragments: [
+            "Grey Fragment (Hardlypool)",
+            "Red Fragment (Tower)",
+            "Grey Fragment (Wetlock)",
+            "Green Fragment (Tomb)",
+            "Grey Fragment (Palazzo)",
+            "Turquoise Fragment (Serpent)",
+            "Red Fragment (Wetlock Present)",
+          ],
+          medals: ["Mini Medal #41 - #50"],
+          steps: [
+            {
+              loc: "Hardlypool (อดีต)",
+              action: "ตามหาความลับใน Hardlypool Tunnel",
+            },
+            {
+              loc: "Sunken Citadel",
+              action: "สู้ Gracos เพื่อหยุดยั้งน้ำท่วม Wetlock",
+            },
+            {
+              loc: "La Bravoure (ปัจจุบัน)",
+              action: "มอบ Mermaid Moon ให้ Colette เพื่อรับ Flying Carpet",
+            },
+            {
+              loc: "Highendreigh Tower",
+              action: "สู้ Ethereal Serpent เพื่อชิง Turquoise Fragment",
+            },
+          ],
+          locations: [
+            {
+              name: "Wetlock",
+              items: ["Mermaid Moon", "Mini Medal #41"],
+              monsters: ["Vicious Kisser"],
+            },
+            {
+              name: "Palazzo di Bulgio",
+              items: ["Magic Key", "Mini Medal #46"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 12,
+          title: "12. การพบกับเซอร์เมอร์วิน",
+          summary: "การปลุก Sir Mervyn อัศวินในตำนานจากหอคอยที่สูงที่สุด",
+          fragments: ["Red Fragment (Mervyn)", "Silver Fragment (Gracos V)"],
+          medals: ["Mini Medal #51, #52, #53"],
+          steps: [
+            { loc: "Estard", action: "คุยกับ Pike เพื่อเบาะแส Sizzling Stone" },
+            {
+              loc: "Tallest Tower",
+              action: "พา Bulgio ไปยอดหอคอยเพื่อปลุก Sir Mervyn",
+            },
+            {
+              loc: "Sunken Citadel (ปัจจุบัน)",
+              action: "สู้ Gracos V เพื่อชิง Silver Fragment",
+            },
+          ],
+          locations: [
+            {
+              name: "Tallest Tower",
+              items: ["Kerplunk Bracer", "Mini Medal #51"],
+              monsters: ["King Slime"],
+            },
+            {
+              name: "Sunken Citadel",
+              items: ["Silver Fragment", "Mini Medal #53"],
+              monsters: ["Gracos V"],
+            },
+          ],
+        },
+        {
+          id: 13,
+          title: "13. ร่องรอยแห่งความรัก",
+          summary:
+            "ปริศนาและความแค้นใน Greenthumb Gardens และจุดกำเนิดของ Wilted Heart",
+          fragments: ["Missing Fragment (Greenthumb)"],
+          medals: ["Mini Medal #54, #55"],
+          steps: [
+            {
+              loc: "Greenthumb Gardens",
+              action: "สู้ Rainiac และแก้คำสาปด้วย Angel Tears",
+            },
+            {
+              loc: "Wilted Heart (ปัจจุบัน)",
+              action: "ไขคดี Camomile และ Dill",
+            },
+            {
+              loc: "Regrette-Rien Convent",
+              action: "ดูหลุมศพเพื่อรับ Yggdrasil Leaf",
+            },
+          ],
+          locations: [
+            {
+              name: "Wilted Heart",
+              items: ["Slime Earrings", "Mini Medal #54"],
+              monsters: ["Vicious Mud Mannequin"],
+            },
+          ],
+        },
+        {
+          id: 14,
+          title: "14. เวทมนตร์และความวุ่นวาย",
+          summary:
+            "ปราบจอมเวทย์ Hybris ใน Hubble และการจากลาชั่วคราวของ มาริเบล",
+          fragments: [
+            "Green Fragment (Falls)",
+            "Green Fragment (Inquisitory)",
+            "Grey Fragment (Grand)",
+            "Green Fragment (Euphonia)",
+          ],
+          medals: ["Mini Medal #56, #57"],
+          steps: [
+            {
+              loc: "Hubble Castle (อดีต)",
+              action: "พบราชินีและผ่านบททดสอบที่ Grand Conjuratorium",
+            },
+            { loc: "Falls Hollow", action: "เก็บ Starshard เพื่อพิสูจน์ฝีมือ" },
+            {
+              loc: "Hubble Castle",
+              action: "สู้ Hybris และจัดการวิกฤตจอมเวทย์",
+            },
+            {
+              loc: "Pilchard Bay",
+              action: "มาริเบล ขอออกจากกลุ่มเพื่อดูแลพ่อที่ป่วย",
+            },
+          ],
+          locations: [
+            {
+              name: "Hubble",
+              items: ["Staff of Antimagic", "Lightning Staff"],
+              monsters: ["The Envoy"],
+            },
+            {
+              name: "Grand Conjuratorium",
+              items: ["Duplic Hat", "Grey Fragment"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 15,
+          title: "15. คำสัญญากับมาริเบล",
+          summary:
+            "ดูแล มาริเบล ที่ป่วยและเตรียมตัวรับมือกับภัยมืดที่กำลังคืบคลาม",
+          fragments: ["-"],
+          medals: ["-"],
+          steps: [
+            {
+              loc: "Pilchard Bay",
+              action: "คุยกับครอบครัว มาริเบล และสัญญาว่าจะกลับมา",
+            },
+          ],
+          locations: [{ name: "Pilchard Bay", items: ["-"], monsters: ["-"] }],
+        },
+        {
+          id: 16,
+          title: "16. มอนสเตอร์และนักบวช",
+          summary: "ปริศนานักบวชที่ Vogograd และคดีโหวตไล่ชาวบ้านออกจากเมือง",
+          fragments: ["Worn Stone Tablet"],
+          medals: ["Mini Medal #58 - #62"],
+          steps: [
+            {
+              loc: "Vogograd (อดีต)",
+              action:
+                "สู้ Gasputin ที่ Mount Gora และพิสูจน์ความบริสุทธิ์ของบาทหลวง",
+            },
+            {
+              loc: "Vogograd (ปัจจุบัน)",
+              action:
+                "รับ Worn Stone Tablet จากเด็กชายและเก็บเหรียญ 5 เหรียญที่สุสาน",
+            },
+          ],
+          locations: [
+            {
+              name: "Vogograd",
+              items: ["Life Ring", "Mini Medal #58-62"],
+              monsters: ["Gasputin"],
+            },
+          ],
+        },
+        {
+          id: 17,
+          title: "17. ชะตากรรมของธาตุลม",
+          summary:
+            "รวบรวมเครื่องรางธาตุลมใน Aeolus Vale และการปลดล็อก Skystone",
+          fragments: ["Blue Fragment (Sanctum)"],
+          medals: ["Mini Medal #63, #64"],
+          steps: [
+            {
+              loc: "Aeolus Vale (อดีต)",
+              action: "สู้ Cumulus Vex เพื่อนำลมกลับคืนมาสู่หุบเขา",
+            },
+            { loc: "Sullied Sanctum", action: "แก้ปริศนากระจกและสู้ Vaipur" },
+            {
+              loc: "Pool of Piety",
+              action: "ใช้ Sacred Stone เพื่อเปิดทางสู่ Coral Cave",
+            },
+          ],
+          locations: [
+            {
+              name: "Aeolus Vale",
+              items: ["Sacred Stone", "Mini Medal #63"],
+              monsters: ["Vicious Scrapper"],
+            },
+            {
+              name: "Sanctum of the Cirrus",
+              items: ["Blue Fragment", "Seed of Sorcery"],
+              monsters: ["Cumulus Vex"],
+            },
+          ],
+        },
+        {
+          id: 18,
+          title: "18. คำสาปขั้นสุดยอด",
+          summary:
+            "การรวบรวมเครื่องรางธาตุไฟและดิน และการได้รับยานบิน Skystone",
+          fragments: [
+            "Black Fragment (Beacon)",
+            "Turquoise Fragment (Buccanham)",
+            "Black Fragment (Arrival)",
+            "Grey Fragment (Divine)",
+          ],
+          medals: ["Mini Medal #66, #67, #68"],
+          steps: [
+            {
+              loc: "Buccanham (อดีต)",
+              action: "สู้ Mossferatu และจุดไฟ Beacon ด้วย Prism Dew",
+            },
+            {
+              loc: "The Beacon",
+              action: "สู้ Togrus Maximus เพื่อชิง Black Fragment",
+            },
+            {
+              loc: "Divine Shrine",
+              action: "คุยแม่ชีเพื่อรับ Skystone ยานบินหิน",
+            },
+          ],
+          locations: [
+            {
+              name: "Buccanham",
+              items: ["Sea Serpent Sabre", "Mini Medal #66"],
+              monsters: ["Vicious Green Dragon"],
+            },
+            {
+              name: "Den of the Dwarves",
+              items: ["Glowmoss", "Seed of Deftness"],
+              monsters: ["Mossferatu"],
+            },
+          ],
+        },
+        {
+          id: 19,
+          title: "19. ปราบราชาปีศาจ",
+          summary: "ศึกตัดสินที่ Malign Shrine กับจอมมาร Orgodemir ในร่างแรก",
+          fragments: ["Black Fragment (Strange)"],
+          medals: ["Mini Medal #69"],
+          steps: [
+            {
+              loc: "Strange Shrine",
+              action: "เก็บ Black Fragment และ Mini Medal #69",
+            },
+            {
+              loc: "Malign Shrine",
+              action: "สู้ The Time Being และ Orgodemir 2 ร่าง",
+            },
+          ],
+          locations: [
+            { name: "Malign Shrine", items: ["-"], monsters: ["Orgodemir"] },
+          ],
+        },
+        {
+          id: 20,
+          title: "20. การปลุกพระผู้สร้าง",
+          summary: "ปลุกจิตวิญญาณทั้ง 4 เพื่อเปิดทางสู่ปราสาทจอมมารที่แท้จริง",
+          fragments: ["Gold Fragment (Path)"],
+          medals: ["Mini Medal #70 - #73"],
+          steps: [
+            {
+              loc: "Cathedral of Light",
+              action: "เก็บ Ultimate Key และ Mini Medal #70",
+            },
+            {
+              loc: "Estard Castle",
+              action: "ใช้ Ultimate Key เก็บ Kingsblade และ Mini Medal #71",
+            },
+          ],
+          locations: [
+            {
+              name: "Estard Castle",
+              items: ["Kingsblade", "Pallium Regale"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 21,
+          title: "21. ปลุกวิญญาณแห่งไฟ",
+          summary: "ปลุกวิญญาณอัคคีที่ Burnmount และรับ Fire Amulet",
+          fragments: ["Conflagration Key"],
+          medals: ["Mini Medal #74 - #77"],
+          steps: [
+            { loc: "Beacon", action: "Mervyn สู้บอส Smothers ฉายเดี่ยว" },
+            {
+              loc: "Emberdale",
+              action: "ใช้ Conflagration Key เปิดทางสู่ภูเขาไฟ",
+            },
+            {
+              loc: "Burnmount",
+              action: "สู้ Fire Spirit เพื่อรับ Fire Amulet",
+            },
+          ],
+          locations: [
+            {
+              name: "Burnmount",
+              items: ["Magma Staff", "Fire Amulet"],
+              monsters: ["Fire Spirit"],
+            },
+          ],
+        },
+        {
+          id: 22,
+          title: "22. คืนชีพบัญญัติแห่งดิน",
+          summary: "สำรวจพีระมิดลับที่ Likeness และปลุกวิญญาณปฐพี",
+          fragments: ["Grey Fragment (Sea Dragon)"],
+          medals: ["Mini Medal #78 - #81"],
+          steps: [
+            {
+              loc: "The Sea Dragon",
+              action: "เก็บ Grey Fragment และ Mini Medal #78",
+            },
+            { loc: "Temple Palace", action: "สู้มอนสเตอร์เพื่อชิง Royal Key" },
+            {
+              loc: "Hidden Pyramid",
+              action: "รวบรวมหินธาตุ 4 ชิ้นเพื่อปลุกวิญญาณปฐพี",
+            },
+          ],
+          locations: [
+            {
+              name: "Hidden Pyramid",
+              items: ["Royal Mail", "Earth Amulet"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 23,
+          title: "23. ปลุกวิญญาณแห่งลม",
+          summary:
+            "พิชิตหอคอย Ventus และMultipleximus Maximus เพื่อปลุกวิญญาณวายุ",
+          fragments: ["Multipleximus Key"],
+          medals: ["Mini Medal #82 - #84"],
+          steps: [
+            {
+              loc: "Ventus Tower",
+              action: "ขึ้นสู่ยอดหอคอยเพื่อวาร์ปไป Villa Priores",
+            },
+            {
+              loc: "Multipleximus Maximus",
+              action: "แก้ปริศนาหมุนฉากและสู้บอส Macho Picchu",
+            },
+            {
+              loc: "Sanctum of the Cirrus",
+              action: "วาง Cirrus Surplice เพื่อรับ Wind Amulet",
+            },
+          ],
+          locations: [
+            {
+              name: "Villa Priores",
+              items: ["Aeolus Globe", "Mini Medal #84"],
+              monsters: ["Vicious Dragster"],
+            },
+          ],
+        },
+        {
+          id: 24,
+          title: "24. เมืองที่แย่ที่สุด",
+          summary: "แก้คำสาปในเมือง Nottagen และเก็บตกเศษศิลา Gold Fragment",
+          fragments: ["Gold Fragment (Coral)", "Gold Fragment (อดีต)"],
+          medals: ["Mini Medal #85 - #90"],
+          steps: [
+            {
+              loc: "King Scoober’s Domain",
+              action: "เก็บ Mini Medal #87 ในโดเมนลับ",
+            },
+            {
+              loc: "Nottagen Cavern",
+              action: "สู้ Malign Vine เพื่อกอบกู้เมือง Nottagen",
+            },
+          ],
+          locations: [
+            {
+              name: "Nottagen",
+              items: ["Gold Fragment", "Mini Medal #89"],
+              monsters: ["Moostapha"],
+            },
+          ],
+        },
+        {
+          id: 25,
+          title: "25. เดจาวู",
+          summary: "การกลับมาของ Kiefer ชั่วคราวในฐานะนักรบจากอดีต",
+          fragments: ["Curious Fragment"],
+          medals: ["Mini Medal #91"],
+          steps: [
+            {
+              loc: "Rucker Castle",
+              action: "สู้ Marshal Lourgh และรวมพลังกับ Kiefer",
+            },
+          ],
+          locations: [
+            {
+              name: "Rucker Castle",
+              items: ["Curious Fragment", "Mini Medal #91"],
+              monsters: ["Marshal Lourgh"],
+            },
+          ],
+        },
+        {
+          id: 26,
+          title: "26. ศึกตัดสินกับราชาปีศาจ",
+          summary: "ศึกตัดสินสุดท้ายกับจอมมาร Orgodemir ใน Cathedral of Blight",
+          fragments: ["-"],
+          medals: ["Mini Medal #92 - #94"],
+          steps: [
+            {
+              loc: "Cathedral of Blight",
+              action: "พิชิตดันเจี้ยน 4 ธาตุและสู้ร่างสุดท้ายของ Orgodemir",
+            },
+          ],
+          locations: [
+            {
+              name: "Cathedral of Blight",
+              items: ["Okeanos Sword", "Gaia Armour"],
+              monsters: ["Orgodemir"],
+            },
+          ],
+        },
+        {
+          id: 27,
+          title: "27. หลังจบเกม",
+          summary:
+            "พิชิตดันเจี้ยนลับ ท้าทายพระเจ้า และรวบรวม Mini Medal จนครบ 100 เหรียญ",
+          fragments: [
+            "Silver Fragment (Estard)",
+            "Gold Fragment (Almighty)",
+            "Gold Fragment (Arena)",
+          ],
+          medals: ["Mini Medal #95 - #100"],
+          steps: [
+            {
+              loc: "Another World",
+              action: "สู้พระเจ้า (The Almighty) ภายในเทิร์นที่กำหนด",
+            },
+            {
+              loc: "Buccanham Arena",
+              action: "ชนะ Testy Road เพื่อรับเศษศิลาทองชิ้นสุดท้าย",
+            },
+            {
+              loc: "Familiar Town",
+              action: "เก็บ Mini Medal 3 เหรียญสุดท้ายที่นี่",
+            },
+          ],
+          locations: [
+            {
+              name: "Another World",
+              items: ["Supernova Sword", "Gold Fragment"],
+              monsters: ["The Almighty"],
+            },
+            {
+              name: "Familiar Town",
+              items: ["Mini Medal #100"],
+              monsters: ["4 Spirits"],
+            },
+          ],
+        },
+      ];
+
+      function renderChapterTabs(activeId) {
+        const container = document.getElementById("chapter-tabs");
+        container.innerHTML = walkthroughData
+          .map((ch) => {
+            const isActive = ch.id === activeId;
+            return `
+                <button onclick="updateWalkthrough(${ch.id})" role="tab" aria-selected="${isActive}" class="px-6 py-2 text-sm font-medium transition-all duration-300 min-w-fit ${isActive ? "active bg-white shadow-sm rounded-lg text-zinc-900" : "text-zinc-500 hover:text-zinc-800"}">
+                    บทที่ ${ch.id}
+                </button>
+            `;
+          })
+          .join("");
+      }
+
+      function updateWalkthrough(chId) {
+        const ch = walkthroughData.find((c) => c.id === chId);
+        if (!ch) return;
+
+        renderChapterTabs(chId);
+
+        const container = document.getElementById("walkthrough-display");
+        container.innerHTML = `
+          <div class="walkthrough-grid dashboard-fade-in">
+            <!-- Left Sidebar: Key Points -->
+            <div class="bg-zinc-50/50 p-8 border-r border-gray-100 space-y-10">
+              <div>
+                <h4 class="label-caps mb-4 flex items-center">
+                  <span class="material-symbols-outlined text-[16px] mr-2">auto_awesome</span>
+                  Chapter Overview
+                </h4>
+                <p class="text-zinc-600 font-medium leading-relaxed">${ch.summary}</p>
+              </div>
+
+              <div class="space-y-6">
+                <h4 class="label-caps mb-4 flex items-center">
+                  <span class="material-symbols-outlined text-[16px] mr-2">diamond</span>
+                  Key Collection
+                </h4>
+                
+                <div class="space-y-4">
+                  <div>
+                    <div class="text-xs font-bold text-blue-600 mb-2 uppercase tracking-wide">Fragments</div>
+                    <div class="flex flex-wrap gap-2 text-sm text-zinc-500">
+                      ${ch.fragments.map((f) => `<span class="bg-white px-2 py-1 rounded border border-gray-100 shadow-sm">${f}</span>`).join("")}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <div class="text-xs font-bold text-green-600 mb-2 uppercase tracking-wide">Mini Medals</div>
+                    <div class="flex flex-wrap gap-2 text-sm text-zinc-500">
+                      ${ch.medals.map((m) => `<span class="bg-white px-2 py-1 rounded border border-gray-100 shadow-sm">${m}</span>`).join("")}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="p-8 md:p-10 space-y-12 bg-white">
+              <!-- Timeline -->
+              <div>
+                <h4 class="label-caps mb-8 flex items-center">
+                  <span class="material-symbols-outlined text-[16px] mr-2">swords</span>
+                  Story Progression
+                </h4>
+                <div class="space-y-6">
+                  ${ch.steps
+                    .map(
+                      (s) => `
+                    <div class="timeline-item relative flex items-start">
+                      <div class="timeline-dot"></div>
+                      <div>
+                        <div class="text-xs font-black text-blue-600 uppercase tracking-wider mb-1">${s.loc}</div>
+                        <div class="text-base font-bold text-zinc-900">${s.action}</div>
+                      </div>
+                    </div>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+
+              <!-- Highlights -->
+              <div>
+                <h4 class="label-caps mb-8 flex items-center">
+                  <span class="material-symbols-outlined text-[16px] mr-2">category</span>
+                  Location Highlights
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  ${ch.locations
+                    .map(
+                      (loc) => `
+                    <div class="location-card">
+                      <h5 class="text-sm font-black text-zinc-900 uppercase tracking-wider mb-4 border-b border-gray-50 pb-2">${loc.name}</h5>
+                      <div class="space-y-4">
+                        <div>
+                          <p class="text-xs font-bold text-gray-400 uppercase mb-2">Items</p>
+                          <div class="flex flex-wrap gap-1.5 text-xs text-zinc-600 font-medium">
+                            ${loc.items.map((i) => `<span class="bg-zinc-50 px-2 py-0.5 rounded">${i}</span>`).join("")}
+                          </div>
+                        </div>
+                        <div>
+                          <p class="text-xs font-bold text-gray-400 uppercase mb-2">Monsters</p>
+                          <div class="flex flex-wrap gap-1.5 text-xs text-zinc-600 font-medium">
+                            ${loc.monsters.map((m) => `<span class="bg-zinc-50 px-2 py-0.5 rounded">${m}</span>`).join("")}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // --- Init ---
+      document.addEventListener("DOMContentLoaded", () => {
+        renderAttributes();
+        updateDashboard("hero");
+        initComparison();
+        renderChapterTabs(1);
+        updateWalkthrough(1);
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        const closeMobileMenu = () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          menuBtn.setAttribute("aria-expanded", "false");
+        };
+
+        menuBtn.addEventListener("click", () => {
+          const isOpen = mobileMenu.classList.contains("flex");
+          if (isOpen) {
+            closeMobileMenu();
+          } else {
+            mobileMenu.classList.remove("hidden");
+            mobileMenu.classList.add("flex");
+            menuBtn.setAttribute("aria-expanded", "true");
+          }
+        });
+
+        // Navbar Active State Logic (throttled with rAF)
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav .hidden a");
+        let scrollTicking = false;
+
+        const updateNav = () => {
+          let current = "";
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (window.pageYOffset >= sectionTop - 150) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navLinks.forEach((link) => {
+            const isActive = link.getAttribute("href") === `#${current}`;
+            link.classList.toggle("text-blue-600", isActive);
+            link.classList.toggle("text-zinc-500", !isActive);
+            // WCAG 4.1.2 – aria-current on active nav link
+            if (isActive) {
+              link.setAttribute("aria-current", "page");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        };
+
+        // Back-to-top button
+        const backToTopBtn = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+          // Close mobile menu on scroll
+          if (mobileMenu.classList.contains("flex")) {
+            closeMobileMenu();
+          }
+          // Back-to-top visibility (show after scrolling 400px)
+          backToTopBtn.classList.toggle("visible", window.scrollY > 400);
+
+          if (!scrollTicking) {
+            requestAnimationFrame(() => {
+              updateNav();
+              scrollTicking = false;
+            });
+            scrollTicking = true;
+          }
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // Close menu on link click
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", closeMobileMenu);
+        });
+
+        updateNav();
+      });
+    </script>
+  </body>
+</html>
