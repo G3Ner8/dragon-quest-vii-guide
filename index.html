@@ -417,6 +417,81 @@
           scroll-behavior: auto !important;
         }
       }
+
+      /* ── Vocation Cards ──────────────────────────────────────── */
+      .voc-card {
+        background: white;
+        border: 1px solid #f1f5f9;
+        border-radius: 1rem;
+        padding: 0.625rem 0.875rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+        transition:
+          box-shadow 0.25s ease,
+          border-color 0.25s ease,
+          transform 0.25s ease;
+      }
+      .voc-card:hover {
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+        border-color: #e2e8f0;
+        transform: translateY(-2px);
+      }
+      /* card name */
+      .voc-card-name {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: #18181b;
+        line-height: 1.25;
+      }
+      /* chip row label */
+      .voc-chip-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        margin-right: 2px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .voc-chip-label-prereq {
+        color: rgba(180, 80, 0, 0.75);
+      }
+      .voc-chip-label-unlock {
+        color: rgba(30, 140, 60, 0.8);
+      }
+      /* chips */
+      .voc-chip {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 500;
+        padding: 1px 7px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      .voc-chip-prereq {
+        background: rgba(255, 149, 0, 0.12);
+        color: #7d3a00;
+      }
+      .voc-chip-unlock {
+        background: rgba(52, 199, 89, 0.13);
+        color: #1a5c2e;
+      }
+      .voc-chip-none {
+        font-size: 0.68rem;
+        color: #a1a1aa;
+        font-style: italic;
+      }
+      /* chip row — no wrap, swipe if overflow */
+      .voc-chip-row {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 4px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .voc-chip-row::-webkit-scrollbar {
+        display: none;
+      }
     </style>
 
     <!-- Structured Data -->
@@ -462,6 +537,11 @@
                 >คุณสมบัติ</a
               >
               <a
+                href="#vocations"
+                class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+                >สายอาชีพ</a
+              >
+              <a
                 href="#characters"
                 class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
                 >ตัวละคร</a
@@ -504,6 +584,11 @@
             href="#attributes"
             class="p-4 text-zinc-600 font-medium border-b border-zinc-100/50 hover:bg-zinc-50/50 transition-colors"
             >คุณสมบัติ</a
+          >
+          <a
+            href="#vocations"
+            class="p-4 text-zinc-600 font-medium border-b border-zinc-100/50 hover:bg-zinc-50/50 transition-colors"
+            >สายอาชีพ</a
           >
           <a
             href="#characters"
@@ -570,6 +655,39 @@
           id="attr-grid"
         >
           <!-- Injected via JS -->
+        </div>
+      </section>
+
+      <!-- Section: Vocation Tree -->
+      <section id="vocations" aria-labelledby="heading-vocations">
+        <div class="mb-12 text-center">
+          <h2
+            id="heading-vocations"
+            class="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-900 tracking-tight"
+          >
+            สายอาชีพ (Vocation Guide)
+          </h2>
+          <p class="text-zinc-500 mt-3 font-light leading-relaxed">
+            โครงสร้างและเงื่อนไขการปลดล็อกอาชีพทั้ง 20 สาย —
+            เห็นสิ่งที่ต้องการและสิ่งที่จะได้รับในแต่ละ card
+          </p>
+        </div>
+
+        <div class="card-apple p-6 md:p-10">
+          <!-- Legend -->
+          <div class="flex flex-wrap gap-x-8 gap-y-2 mb-8 justify-center">
+            <div class="flex items-center gap-2">
+              <span class="voc-chip-label voc-chip-label-prereq">←</span>
+              <span class="voc-chip voc-chip-prereq">ต้องการ (Requires)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="voc-chip-label voc-chip-label-unlock">→</span>
+              <span class="voc-chip voc-chip-unlock">ปลดล็อก (Unlocks)</span>
+            </div>
+          </div>
+
+          <!-- Injected by JS -->
+          <div id="voc-grid-root" class="space-y-8"></div>
         </div>
       </section>
 
@@ -1115,10 +1233,9 @@
             "Auto-HP Recovery",
           ],
           path: [
-            "Warrior + Martial Artist",
-            "Priest + Mage",
-            "Gladiator",
-            "Sage",
+            "Warrior / Martial Artist",
+            "Armamentalist",
+            "Gladiator (สำรอง)",
             "Hero",
           ],
           gear: [
@@ -1150,7 +1267,7 @@
           },
           focus: ["Might", "MP", "Agi"],
           highlights: ["MP & Might สูงที่สุด", "Glass Cannon", "Agility สูง"],
-          path: ["Mage + Priest", "Sage", "Luminary", "Druid"],
+          path: ["Mage + Priest", "Sage", "Druid", "Sage / Mage (Endgame)"],
           gear: [
             { slot: "Weapon", item: "Solar Staff" },
             { slot: "Armor", item: "Princess Robe" },
@@ -1181,11 +1298,10 @@
           focus: ["Agi", "Deft", "Str"],
           highlights: ["Agility สูงที่สุด", "Deftness สูงสุด", "Strength สูง"],
           path: [
-            "Shepherd + Thief",
-            "Warrior + Martial Artist",
-            "Monster Masher",
-            "Gladiator",
-            "Champion",
+            "Shepherd + Thief / Sailor",
+            "Monster Wrangler",
+            "Pirate",
+            "Monster Master / Pirate (Endgame)",
           ],
           gear: [
             { slot: "Weapon", item: "Wrecking Flail" },
@@ -1216,7 +1332,12 @@
           },
           focus: ["Mend", "Res", "MP"],
           highlights: ["Resilience สูงมาก", "Mending สูงสุด", "ช้าที่สุด"],
-          path: ["Priest + Martial Artist", "Paladin", "Sage", "Paladin/Druid"],
+          path: [
+            "Warrior",
+            "Gladiator",
+            "Paladin",
+            "Champion / Paladin (Endgame)",
+          ],
           gear: [
             { slot: "Weapon", item: "Sword of Miracles" },
             { slot: "Armor", item: "Metal King Armour" },
@@ -1251,10 +1372,10 @@
             "Hybrid Damage",
           ],
           path: [
-            "Dancer + Troubadour + Warrior",
+            "Dancer + Troubadour + Jester",
             "Luminary",
-            "Gladiator",
-            "Champion",
+            "Druid",
+            "Luminary / Druid (Endgame)",
           ],
           gear: [
             { slot: "Weapon", item: "Gringham Whip" },
@@ -4793,9 +4914,181 @@
         `;
       }
 
+      // --- Vocation Cards ---
+      const vocationsData = [
+        // Basic
+        { id: "warrior", name: "Warrior", tier: "basic", prereqs: [] },
+        { id: "mage", name: "Mage", tier: "basic", prereqs: [] },
+        { id: "priest", name: "Priest", tier: "basic", prereqs: [] },
+        {
+          id: "martialartist",
+          name: "Martial Artist",
+          tier: "basic",
+          prereqs: [],
+        },
+        { id: "thief", name: "Thief", tier: "basic", prereqs: [] },
+        { id: "sailor", name: "Sailor", tier: "basic", prereqs: [] },
+        { id: "shepherd", name: "Shepherd", tier: "basic", prereqs: [] },
+        { id: "dancer", name: "Dancer", tier: "basic", prereqs: [] },
+        { id: "troubadour", name: "Troubadour", tier: "basic", prereqs: [] },
+        { id: "jester", name: "Jester", tier: "basic", prereqs: [] },
+        // Intermediate
+        {
+          id: "armamentalist",
+          name: "Armamentalist",
+          tier: "inter",
+          prereqs: ["mage", "warrior"],
+        },
+        {
+          id: "gladiator",
+          name: "Gladiator",
+          tier: "inter",
+          prereqs: ["warrior", "martialartist"],
+        },
+        {
+          id: "paladin",
+          name: "Paladin",
+          tier: "inter",
+          prereqs: ["martialartist", "priest"],
+        },
+        {
+          id: "sage",
+          name: "Sage",
+          tier: "inter",
+          prereqs: ["priest", "mage"],
+        },
+        {
+          id: "pirate",
+          name: "Pirate",
+          tier: "inter",
+          prereqs: ["sailor", "thief"],
+        },
+        {
+          id: "monsterwrangler",
+          name: "Monster Wrangler",
+          tier: "inter",
+          prereqs: ["thief", "shepherd"],
+        },
+        {
+          id: "luminary",
+          name: "Luminary",
+          tier: "inter",
+          prereqs: ["dancer", "troubadour", "jester"],
+        },
+        // Advanced
+        {
+          id: "hero",
+          name: "Hero",
+          tier: "adv",
+          prereqs: ["armamentalist", "gladiator", "sage"],
+        },
+        {
+          id: "champion",
+          name: "Champion",
+          tier: "adv",
+          prereqs: ["gladiator", "paladin"],
+        },
+        {
+          id: "druid",
+          name: "Druid",
+          tier: "adv",
+          prereqs: ["pirate", "sage", "luminary"],
+        },
+      ];
+
+      function renderVocationGrid() {
+        const root = document.getElementById("voc-grid-root");
+        if (!root) return;
+
+        // id → vocation lookup (avoids repeated .find() inside loops)
+        const vocById = Object.fromEntries(vocationsData.map((v) => [v.id, v]));
+
+        const tierColors = {
+          basic: "var(--green)",
+          inter: "var(--blue)",
+          adv: "var(--purple)",
+        };
+
+        const tiers = [
+          {
+            id: "basic",
+            label: "ขั้นพื้นฐาน",
+            sublabel: "Basic",
+            cols: "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5",
+          },
+          {
+            id: "inter",
+            label: "ขั้นกลาง",
+            sublabel: "Intermediate",
+            cols: "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4",
+          },
+          {
+            id: "adv",
+            label: "ขั้นสูง",
+            sublabel: "Advanced",
+            cols: "grid-cols-3",
+          },
+        ];
+
+        root.innerHTML = tiers
+          .map((tier) => {
+            const items = vocationsData.filter((v) => v.tier === tier.id);
+
+            const cards = items
+              .map((v) => {
+                const unlocks = vocationsData.filter((u) =>
+                  u.prereqs.includes(v.id),
+                );
+
+                const prereqChips = v.prereqs.length
+                  ? v.prereqs
+                      .map(
+                        (p) =>
+                          `<span class="voc-chip voc-chip-prereq">${vocById[p]?.name}</span>`,
+                      )
+                      .join("")
+                  : `<span class="voc-chip-none">—</span>`;
+                const unlockChips = unlocks.length
+                  ? unlocks
+                      .map(
+                        (u) =>
+                          `<span class="voc-chip voc-chip-unlock">${u.name}</span>`,
+                      )
+                      .join("")
+                  : `<span class="voc-chip-none">—</span>`;
+
+                const prereqRow =
+                  tier.id !== "basic"
+                    ? `<div class="flex items-center gap-1"><span class="voc-chip-label voc-chip-label-prereq">←</span><div class="voc-chip-row">${prereqChips}</div></div>`
+                    : "";
+                const unlockRow =
+                  tier.id !== "adv"
+                    ? `<div class="flex items-center gap-1"><span class="voc-chip-label voc-chip-label-unlock">→</span><div class="voc-chip-row">${unlockChips}</div></div>`
+                    : "";
+
+                return `<div class="voc-card"><p class="voc-card-name">${v.name}</p>${prereqRow}${unlockRow}</div>`;
+              })
+              .join("");
+
+            return `
+            <div>
+              <div class="flex items-center gap-2.5 mb-3">
+                <div class="w-1 h-6 rounded-full" style="background:${tierColors[tier.id]}"></div>
+                <div>
+                  <p class="font-bold text-zinc-900 leading-none">${tier.label}</p>
+                  <p class="label-caps mt-0.5">${tier.sublabel}</p>
+                </div>
+              </div>
+              <div class="grid ${tier.cols} gap-2">${cards}</div>
+            </div>`;
+          })
+          .join("");
+      }
+
       // --- Init ---
       document.addEventListener("DOMContentLoaded", () => {
         renderAttributes();
+        renderVocationGrid();
         updateDashboard("hero");
         initComparison();
         renderChapterTabs(1);
