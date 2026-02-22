@@ -1,0 +1,8 @@
+# VS Code workspace settings (local only)
+.vscode/
+
+# Python virtual environment
+.venv/
+
+# macOS
+.DS_Store

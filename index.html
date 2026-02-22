@@ -1,11 +1,3800 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=Dragon_Quest_VII_Guide.html">
-  <title>Dragon Quest VII Guide</title>
-</head>
-<body>
-  <p>กำลังโหลด... <a href="Dragon_Quest_VII_Guide.html">คลิกที่นี่</a> หากไม่เปลี่ยนหน้าอัตโนมัติ</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>Dragon Quest VII Reimagined: เจาะลึกตัวละครและสายอาชีพ</title>
+    <meta name="description" content="คู่มือ Dragon Quest VII Reimagined ฉบับสมบูรณ์ เจาะลึกสเตตัส สายอาชีพ อุปกรณ์ระดับตำนาน กลยุทธ์การเล่น และบทสรุปเนื้อเรื่อง 100%" />
+    <meta name="keywords" content="Dragon Quest VII, DQVII, Reimagined, คู่มือ, walkthrough, 100%, สายอาชีพ, Fragment, Mini Medal, แผ่นศิลา, Maribel, Kiefer, Ruff, Mervyn" />
+    <meta name="author" content="G3Ner8" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://g3ner8.github.io/dragon-quest-vii-guide/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Dragon Quest VII Guide" />
+    <meta property="og:title" content="Dragon Quest VII Reimagined: เจาะลึกตัวละครและสายอาชีพ" />
+    <meta property="og:description" content="คู่มือ Dragon Quest VII Reimagined ฉบับสมบูรณ์ เจาะลึกสเตตัส สายอาชีพ อุปกรณ์ระดับตำนาน กลยุทธ์การเล่น และบทสรุปเนื้อเรื่อง 100%" />
+    <meta property="og:url" content="https://g3ner8.github.io/dragon-quest-vii-guide/" />
+    <meta property="og:locale" content="th_TH" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Dragon Quest VII Reimagined: เจาะลึกตัวละครและสายอาชีพ" />
+    <meta name="twitter:description" content="คู่มือ Dragon Quest VII Reimagined ฉบับสมบูรณ์ เจาะลึกสเตตัส สายอาชีพ อุปกรณ์ระดับตำนาน กลยุทธ์การเล่น และบทสรุปเนื้อเรื่อง 100%" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts: include all used weights (400,600,700,900) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Material Symbols -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=auto_awesome,balance,bar_chart,bolt,category,check_circle,cyclone,diamond,favorite,fitness_center,groups,local_fire_department,shield,speed,stars,swords,timer,water_drop"
+    />
+
+    <style>
+      :root {
+        --apple-bg: #fbfbfd;
+        --apple-card: rgba(255, 255, 255, 0.85);
+        --apple-glass: rgba(255, 255, 255, 0.75);
+        --zinc-950: #09090b;
+        --zinc-900: #18181b;
+        --zinc-500: #71717a;
+        --zinc-100: #f4f4f5;
+
+        /* Vibrant Apple Palette */
+        --blue: #007aff;
+        --green: #34c759;
+        --red: #ff3b30;
+        --purple: #af52de;
+        --orange: #ff9500;
+        --indigo: #5856d6;
+        --pink: #ff2d55;
+        --cyan: #32ade6;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
+      body {
+        font-family:
+          "Prompt",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        font-weight: 400;
+        background-color: var(--apple-bg);
+        color: var(--zinc-900);
+        letter-spacing: 0;
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+      .mesh-gradient {
+        background-image: linear-gradient(
+          -45deg,
+          #007aff,
+          #24a0ff,
+          #5856d6,
+          #8a46e3,
+          #af52de,
+          #d63fb9,
+          #ff2d55,
+          #ff6b00,
+          #ff9500,
+          #007aff
+        );
+        background-size: 400% 400%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: gradient-flow 15s ease infinite;
+        padding: 0.1em 0;
+        line-height: 1.2;
+      }
+      @keyframes gradient-flow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .glass {
+        background: var(--apple-glass);
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transform: translate3d(0, 0, 0);
+      }
+      .card-apple {
+        background: var(--apple-card);
+        border-radius: 2.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-apple:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        background: white;
+      }
+      .segmented-control {
+        background: rgba(0, 0, 0, 0.05);
+        padding: 4px;
+        border-radius: 16px;
+        display: flex;
+        gap: 2px;
+      }
+      .segmented-control button {
+        flex: 1;
+        padding: 10px 20px;
+        min-height: 44px; /* WCAG 2.5.5 touch target */
+        border-radius: 12px;
+        font-size: 0.875rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        color: var(--zinc-500);
+        cursor: pointer;
+      }
+      .segmented-control button.active {
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        color: var(--zinc-900);
+        font-weight: 600;
+      }
+      .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 650px;
+        height: 300px;
+        margin: 0 auto;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .float-animation {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .dashboard-fade-in {
+        animation: fadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hide-scroll::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scroll {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Mobile Menu Toggle */
+      #mobile-menu.active {
+        display: flex;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px) saturate(200%);
+      }
+      .hero-glow {
+        position: absolute;
+        top: -20%;
+        left: 50%;
+        transform: translateX(-50%) translate3d(0, 0, 0);
+        width: 120%;
+        height: 100%;
+        background: radial-gradient(
+          circle at center,
+          rgba(0, 122, 255, 0.1) 0%,
+          rgba(0, 122, 255, 0.04) 40%,
+          rgba(0, 122, 255, 0) 70%
+        );
+        filter: blur(60px);
+        pointer-events: none;
+        z-index: -1;
+        will-change: transform;
+      }
+
+      /* Walkthrough Styles */
+      .walkthrough-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      @media (min-width: 1024px) {
+        .walkthrough-grid {
+          grid-template-columns: 350px 1fr;
+        }
+      }
+      .timeline-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--blue);
+        position: relative;
+        z-index: 10;
+        margin-right: 1.5rem;
+        margin-top: 0.5rem;
+        flex-shrink: 0;
+      }
+      .timeline-item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 1.5rem;
+        bottom: -0.5rem;
+        width: 2px;
+        background: #f1f5f9;
+      }
+      .location-card {
+        background: white;
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        border: 1px solid #f1f5f9;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .location-card:hover {
+        border-color: var(--blue);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+      /* Reusable label style */
+      .label-caps {
+        font-size: 0.75rem; /* 12px */
+        font-weight: 900;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+      }
+
+      /* ── Skip navigation link (WCAG 2.4.1) ────────────────── */
+      .skip-link {
+        position: absolute;
+        top: -100%;
+        left: 1rem;
+        z-index: 9999;
+        padding: 0.75rem 1.25rem;
+        background: var(--blue);
+        color: white;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border-radius: 0 0 0.75rem 0.75rem;
+        text-decoration: none;
+        transition: top 0.2s ease;
+      }
+      .skip-link:focus {
+        top: 0;
+        outline: 3px solid white;
+        outline-offset: 2px;
+      }
+
+      /* ── Global keyboard focus indicator (WCAG 2.4.11) ─────── */
+      :focus-visible {
+        outline: 2.5px solid var(--blue);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+
+      /* ── Back-to-top button ─────────────────────────────────── */
+      .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 40;
+        width: 48px;
+        height: 48px;
+        background: white;
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease;
+        pointer-events: none;
+      }
+      .back-to-top.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .back-to-top:hover {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        background: var(--blue);
+        color: white;
+        border-color: transparent;
+      }
+
+      /* ── Reduce motion for users who prefer it (WCAG 2.3.3) ── */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Dragon Quest VII Reimagined: เจาะลึกตัวละครและสายอาชีพ",
+      "description": "คู่มือ Dragon Quest VII Reimagined ฉบับสมบูรณ์ เจาะลึกสเตตัส สายอาชีพ อุปกรณ์ระดับตำนาน กลยุทธ์การเล่น และบทสรุปเนื้อเรื่อง 100%",
+      "inLanguage": "th",
+      "author": { "@type": "Person", "name": "G3Ner8" },
+      "url": "https://g3ner8.github.io/dragon-quest-vii-guide/",
+      "about": {
+        "@type": "VideoGame",
+        "name": "Dragon Quest VII: Fragments of the Forgotten Past",
+        "gamePlatform": ["Nintendo 3DS", "iOS", "Android"]
+      }
+    }
+    </script>
+  </head>
+  <body class="antialiased min-h-screen flex flex-col">
+    <!-- Skip navigation link (WCAG 2.4.1) -->
+    <a href="#main-content" class="skip-link">ข้ามไปเนื้อหาหลัก</a>
+
+    <!-- Navbar -->
+    <nav class="fixed top-6 left-0 right-0 z-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="glass rounded-3xl shadow-2xl">
+        <div class="flex justify-between items-center h-16 px-8">
+          <div class="flex items-center">
+            <span class="text-2xl font-bold tracking-tighter text-zinc-900"
+              >DQ<span class="text-blue-600">7</span></span
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-10">
+            <a
+              href="#attributes"
+              class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+              >คุณสมบัติ</a
+            >
+            <a
+              href="#characters"
+              class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+              >ตัวละคร</a
+            >
+            <a
+              href="#comparison"
+              class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+              >การจัดอันดับ</a
+            >
+            <a
+              href="#strategy"
+              class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+              >กลยุทธ์</a
+            >
+            <a
+              href="#walkthrough"
+              class="text-zinc-500 hover:text-blue-600 text-sm font-medium transition-colors"
+              >บทสรุป</a
+            >
+          </div>
+          <div class="md:hidden flex items-center">
+            <button
+              id="menu-btn"
+              class="p-2 text-zinc-900 cursor-pointer rounded-lg focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1"
+              aria-label="เปิดเมนู"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <span class="text-3xl" aria-hidden="true">☰</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Links -->
+      <div
+        id="mobile-menu"
+        class="hidden flex-col absolute top-24 left-6 right-6 glass rounded-3xl p-6 shadow-2xl md:hidden overflow-hidden"
+      >
+        <a
+          href="#attributes"
+          class="p-4 text-zinc-600 font-medium border-b border-zinc-100/50 hover:bg-zinc-50/50 transition-colors"
+          >คุณสมบัติ</a
+        >
+        <a
+          href="#characters"
+          class="p-4 text-zinc-600 font-medium border-b border-zinc-100/50 hover:bg-zinc-50/50 transition-colors"
+          >ตัวละคร</a
+        >
+        <a
+          href="#comparison"
+          class="p-4 text-zinc-600 font-medium border-b border-zinc-100/50 hover:bg-zinc-50/50 transition-colors"
+          >การจัดอันดับ</a
+        >
+        <a
+          href="#strategy"
+          class="p-4 text-zinc-600 font-medium border-b border-zinc-100/50 hover:bg-zinc-50/50 transition-colors"
+          >กลยุทธ์</a
+        >
+        <a
+          href="#walkthrough"
+          class="p-4 text-zinc-600 font-medium hover:bg-zinc-50/50 transition-colors"
+          >บทสรุป</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-48 pb-24 px-6 text-center relative overflow-hidden">
+      <div class="hero-glow"></div>
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 mesh-gradient max-w-5xl mx-auto"
+      >
+        คู่มือ Dragon Quest VII Reimagined
+      </h1>
+      <p
+        class="text-lg md:text-xl max-w-2xl mx-auto text-zinc-600 font-normal leading-relaxed px-4"
+      >
+        เจาะลึกข้อมูลสเตตัส เส้นทางอาชีพ อุปกรณ์ระดับตำนาน กลยุทธ์การเล่น
+        และบทสรุปเนื้อเรื่องฉบับสมบูรณ์ เพื่อการผจญภัยที่ไร้ขีดจำกัด
+      </p>
+    </header>
+
+    <main id="main-content" class="flex-grow w-full max-w-6xl mx-auto px-4 py-8 space-y-16">
+      <!-- Section 1: Attribute Encyclopedia -->
+      <section id="attributes">
+        <div class="mb-12 text-center">
+          <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+            คุณสมบัติพื้นฐาน (Core Attributes)
+          </h2>
+          <p class="text-zinc-500 mt-2 font-normal">
+            ค่าพลังพื้นฐานที่มีผลต่อการประสิทธิภาพการต่อสู้
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+          id="attr-grid"
+        >
+          <!-- Injected via JS -->
+        </div>
+      </section>
+
+      <!-- Section 2: Character Dashboard -->
+      <section id="characters" class="card-apple overflow-hidden">
+        <div class="p-8 md:p-12 border-b border-gray-100">
+          <div class="max-w-2xl mx-auto text-center mb-6">
+            <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+              วิเคราะห์เจาะลึกตัวละคร (Deep Analysis)
+            </h2>
+            <p class="text-zinc-500 mt-3 font-normal">
+              การวิเคราะห์ตัวละครและเส้นทางการพัฒนาสายอาชีพอย่างละเอียด
+            </p>
+          </div>
+
+          <!-- Apple Style Segmented Control -->
+          <div class="max-w-none mx-auto">
+            <div
+              class="segmented-control overflow-x-auto hide-scroll flex-nowrap"
+              id="char-tabs"
+              role="tablist"
+              aria-label="Character selection"
+            >
+              <!-- Tabs injected via JS -->
+            </div>
+          </div>
+        </div>
+
+        <div class="walkthrough-grid dashboard-fade-in">
+          <!-- Left Sidebar: Visuals -->
+          <div
+            class="bg-zinc-50/50 border-r border-gray-100 flex flex-col pt-12 space-y-16"
+          >
+            <!-- Image Area -->
+            <div
+              class="relative float-animation min-h-0 flex items-start justify-center px-8"
+            >
+              <div
+                id="char-glow"
+                class="absolute inset-0 blur-[100px] opacity-20 scale-50 rounded-full transition-all duration-1000"
+              ></div>
+              <img
+                id="char-image"
+                src=""
+                alt=""
+                class="relative w-full h-full object-contain filter drop-shadow-2xl transition-all duration-500 z-10"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Graph Area -->
+            <div class="pb-12">
+              <div class="px-8 mb-6">
+                <h4
+                  class="label-caps flex items-center"
+                >
+                  <span class="material-symbols-outlined text-[16px] mr-2"
+                    >bar_chart</span
+                  >
+                  Combat Potential
+                </h4>
+              </div>
+              <div class="w-full px-8">
+                <div
+                  class="chart-container"
+                  style="height: 300px; width: 100%; max-width: none"
+                >
+                  <canvas id="radarChart"></canvas>
+                </div>
+                <p
+                  class="text-center text-xs text-gray-400 mt-6 font-medium uppercase tracking-wider opacity-50"
+                >
+                  *ประเมินจากศักยภาพสูงสุด (Max Potential)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content: Information -->
+          <div class="p-8 md:p-12 space-y-12 bg-white">
+            <!-- Bio Section -->
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <span
+                  id="char-tier"
+                  class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase border"
+                ></span>
+                <div
+                  id="char-role"
+                  class="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]"
+                ></div>
+              </div>
+              <h3
+                id="char-name"
+                class="text-5xl md:text-7xl font-black leading-none mb-6"
+              >
+                Character Name
+              </h3>
+              <p
+                id="char-analysis"
+                class="text-zinc-600 text-base md:text-lg leading-relaxed font-normal"
+              ></p>
+            </div>
+
+            <!-- Highlights -->
+            <div>
+              <h4
+                class="label-caps mb-6 flex items-center"
+              >
+                <span class="material-symbols-outlined text-[16px] mr-2"
+                  >bolt</span
+                >
+                จุดเด่นสำคัญ (Key Highlights)
+              </h4>
+              <div
+                class="bg-blue-50/30 border border-blue-100/50 rounded-3xl p-8"
+              >
+                <ul
+                  id="char-highlights"
+                  class="grid grid-cols-1 md:grid-cols-2 gap-4 text-zinc-700 font-bold"
+                >
+                  <!-- Injected via JS -->
+                </ul>
+              </div>
+            </div>
+
+            <!-- Vocation path -->
+            <div>
+              <h4
+                class="label-caps mb-8 flex items-center"
+              >
+                <span class="material-symbols-outlined text-[16px] mr-2"
+                  >category</span
+                >
+                เส้นทางสายอาชีพ (Build Order)
+              </h4>
+              <div id="vocation-container" class="space-y-0">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- Gear -->
+            <div>
+              <h4
+                class="label-caps mb-8 flex items-center"
+              >
+                <span class="material-symbols-outlined text-[16px] mr-2"
+                  >shield</span
+                >
+                อุปกรณ์ระดับตำนาน (Legendary Setup)
+              </h4>
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"
+                id="equipment-container"
+              >
+                <!-- Injected via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Comparison -->
+      <section id="comparison">
+        <div class="card-apple p-8 md:p-12">
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12"
+          >
+            <div>
+              <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+                อันดับค่าพลัง (Stat Ranking)
+              </h2>
+              <p class="text-zinc-500 mt-1 font-normal">
+                การเปรียบเทียบศักยภาพตัวละครในด้านต่างๆ
+              </p>
+            </div>
+            <div class="md:w-64">
+              <label for="stat-selector" class="sr-only">เลือกสถิติที่ต้องการเปรียบเทียบ</label>
+              <select
+                id="stat-selector"
+                class="w-full bg-white border border-zinc-200 text-sm p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-100"
+              >
+                <!-- Options injected via JS -->
+              </select>
+            </div>
+          </div>
+
+          <div class="chart-container" style="max-width: 900px; height: 450px">
+            <canvas id="barChart"></canvas>
+          </div>
+          <div
+            class="mt-8 p-6 bg-zinc-50 rounded-2xl text-sm text-zinc-500 border border-zinc-100"
+            id="comparison-desc"
+          >
+            <!-- Dynamic description -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Walkthrough (Summarized) -->
+      <section id="walkthrough" class="card-apple overflow-hidden">
+        <div class="p-8 md:p-12 border-b border-gray-100">
+          <div class="max-w-2xl mx-auto text-center mb-8">
+            <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+              บทสรุปเนื้อเรื่อง (Walkthrough Summary)
+            </h2>
+            <p class="text-zinc-500 mt-3 font-normal">
+              เจาะลึกเนื้อหา บทที่ 1 จนถึงฉากจบ พร้อมตำแหน่ง Fragment
+              และไอเทมสำคัญ
+            </p>
+          </div>
+
+          <!-- Chapter Selector -->
+          <div
+            class="segmented-control overflow-x-auto hide-scroll flex-nowrap mb-4"
+            id="chapter-tabs"
+            role="tablist"
+            aria-label="Chapter selection"
+          >
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <div id="walkthrough-display" class="p-0">
+          <!-- Dynamic Chapter Content Injected via JS -->
+        </div>
+      </section>
+
+      <!-- Section 4: Strategy & Tips -->
+      <section id="strategy">
+        <div class="mb-12 text-center">
+          <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+            ทริคเสริมเพื่อความไร้เทียมทาน
+          </h2>
+          <p class="text-zinc-500 mt-2 font-normal">
+            กลยุทธ์ขั้นสูงสำหรับการเพิ่มประสิทธิภาพทีมและการผ่านด่านยากๆ
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Tip 1 -->
+          <div class="card-apple p-10 group relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-all duration-700"
+            ></div>
+            <div
+              class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[28px]"
+                >auto_awesome</span
+              >
+            </div>
+            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+              Monster Legacies
+            </h3>
+            <p class="text-zinc-600 leading-relaxed font-medium">
+              หัวใจของการผ่านบอสลับคือการ Master อาชีพมอนสเตอร์ เช่น Healslime
+              (เพื่อปลดล็อก Omniheal แบบ Skill ติดตัวถาวร) และ Platinum King
+              Jewel เพื่อรับค่า Defense และ Resistance สูงสุดในเกม
+            </p>
+          </div>
+
+          <!-- Tip 2 -->
+          <div class="card-apple p-10 group relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-sky-500/10 transition-all duration-700"
+            ></div>
+            <div
+              class="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 mb-8 group-hover:bg-sky-600 group-hover:text-white transition-all duration-500 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[28px]">cyclone</span>
+            </div>
+            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+              Efficient Farming
+            </h3>
+            <p class="text-zinc-600 leading-relaxed font-medium">
+              ทุกตัวละครควรแวะเรียนท่า <strong>Thin Air</strong> จากอาชีพ
+              Paladin เพราะเป็นท่าโจมตีหมู่ที่รุนแรงและ
+              <strong>ไม่เสีย MP</strong> แม้แต่หน่วยเดียว
+              ช่วยให้เก็บเลเวลได้ยาวนานโดยไม่ต้องกังวลเรื่องทรัพยากร
+            </p>
+          </div>
+
+          <!-- Tip 3 -->
+          <div class="card-apple p-10 group relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-emerald-500/10 transition-all duration-700"
+            ></div>
+            <div
+              class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[28px]">groups</span>
+            </div>
+            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+              Formation of the Gods
+            </h3>
+            <p class="text-zinc-600 leading-relaxed font-medium">
+              สูตรทัพที่เสถียรที่สุดคือ <strong>2-1-1</strong>: สายกายภาพ 2 คน
+              (Hero/Champion), จอมเวทย์ 1 คน (Druid) และสายสนับสนุน/แทงค์ 1 คน
+              (Paladin) เพื่อรับมือกับทุกสถานการณ์ได้อย่างครอบคลุม
+            </p>
+          </div>
+
+          <!-- Tip 4 -->
+          <div class="card-apple p-10 group relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-orange-500/10 transition-all duration-700"
+            ></div>
+            <div
+              class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 mb-8 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[28px]">timer</span>
+            </div>
+            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+              Initiative Mastery
+            </h3>
+            <p class="text-zinc-600 leading-relaxed font-medium">
+              สวมใส่ <strong>Meteorite Bracer</strong> ให้ Healer
+              เพื่อแก้สถานการณ์คับขันได้ทันที หรือใส่ให้ Buffer เพื่อบัฟป้องกัน
+              (Kabuff/Magic Barrier)
+              ให้ทีมก่อนที่ศัตรูจะเริ่มเปิดฉากโจมตีในแต่ละเทิร์น
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-16 border-t border-gray-200 py-10 text-center text-gray-400 text-xs space-y-2">
+        <p class="font-semibold text-gray-500">Dragon Quest VII Reimagined — Fan Guide</p>
+        <p>สร้างขึ้นเพื่อใช้เป็นแนวทางการเล่นส่วนตัว หากเป็นประโยชน์กับผู้อื่นด้วยก็ยินดี</p>
+        <p class="text-gray-300 leading-relaxed">
+          Dragon Quest VII: Fragments of the Forgotten Past &trade; &amp; &copy; SQUARE ENIX CO., LTD.
+        </p>
+        <p class="text-gray-300">ไซต์นี้เป็น fan-made ไม่ใช่ผลิตภัณฑ์อย่างเป็นทางการ และไม่มีความเกี่ยวข้องกับ Square Enix</p>
+        <p>&copy; 2026 &nbsp;<a href="https://github.com/G3Ner8/dragon-quest-vii-guide" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-gray-500 transition-colors">G3Ner8</a></p>
+      </footer>
+    </main>
+
+    <!-- Back to top button -->
+    <button
+      id="back-to-top"
+      class="back-to-top"
+      aria-label="กลับขึ้นด้านบน"
+      title="กลับขึ้นด้านบน"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <!-- JS Logic -->
+    <script>
+      // --- Data Source ---
+      const attributes = [
+        {
+          key: "HP",
+          name: "HP",
+          desc: "พลังชีวิต หากเหลือ 0 จะไม่สามารถต่อสู้ได้",
+          icon: "favorite",
+          color: "var(--red)",
+        },
+        {
+          key: "Str",
+          name: "Strength",
+          desc: "พลังกายพื้นฐาน ส่งผลโดยตรงต่อความแรงในการโจมตี",
+          icon: "fitness_center",
+          color: "var(--orange)",
+        },
+        {
+          key: "Res",
+          name: "Resilience",
+          desc: "ความอึดพื้นฐานของร่างกายในการรับแรงกระแทก",
+          icon: "shield",
+          color: "var(--green)",
+        },
+        {
+          key: "Agi",
+          name: "Agility",
+          desc: "ลำดับการออกคำสั่ง และโอกาสในการหลบหลีก",
+          icon: "speed",
+          color: "var(--cyan)",
+        },
+        {
+          key: "Deft",
+          name: "Deftness",
+          desc: "โอกาสในการชิงลงมือก่อน และโอกาสหนีสำเร็จ",
+          icon: "bolt",
+          color: "var(--indigo)",
+        },
+        {
+          key: "Might",
+          name: "M. Might",
+          desc: "ความแรงของเวทย์โจมตี และโอกาสติดสถานะผิดปกติ",
+          icon: "local_fire_department",
+          color: "var(--purple)",
+        },
+        {
+          key: "Mend",
+          name: "M. Mend",
+          desc: "ประสิทธิภาพของเวทย์ฮีล และการชุบชีวิต",
+          icon: "auto_awesome",
+          color: "var(--pink)",
+        },
+        {
+          key: "Charm",
+          name: "Charm",
+          desc: "เสน่ห์ที่ทำให้ศัตรูตะลึงหรือติด Stun",
+          icon: "diamond",
+          color: "var(--purple)",
+        },
+        {
+          key: "MP",
+          name: "MP",
+          desc: "พลังมานาสำหรับใช้ Skills และเวทมนตร์",
+          icon: "water_drop",
+          color: "var(--blue)",
+        },
+      ];
+
+      // Numerical approximations based on "High/Low/Highest" descriptions
+      const characters = [
+        {
+          id: "hero",
+          name: "The Hero",
+          role: "Balanced Leader",
+          tier: "S-Tier",
+          color: "#34C759",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/0/08/DQ7R_Arus.png?width=2240",
+          stats: {
+            HP: 95,
+            MP: 60,
+            Str: 95,
+            Res: 90,
+            Agi: 65,
+            Might: 50,
+            Mend: 75,
+            Deft: 65,
+            Charm: 55,
+          },
+          focus: ["HP", "Str", "Res"],
+          highlights: [
+            "สมดุลที่สุด",
+            "HP & Strength สูงมาก",
+            "Auto-HP Recovery",
+          ],
+          path: [
+            "Warrior + Martial Artist",
+            "Priest + Mage",
+            "Gladiator",
+            "Sage",
+            "Hero",
+          ],
+          gear: [
+            { slot: "Weapon", item: "Okeanos Sword" },
+            { slot: "Armor", item: "Okeanos Armour" },
+            { slot: "Accessory", item: "Meteorite Bracer" },
+          ],
+          analysis:
+            "เนื่องจาก Stat ของเขาสมดุลที่สุด เขาจึงเป็นคนเดียวที่ควรค่าแก่การเป็น Hero เพราะอาชีพนี้ต้องการค่าพลังรอบด้าน การเป็น Sage ช่วงสั้นๆ จะช่วยเพิ่ม MP ให้เขาพอสำหรับการใช้ Omniheal ในอนาคต เมื่อจบที่อาชีพ Hero เขาจะมีอัตรา Regen เลือดที่คำนวณจาก HP พื้นฐานที่สูงของเขา ทำให้เขาตายยากมาก",
+        },
+        {
+          id: "maribel",
+          name: "Maribel",
+          role: "Magic Nuke",
+          tier: "S-Tier",
+          color: "#FF2D55",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/e/e1/DQ7R_Maribel.png?width=2240",
+          stats: {
+            HP: 45,
+            MP: 100,
+            Str: 35,
+            Res: 45,
+            Agi: 85,
+            Might: 100,
+            Mend: 85,
+            Deft: 65,
+            Charm: 85,
+          },
+          focus: ["Might", "MP", "Agi"],
+          highlights: ["MP & Might สูงที่สุด", "Glass Cannon", "Agility สูง"],
+          path: ["Mage + Priest", "Sage", "Luminary", "Druid"],
+          gear: [
+            { slot: "Weapon", item: "Solar Staff" },
+            { slot: "Armor", item: "Princess Robe" },
+            { slot: "Accessory", item: "Goddess Ring" },
+          ],
+          analysis:
+            "ด้วย MP และ Wisdom ที่สูงที่สุด เธอต้องมุ่งสู่สายที่ใช้พลังเวทย์ทำลายล้างเท่านั้น อาชีพ Druid จะมอบโบนัส Wisdom มหาศาล ซึ่งเมื่อคูณกับค่าพลังพื้นฐานของเธอ จะทำให้เวทย์ Kafrizzle หรือ Maelstrom ของเธอกลายเป็นระเบิดนิวเคลียร์ที่เคลียร์ศัตรูได้ในเทิร์นเดียว",
+        },
+        {
+          id: "ruff",
+          name: "Ruff",
+          role: "Speedster",
+          tier: "S-Tier",
+          color: "#30B0C7",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/9/96/DQ7R_Gabo.png?width=2240",
+          stats: {
+            HP: 85,
+            MP: 35,
+            Str: 90,
+            Res: 65,
+            Agi: 100,
+            Might: 25,
+            Mend: 25,
+            Deft: 100,
+            Charm: 45,
+          },
+          focus: ["Agi", "Deft", "Str"],
+          highlights: ["Agility สูงที่สุด", "Deftness สูงสุด", "Strength สูง"],
+          path: [
+            "Shepherd + Thief",
+            "Warrior + Martial Artist",
+            "Monster Masher",
+            "Gladiator",
+            "Champion",
+          ],
+          gear: [
+            { slot: "Weapon", item: "Wrecking Flail" },
+            { slot: "Armor", item: "Liquid Metal Armour" },
+            { slot: "Accessory", item: "Meteorite Bracer" },
+          ],
+          analysis:
+            "จุดเด่นคือ Agility ดังนั้นต้องเน้นอาชีพที่ให้ผลลัพธ์ทันที (Instant Effect) Ruff มี Agility สูงจนมักจะได้ออกตัวก่อนบอส การเป็น Champion ทำให้เขาสามารถใช้ท่าตัดกำลังบอส หรือใช้ท่าไม้ตายปิดฉากได้ก่อนที่บอสจะทันได้ร่ายบัฟป้องกัน",
+        },
+        {
+          id: "mervyn",
+          name: "Sir Mervyn",
+          role: "Tank Healer",
+          tier: "A-Tier",
+          color: "#AF52DE",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/1/1b/DQ7R_Melvin.png?width=2240",
+          stats: {
+            HP: 85,
+            MP: 85,
+            Str: 75,
+            Res: 100,
+            Agi: 25,
+            Might: 65,
+            Mend: 100,
+            Deft: 35,
+            Charm: 55,
+          },
+          focus: ["Mend", "Res", "MP"],
+          highlights: ["Resilience สูงมาก", "Mending สูงสุด", "ช้าที่สุด"],
+          path: ["Priest + Martial Artist", "Paladin", "Sage", "Paladin/Druid"],
+          gear: [
+            { slot: "Weapon", item: "Sword of Miracles" },
+            { slot: "Armor", item: "Metal King Armour" },
+            { slot: "Accessory", item: "Recovery Ring" },
+          ],
+          analysis:
+            "เขาช้าแต่ถึก และมี Wisdom สูง เหมาะกับการเป็นสายสนับสนุนที่ไม่มีวันตาย เนื่องจากเขาช้าที่สุด การเป็น Paladin จะทำให้เขาเป็น 'Back-row Healer' ที่ดีที่สุด เมื่อมอนสเตอร์ตีเสร็จ เมลวินจะปิดท้ายด้วยการฮีลฟูลทีม ทำให้เทิร์นถัดไปเพื่อนๆ เริ่มต้นด้วยเลือดเต็มเสมอ",
+        },
+        {
+          id: "aishe",
+          name: "Aishe",
+          role: "Hybrid DPS",
+          tier: "A-Tier",
+          color: "#FF9500",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/d/dc/DQ7R_Aira.png?width=2240",
+          stats: {
+            HP: 75,
+            MP: 65,
+            Str: 85,
+            Res: 70,
+            Agi: 80,
+            Might: 55,
+            Mend: 45,
+            Deft: 65,
+            Charm: 95,
+          },
+          focus: ["Charm", "Str", "Agi"],
+          highlights: [
+            "Strength & Agility สมดุล",
+            "Charm สูงสุด",
+            "Hybrid Damage",
+          ],
+          path: [
+            "Dancer + Troubadour + Warrior",
+            "Luminary",
+            "Gladiator",
+            "Champion",
+          ],
+          gear: [
+            { slot: "Weapon", item: "Gringham Whip" },
+            { slot: "Armor", item: "Angelic Robe" },
+            { slot: "Accessory", item: "Bunny Tail" },
+          ],
+          analysis:
+            "เธอมีค่า Style และ Str สูง เหมาะกับสาย Hybrid ที่ทำ Damage ได้และป่วนได้ด้วย Aishe ควรเน้นไปที่อาชีพที่ใช้ค่า Strength และ Agility ร่วมกัน การที่เธอเริ่มต้นด้วยท่า Sword Dance ทำให้เธอเป็นตัวทำ Damage ที่เสถียรมากในอาชีพ Champion",
+        },
+        {
+          id: "kiefer",
+          name: "Kiefer",
+          role: "Early Tank",
+          tier: "Early-Game",
+          color: "#FF3B30",
+          image:
+            "https://oyster.ignimgs.com/mediawiki/apis.ign.com/dragon-quest-7-reimagined/2/22/DQ7R_Kiefer.png?width=2240",
+          stats: {
+            HP: 100,
+            MP: 0,
+            Str: 100,
+            Res: 85,
+            Agi: 45,
+            Might: 0,
+            Mend: 0,
+            Deft: 45,
+            Charm: 55,
+          },
+          focus: ["Str", "HP"],
+          highlights: ["HP & Strength สูงสุด", "MP เป็น 0", "ห้ามใช้ Seeds"],
+          path: ["Warrior + Martial Artist", "Gladiator", "Champion"],
+          gear: [
+            { slot: "Weapon", item: "Best Sword" },
+            { slot: "Armor", item: "Best Armor" },
+            { slot: "Accessory", item: "Strength Ring" },
+          ],
+          analysis:
+            "สเตตัสเขาคือเบอร์ 1 ด้านกายภาพ แต่ MP เป็น 0 ดังนั้นห้ามเสียเวลากับสายเวทย์เด็ดขาด หากเขาอยู่จนจบเกม เขาจะเป็น Champion ที่รุนแรงที่สุด ท่า Blade of Ultimate Power ของเขาจะสร้างความเสียหายมหาศาลจาก Strength พื้นฐานที่สูงสุดในบรรดาทั้ง 6 ตัวละคร",
+        },
+      ];
+
+      // --- Global Charts ---
+      let radarChartInstance = null;
+      let barChartInstance = null;
+
+      // --- Helper Functions ---
+
+      // Label wrapping logic for Chart.js (Mandatory)
+      function formatLabel(str, maxLen = 16) {
+        if (str.length <= maxLen) return str;
+        const words = str.split(" ");
+        const lines = [];
+        let currentLine = words[0];
+
+        for (let i = 1; i < words.length; i++) {
+          if (currentLine.length + 1 + words[i].length <= maxLen) {
+            currentLine += " " + words[i];
+          } else {
+            lines.push(currentLine);
+            currentLine = words[i];
+          }
+        }
+        lines.push(currentLine);
+        return lines;
+      }
+
+      // --- Rendering Logic ---
+
+      function renderAttributes() {
+        const container = document.getElementById("attr-grid");
+        container.innerHTML = attributes
+          .map(
+            (attr) => `
+                <div class="card-apple p-6 hover:border-zinc-200 transition duration-300 relative group overflow-hidden">
+                    <div class="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none" style="background-color: ${attr.color}"></div>
+                    <div class="flex flex-col items-center text-center relative z-10">
+                        <span class="material-symbols-outlined text-3xl mb-4 transition duration-300 transform group-hover:scale-105" style="color: ${attr.color}">${attr.icon}</span>
+                        <h3 class="font-semibold text-zinc-900 mb-1 text-sm tracking-normal">${attr.name}</h3>
+                        <p class="text-xs text-zinc-500 font-normal leading-snug">${attr.desc}</p>
+                    </div>
+                </div>
+            `,
+          )
+          .join("");
+      }
+
+      function renderTabs(activeId) {
+        const container = document.getElementById("char-tabs");
+        container.innerHTML = characters
+          .map((char) => {
+            const isActive = char.id === activeId;
+            return `
+                <button onclick="updateDashboard('${char.id}')" role="tab" aria-selected="${isActive}" class="px-4 py-2 text-sm font-medium transition-all duration-300 ${isActive ? "active bg-white shadow-sm rounded-lg text-zinc-900" : "text-zinc-500 hover:text-zinc-800"}">
+                    ${char.name}
+                </button>
+            `;
+          })
+          .join("");
+      }
+
+      function updateDashboard(charId) {
+        const char = characters.find((c) => c.id === charId);
+        if (!char) return;
+
+        // Update Tabs UI
+        renderTabs(charId);
+
+        // Update Text Info
+        const charImg = document.getElementById("char-image");
+        const charGlow = document.getElementById("char-glow");
+        if (charImg) {
+          charImg.src = char.image;
+          charImg.alt = char.name;
+        }
+        if (charGlow) {
+          charGlow.style.backgroundColor = char.color;
+        }
+
+        document.getElementById("char-name").style.color = char.color;
+        document.getElementById("char-name").innerText = char.name;
+        document.getElementById("char-role").innerText = char.role;
+        const tierBadge = document.getElementById("char-tier");
+        tierBadge.innerText = char.tier;
+        tierBadge.style.backgroundColor = char.color + "10";
+        tierBadge.style.color = char.color;
+        tierBadge.style.borderColor = char.color + "30";
+
+        const highlights = document.getElementById("char-highlights");
+        highlights.innerHTML = char.highlights
+          .map(
+            (h) => `
+            <li class="flex items-center">
+              <span class="material-symbols-outlined normal-case text-[20px] mr-3" style="color: ${char.color}">check_circle</span>
+              <span class="text-gray-800">${h}</span>
+            </li>
+        `,
+          )
+          .join("");
+
+        // Update Vocation Path (Vertical Timeline Style)
+        const vocationContainer = document.getElementById("vocation-container");
+        vocationContainer.innerHTML = char.path
+          .map((p, idx) => {
+            const isLast = idx === char.path.length - 1;
+            return `
+            <div class="timeline-item relative flex items-start ${isLast ? "" : "pb-6"}">
+                <div class="timeline-dot" style="${isLast ? "background: var(--blue); shadow: 0 0 15px var(--blue);" : "background: #e2e8f0;"}"></div>
+                <div class="flex-grow">
+                    <div class="inline-flex flex-col">
+                        <span class="px-5 py-2.5 font-bold ${isLast ? "text-blue-700 bg-blue-50 border-blue-100" : "text-zinc-700 bg-white border-zinc-100"} rounded-2xl shadow-sm border text-sm transition-all duration-300 hover:translate-x-1 hover:shadow-md cursor-default">
+                            ${p}
+                        </span>
+                        ${idx === 0 ? `<span class="text-xs text-zinc-400 font-black uppercase mt-2 ml-1 tracking-wider">Starting Vocation</span>` : ""}
+                        ${isLast ? `<span class="text-xs text-blue-500 font-black uppercase mt-2 ml-1 tracking-widest">Ultimate Class Goal</span>` : ""}
+                    </div>
+                </div>
+            </div>`;
+          })
+          .join("");
+
+        // Update Equipment
+        const gearIcons = {
+          Weapon: "swords",
+          Armor: "shield",
+          Accessory: "category",
+        };
+        document.getElementById("equipment-container").innerHTML = char.gear
+          .map((g) => {
+            const icon = gearIcons[g.slot] || "settings";
+            return `
+                <div class="location-card group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-zinc-50 flex items-center justify-center group-hover:bg-blue-50 transition-colors duration-500">
+                            <span class="material-symbols-outlined normal-case text-[22px] text-zinc-400 group-hover:text-blue-500 transition-all duration-500">${icon}</span>
+                        </div>
+                        <div class="label-caps">${g.slot}</div>
+                    </div>
+                    <div class="text-lg font-bold text-zinc-900 leading-none">${g.item}</div>
+                </div>
+            `;
+          })
+          .join("");
+
+        document.getElementById("char-analysis").innerText = char.analysis;
+
+        // Update Radar Chart
+        updateRadarChart(char);
+      }
+
+      function updateRadarChart(char) {
+        const ctx = document.getElementById("radarChart").getContext("2d");
+        const labels = attributes.map((a) => a.name);
+        const dataValues = attributes.map((a) => char.stats[a.key]);
+
+        if (radarChartInstance) radarChartInstance.destroy();
+
+        radarChartInstance = new Chart(ctx, {
+          type: "radar",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: char.name,
+                data: dataValues,
+                backgroundColor: char.color + "20",
+                borderColor: char.color,
+                pointBackgroundColor: char.color,
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: char.color,
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+              r: {
+                angleLines: { color: "rgba(0,0,0,0.05)" },
+                grid: { color: "rgba(0,0,0,0.05)" },
+                pointLabels: {
+                  font: {
+                    family: "'Prompt', sans-serif",
+                    size: 11,
+                    weight: 600,
+                  },
+                  color: (context) => {
+                    if (char && char.focus) {
+                      const attr = attributes.find(
+                        (a) => a.name === context.label,
+                      );
+                      if (attr && char.focus.includes(attr.key))
+                        return char.color;
+                    }
+                    return "#94a3b8";
+                  },
+                  padding: 8,
+                },
+                ticks: { display: false, stepSize: 20 },
+                suggestedMin: 0,
+                suggestedMax: 105,
+              },
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                titleColor: "#1e293b",
+                bodyColor: "#475569",
+                borderColor: "rgba(0,0,0,0.05)",
+                borderWidth: 1,
+                padding: 12,
+                boxPadding: 4,
+                usePointStyle: true,
+                callbacks: {
+                  label: function (context) {
+                    return ` ${context.dataset.label}: ${context.parsed.r}%`;
+                  },
+                },
+              },
+            },
+            layout: {
+              padding: 0,
+            },
+          },
+        });
+      }
+
+      function initComparison() {
+        const selector = document.getElementById("stat-selector");
+        attributes.forEach((attr) => {
+          const opt = document.createElement("option");
+          opt.value = attr.key;
+          opt.text = attr.name;
+          selector.add(opt);
+        });
+
+        selector.addEventListener("change", (e) =>
+          updateComparisonChart(e.target.value),
+        );
+
+        // Initial load
+        updateComparisonChart("HP");
+      }
+
+      function updateComparisonChart(statKey) {
+        const ctx = document.getElementById("barChart").getContext("2d");
+
+        const labels = characters.map((c) => c.name);
+        const data = characters.map((c) => c.stats[statKey]);
+        const colors = characters.map((c) => c.color);
+        const sortedChars = [...characters].sort(
+          (a, b) => b.stats[statKey] - a.stats[statKey],
+        );
+        const topChar = sortedChars[0];
+        const avg =
+          characters.reduce((acc, c) => acc + c.stats[statKey], 0) /
+          characters.length;
+
+        const statInfo = attributes.find((a) => a.key === statKey);
+        const desc = document.getElementById("comparison-desc");
+        desc.innerHTML = `
+          <div class="flex items-start gap-4">
+            <div class="material-symbols-outlined text-3xl mt-1 text-blue-600">bar_chart</div>
+            <div>
+              <p class="text-zinc-900 font-semibold mb-1">บทวิเคราะห์การจัดอันดับ ${statInfo.name}</p>
+              <p class="leading-relaxed">
+                ในด้าน ${statInfo.name}, <strong>${topChar.name}</strong> ครองอันดับสูงสุดที่ <strong>${topChar.stats[statKey]}%</strong> 
+                เทียบกับค่าเฉลี่ยของทีมที่ <strong>${avg.toFixed(1)}%</strong>. 
+                ซึ่งหมายความว่า ${topChar.name} มีความโดดเด่นมากกว่าค่าเฉลี่ยถึง <strong>${(topChar.stats[statKey] - avg).toFixed(0)}%</strong> ในด้านนี้.
+              </p>
+            </div>
+          </div>
+        `;
+
+        if (barChartInstance) barChartInstance.destroy();
+
+        barChartInstance = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: labels.map((l) => formatLabel(l)),
+            datasets: [
+              {
+                label: statInfo.name,
+                data: data,
+                backgroundColor: colors,
+                borderRadius: 12,
+                barThickness: 24,
+              },
+            ],
+          },
+          options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            indexAxis: "y", // Horizontal bar for better label readability
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                titleColor: "#1e293b",
+                bodyColor: "#475569",
+                borderColor: "rgba(0,0,0,0.05)",
+                borderWidth: 1,
+                padding: 12,
+                boxPadding: 4,
+                usePointStyle: true,
+                callbacks: {
+                  title: function (tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(" ") : label;
+                  },
+                  label: function (context) {
+                    return ` ${context.label}: ${context.parsed.x}%`;
+                  },
+                },
+              },
+            },
+            scales: {
+              x: {
+                beginAtZero: true,
+                max: 100,
+                grid: { color: "#F1F5F9" },
+                ticks: {
+                  font: { family: "'Prompt', sans-serif", weight: 400 },
+                },
+              },
+              y: {
+                grid: { display: false },
+                ticks: {
+                  font: { family: "'Prompt', sans-serif", weight: 400 },
+                },
+              },
+            },
+          },
+        });
+      }
+
+      // --- Walkthrough Data ---
+      const walkthroughData = [
+        {
+          id: 1,
+          title: "1. การเริ่มต้นของการผจญภัย",
+          summary:
+            "เริ่มต้นการเดินทางที่ Pilchard Bay และ Estard Castle เพื่อค้นหาความลับของเกาะ Estard และรับแผ่นศิลาชิ้นแรก",
+          fragments: ["Yellow Fragment (Kiefer)", "Yellow Fragment (Pollock)", "Yellow Fragment (Underground)", "Yellow Fragment (Rainbow Cove)"],
+          medals: ["Mini Medal #1"],
+          steps: [
+            {
+              loc: "Pilchard Bay",
+              action: "รับ Pilchard Sandwich จาก Pearl และชวน มาริเบล ร่วมทีม",
+            },
+            {
+              loc: "Estard",
+              action: "คุยกับ Pike เรื่อง Sizzling Stone",
+            },
+            {
+              loc: "Estard Castle",
+              action: "พบ King Donald และรับ Medal Album",
+            },
+            {
+              loc: "Shrine of Mysteries",
+              action: "รวบรวม Yellow Fragments ทั้ง 4 ชิ้นเพื่อเปิดประตูบานแรก",
+            },
+          ],
+          locations: [
+            {
+              name: "Pilchard Bay (ถ้ำ Shoreside)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (หน้าโบสถ์)",
+              items: ["Cypress Stick"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (บ้านพระเอก)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (ห้องพระเอก)",
+              items: ["Wayfarer's Clothes"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (บ้านทิศตะวันตก)",
+              items: ["10 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (บ้านทิศตะวันตก B1)",
+              items: ["7 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (บ้านทิศตะวันตก B1)",
+              items: ["5 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (บ้านนายกฯ)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (บ้านนายกฯ 2F)",
+              items: ["Hairband"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (บ้านนายกฯ 2F)",
+              items: ["Leather Hat"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (ภายในเรือ)",
+              items: ["50 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (ภายในเรือ)",
+              items: ["Rags"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (ภายในเรือ)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Region",
+              items: ["Chimaera Wing"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard (หน้าโบสถ์)",
+              items: ["Cypress Stick"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard (บ้าน SW)",
+              items: ["Rags"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard (โรงแรม)",
+              items: ["Antidotal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard (โรงแรม 2F)",
+              items: ["Chimaera Wing", "20 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard (ร้านค้า 2F)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard (ร้านค้า 2F)",
+              items: ["Leather Hat"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard (บ้าน NW)",
+              items: ["Medicinal Herb", "30 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard (บ้าน N)",
+              items: ["Pilchard Pie"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard (บ้าน N 2F)",
+              items: ["50 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard (บ้าน NE)",
+              items: ["1 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Cliffside Dwelling",
+              items: ["Seed of Resilience"],
+              monsters: ["-"],
+            },
+            {
+              name: "Cliffside Dwelling",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (1F SE)",
+              items: ["Seed of Strength"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ห้อง Kiefer)",
+              items: ["20 gold", "Pilchard Pie"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ห้อง Kiefer)",
+              items: ["Chimaera Wing"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ระเบียงตะวันออก)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ระเบียงตะวันตก)",
+              items: ["Rags"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ห้องพระราชา)",
+              items: ["Bow Tie"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ห้องพระราชา)",
+              items: ["Mini Medal (1/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ครัว 1F)",
+              items: ["Pilchard Pie"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ห้องเก็บของ B1)",
+              items: ["Antidotal Herb", "Wrecked Specs", "Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Island",
+              items: ["Seed of Agility"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "2. วีรบุรุษแห่ง Ballymolloy",
+          summary:
+            "เดินทางสู่อดีตเพื่อช่วยเหลือเมือง Ballymolloy จากคำสาปหินและช่วย Patrick คลี่คลายวิกฤต",
+          fragments: ["Green Fragment (Golem)", "Red Fragment (Tower)", "Green Fragment (Present)", "Red Fragment (Mines)", "Red Fragment (Estard)"],
+          medals: ["Mini Medal #2, #4"],
+          steps: [
+            {
+              loc: "",
+              action: "เดินทางสู่อดีตของ Ballymolloy คุยกับ Patrick",
+            },
+            {
+              loc: "",
+              action: "สำรวจ Rainbow Mines เพื่อเก็บ Glowing Green Gem และรับ Wooden Doll จาก Maeve",
+            },
+            {
+              loc: "",
+              action: "ไปที่ The Tower (อดีต) กำจัด Golem เพื่อรับ แผ่นศิลาสีเขียว (Green Fragment) และบอส Crabble-Rouser",
+            },
+            {
+              loc: "",
+              action: "คุยกับ NPC ใน Ballymolloy (ปัจจุบัน) เพื่อรับ แผ่นศิลาสีเขียว (Green Fragment)",
+            },
+          ],
+          locations: [
+            {
+              name: "Ballymolloy (อดีต - บ้าน N)",
+              items: ["Horse Manure"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (อดีต - โรงแรม)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (อดีต - โรงแรม)",
+              items: ["Plain Clothes"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (อดีต - ร้านอุปกรณ์)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Rainbow Mines (อดีต - ภายนอก)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Rainbow Mines (อดีต - 1F SE)",
+              items: ["Leather Shield"],
+              monsters: ["-"],
+            },
+            {
+              name: "Rainbow Mines (อดีต - 1F NW)",
+              items: ["Pointy Hat"],
+              monsters: ["-"],
+            },
+            {
+              name: "Rainbow Mines (อดีต - B5 NE)",
+              items: ["Slime Heart"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tower (อดีต - ภายใน)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tower (อดีต - ภายใน)",
+              items: ["100 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tower (อดีต - ภายใน)",
+              items: ["Hardwood Headwear", "Leather Shield"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tower (อดีต - 4F)",
+              items: ["Antidotal Herb", "Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tower (อดีต - 5F NW)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tower (อดีต - 5F)",
+              items: ["แผ่นศิลาสีแดง (Red Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tower (อดีต - 5F)",
+              items: ["Golem Heart"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tower (อดีต - 6F)",
+              items: ["Mini Medal (2/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tower (อดีต - 6F ตะวันออก)",
+              items: ["Chimaera Wing", "Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (ปัจจุบัน)",
+              items: ["Seed of Magic"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (ปัจจุบัน)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (ปัจจุบัน)",
+              items: ["Horse Manure"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (ปัจจุบัน)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (ปัจจุบัน)",
+              items: ["Chimaera Wing"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (ปัจจุบัน)",
+              items: ["Hardwood Headwear"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (ปัจจุบัน)",
+              items: ["Medicinal Herb", "Antidotal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ballymolloy (ปัจจุบัน)",
+              items: ["Mini Medal (3/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Rainbow Mines (ปัจจุบัน)",
+              items: ["Medicinal Herb", "Antidotal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Rainbow Mines (ปัจจุบัน - B3)",
+              items: ["แผ่นศิลาสีแดง (Red Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Rainbow Mines (ปัจจุบัน - B3)",
+              items: ["100 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ปัจจุบัน - SW)",
+              items: ["Mini Medal (4/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ปัจจุบัน - ด้านหลัง)",
+              items: ["Cypress Stick"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ปัจจุบัน - ด้านหลัง)",
+              items: ["Single Phial", "Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ปัจจุบัน - ด้านหลัง)",
+              items: ["แผ่นศิลาสีแดง (Red Fragment)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "3. การปะทุครั้งใหญ่",
+          summary:
+            "ดับภูเขาไฟในหมู่บ้าน Emberdale และช่วย Palmela ทำพิธีกรรมเพื่อความสงบสุข",
+          fragments: ["Red Fragment (Inferno)", "Green Fragment (Palmela)", "Green Fragment (Present)", "Grey Fragment (Burnmount)"],
+          medals: ["Mini Medal #5, #6, #7"],
+          steps: [
+            {
+              loc: "",
+              action: "ไปที่ Emberdale (อดีต) คุยกับ Gaffer และ Palmela",
+            },
+            {
+              loc: "",
+              action: "บุก Burnmount (อดีต) กำจัดบอส Glowering Inferno เพื่อรับ แผ่นศิลาสีแดง (Red Fragment)",
+            },
+            {
+              loc: "",
+              action: "รับ แผ่นศิลาสีเขียว (Green Fragment) จาก Palmela หลังจบเหตุการณ์",
+            },
+          ],
+          locations: [
+            {
+              name: "Emberdale (อดีต)",
+              items: ["Seed of Life"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (อดีต)",
+              items: ["Antidotal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (อดีต)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (อดีต)",
+              items: ["50 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (อดีต)",
+              items: ["Rags"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (อดีต)",
+              items: ["Medicinal Herb", "Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (อดีต)",
+              items: ["Chimaera Wing"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (อดีต)",
+              items: ["Boxer Shorts"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (อดีต)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (อดีต)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (อดีต - 4F)",
+              items: ["Scale Shield"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (อดีต - 4F)",
+              items: ["Divine Dagger"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (อดีต - 2F)",
+              items: ["Scale Armour"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (อดีต - 2F ตะวันออก)",
+              items: ["Yggdrasil Leaf"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (อดีต - 3F)",
+              items: ["Mini Medal (5/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (อดีต - 2F)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "4. น้ำตาที่หลั่งรินใน Regenstein",
+          summary:
+            "ไขปริศนาเมืองร้าง Regenstein และช่วยเหลือ Felix จากความเศร้าโศก",
+          fragments: ["Missing Fragment (Logic)"],
+          medals: ["Mini Medal #8, #9"],
+          steps: [
+            {
+              loc: "",
+              action: "เดินทางสู่ Emberdale (ปัจจุบัน) เก็บ แผ่นศิลาสีเขียว (Green Fragment) ในร้านค้า",
+            },
+            {
+              loc: "",
+              action: "ไปที่ Burnmount (ปัจจุบัน) เก็บ แผ่นศิลาสีเทา (Grey Fragment) และ Mini Medal (7/100)",
+            },
+            {
+              loc: "",
+              action: "ไปที่ Regenstein (อดีต) ใช้ Angel's Tears เพื่อแก้คำสาป และตามหา Klemens ในชั้นใต้ดิน",
+            },
+          ],
+          locations: [
+            {
+              name: "Emberdale (ปัจจุบัน)",
+              items: ["Seed of Strength"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (ปัจจุบัน)",
+              items: ["Coagulant"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (ปัจจุบัน)",
+              items: ["Mini Medal (6/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (ปัจจุบัน)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (ปัจจุบัน)",
+              items: ["30 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (ปัจจุบัน)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (ปัจจุบัน)",
+              items: ["Pointy Hat"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (ปัจจุบัน)",
+              items: ["100 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (ปัจจุบัน - B1)",
+              items: ["แผ่นศิลาสีเทา (Grey Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (ปัจจุบัน - 3F)",
+              items: ["150 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (ปัจจุบัน - 2F)",
+              items: ["Magic Water"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (ปัจจุบัน - ภายนอก)",
+              items: ["Little Devil Heart"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (ปัจจุบัน - 3F)",
+              items: ["Dieamend"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (ปัจจุบัน - 1F)",
+              items: ["Mini Medal (7/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Regenstein (อดีต)",
+              items: ["100 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Regenstein (อดีต)",
+              items: ["Horse Manure"],
+              monsters: ["-"],
+            },
+            {
+              name: "Regenstein (อดีต)",
+              items: ["Leather Hat"],
+              monsters: ["-"],
+            },
+            {
+              name: "Regenstein (อดีต)",
+              items: ["Shellmet"],
+              monsters: ["-"],
+            },
+            {
+              name: "Regenstein (ใต้ดิน B2)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Regenstein (ใต้ดิน B4)",
+              items: ["50 gold", "Single Phial", "Antidotal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Regenstein (ใต้ดิน B4)",
+              items: ["Boomerang"],
+              monsters: ["-"],
+            },
+            {
+              name: "Regenstein (ใต้ดิน B3)",
+              items: ["Holy Water"],
+              monsters: ["-"],
+            },
+            {
+              name: "Felix’s Base",
+              items: ["Mini Medal (8/100)", "200 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Unnamed Island (ใต้ Estard)",
+              items: ["Mini Medal (9/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "5. Ruff ผู้พร้อมลุย",
+          summary:
+            "ช่วยเหลือ Ruff หมาป่าในคราบมนุษย์ และปลดคำสาปใบ้ของเมือง L'Arca",
+          fragments: ["Red Fragment (Grotta)", "Yellow Fragment (Mayor)", "Red Fragment (Grotta B1)", "Red Fragment (Sarcophagus)"],
+          medals: ["Mini Medal #10, #11, #12, #13"],
+          steps: [
+            {
+              loc: "",
+              action: "เดินทางสู่อดีตของ L’Arca คุยกับหมาป่า (Ruff) ในเพิงพัก",
+            },
+            {
+              loc: "",
+              action: "ไปที่ Grotta del Sigillo (อดีต) กำจัดบอส Hackrobat",
+            },
+            {
+              loc: "",
+              action: "Ruff จะเข้าร่วมปาร์ตี้ (เปิดความสามารถ Nose for Treasure และ Whistle)",
+            },
+            {
+              loc: "",
+              action: "รวบรวม แผ่นศิลาสีเหลือง (Yellow Fragment) และ แผ่นศิลาสีแดง (Red Fragment) ในยุคปัจจุบัน",
+            },
+          ],
+          locations: [
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Copper Sword"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Seed of Deftness"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Holy Water", "20 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["50 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Mini Medal (10/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Hairband"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Plain Clothes"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Single Phial", "Bone Stake", "Antidotal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (อดีต)",
+              items: ["Horse Manure x2"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (อดีต)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (อดีต - 2F)",
+              items: ["แผ่นศิลาสีแดง (Red Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (อดีต - 2F)",
+              items: ["200 gold", "Iron Lance"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (อดีต - 3F)",
+              items: ["Yggdrasil Dew"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (อดีต - 5F)",
+              items: ["Mini Medal (11/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (อดีต - ทางเข้า)",
+              items: ["Wizard Staff"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (ปัจจุบัน)",
+              items: ["Seed of Therapeusis", "Leather Kilt", "Pretty Betsy"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (ปัจจุบัน)",
+              items: ["Antidotal Herb", "Moonwort Bulb", "Single Phial", "Holy Water"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (ปัจจุบัน)",
+              items: ["Plain Clothes"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (ปัจจุบัน)",
+              items: ["Bone Stake"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (ปัจจุบัน)",
+              items: ["30 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (ปัจจุบัน)",
+              items: ["Rabbit Ears"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (ปัจจุบัน)",
+              items: ["Horse Manure"],
+              monsters: ["-"],
+            },
+            {
+              name: "L’Arca (ปัจจุบัน)",
+              items: ["150 gold", "Medicinal Herb", "แผ่นศิลาสีเหลือง (Yellow Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "ท่าเรือ (Dock)",
+              items: ["Mini Medal (12/100)", "Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (ปัจจุบัน)",
+              items: ["Seed of Life", "แผ่นศิลาสีแดง (Red Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (ปัจจุบัน)",
+              items: ["Healslime Heart", "Magic Water"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (ปัจจุบัน)",
+              items: ["Rabbit Tail"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (ปัจจุบัน)",
+              items: ["Sledgehammer", "Mini Medal (13/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Grotta Del Sigillo (ปัจจุบัน - สุดทาย)",
+              items: ["แผ่นศิลาสีแดง (Red Fragment)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "6. หุ่นยนต์ข้ามกาลเวลา",
+          summary:
+            "การต่อสู้กับกองทัพหุ่นยนต์ใน Faraday Castle และการหายตัวไปชั่วคราวของ Kiefer",
+          fragments: ["Yellow Fragment (Institute)", "Blue Fragment (Stronghold)", "Grey Fragment (Faraday Cell)", "Yellow Fragment (Ambrose)"],
+          medals: ["Mini Medal #14, #15, #16, #17"],
+          steps: [
+            {
+              loc: "",
+              action: "เดินทางสู่อดีตของ Frobisher และ Faraday Castle",
+            },
+            {
+              loc: "",
+              action: "ช่วยนักประดิษฐ์ Autonymus และต่อสู้กับหุ่นยนต์ Automaton",
+            },
+            {
+              loc: "",
+              action: "บุก Automaton Stronghold กำจัดบอส Slaughtomaton เพื่อรับ แผ่นศิลาสีน้ำเงิน (Blue Fragment)",
+            },
+            {
+              loc: "",
+              action: "เก็บกุญแจสำคัญ Bandit’s Key และ แผ่นศิลาสีเทา (Grey Fragment) ในยุคปัจจุบัน",
+            },
+          ],
+          locations: [
+            {
+              name: "Frobisher (อดีต)",
+              items: ["Single Phial", "Strong Medicine"],
+              monsters: ["-"],
+            },
+            {
+              name: "Frobisher (อดีต)",
+              items: ["Wayfarer’s Clothes"],
+              monsters: ["-"],
+            },
+            {
+              name: "Frobisher (อดีต)",
+              items: ["50 gold", "Antidotal Herb", "Scale Armour"],
+              monsters: ["-"],
+            },
+            {
+              name: "Frobisher (อดีต)",
+              items: ["Strong Medicine", "Medicinal Herb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Frobisher (อดีต)",
+              items: ["Holy Water", "Horse Manure"],
+              monsters: ["-"],
+            },
+            {
+              name: "Faraday Castle (อดีต)",
+              items: ["Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Faraday Castle (อดีต)",
+              items: ["Hardwood Headwear"],
+              monsters: ["-"],
+            },
+            {
+              name: "Faraday Castle (อดีต)",
+              items: ["Coagulant"],
+              monsters: ["-"],
+            },
+            {
+              name: "Faraday Castle (อดีต)",
+              items: ["Strength Ring", "Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Faraday Castle (อดีต)",
+              items: ["Moonwort Bulb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Faraday Castle (อดีต)",
+              items: ["Medicinal Herb", "Edged Boomerang"],
+              monsters: ["-"],
+            },
+            {
+              name: "Inst. of Automatry (อดีต)",
+              items: ["Medicinal Herb", "Single Phial", "Strong Medicine", "Antidotal Herb", "แผ่นศิลาสีเหลือง (Yellow Fragment)", "Noble Garb", "70 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Automaton Stronghold (อดีต)",
+              items: ["Iron Claws"],
+              monsters: ["-"],
+            },
+            {
+              name: "Automaton Stronghold (อดีต)",
+              items: ["Magic Water", "Steel Broadsword"],
+              monsters: ["-"],
+            },
+            {
+              name: "Automaton Stronghold (อดีต)",
+              items: ["Strong Medicine", "Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Frobisher (ปัจจุบัน)",
+              items: ["Single Phial", "Fishnet Stocking"],
+              monsters: ["-"],
+            },
+            {
+              name: "Frobisher (ปัจจุบัน)",
+              items: ["100 gold", "Strong Medicine"],
+              monsters: ["-"],
+            },
+            {
+              name: "Frobisher (ปัจจุบัน)",
+              items: ["Moonwort Bulb", "Medicinal Herb", "แผ่นศิลาสีเหลือง (Yellow Fragment)", "Strong Medicine", "Mini Medal (14/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Automaton Stronghold (ปัจจุบัน)",
+              items: ["Strong Medicine", "300 gold", "Mini Medal (15/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Inst. of Automatry (ปัจจุบัน)",
+              items: ["Coagulant", "3 gold", "Medicinal Herb", "Holy Water", "Mini Medal (16/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Faraday Castle (ปัจจุบัน)",
+              items: ["Strong Medicine", "Ruby of Protection", "200 gold", "Medicinal Herb", "Chimaera Wing", "Moonwort Bulb", "Holy Water", "Single Phial", "แผ่นศิลาสีเทา (Grey Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pool of Piety (ปัจจุบัน)",
+              items: ["Mini Medal (17/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Bandit’s Base (ปัจจุบัน)",
+              items: ["Silk Robe", "Horse Manure", "Frying Pan", "Strong Medicine", "2 gold", "Bandit’s Key", "Seed of Therapeusis", "Swagman Heart", "Mini Medal (33/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "7. ชนเผ่าเร่ร่อน",
+          summary:
+            "การเดินทางของชนเผ่า Roamers และการลาจากครั้งใหญ่ของ Kiefer ผู้เลือกอยู่กับเผ่าตลอดกาล",
+          fragments: ["Grey Fragment (Roamer)", "Yellow Fragment (Cave)", "Blue Fragment (Estard)", "Blue Fragment (Dig Site)"],
+          medals: ["Mini Medal #18, #19, #20, #21"],
+          steps: [
+            {
+              loc: "",
+              action: "เดินทางสู่อดีตของเผ่า Roamer ร่วมพิธีเต้นรำที่ Altar of the Almighty",
+            },
+            {
+              loc: "",
+              action: "บุก Poolside Cave (อดีต) เพื่อทำพิธีชำระล้าง",
+            },
+            {
+              loc: "",
+              action: "เหตุการณ์สำคัญ: Kiefer จะออกจากปาร์ตี้อย่างถาวร (รับจดหมายและอุปกรณ์ของเขาคืนมา)",
+            },
+            {
+              loc: "",
+              action: "รับ แผ่นศิลาสีน้ำเงิน (Blue Fragment) จาก King Donald และ Dig Site (ปัจจุบัน)",
+            },
+          ],
+          locations: [
+            {
+              name: "ค่าย Roamer (อดีต)",
+              items: ["แผ่นศิลาสีเทา (Grey Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "ค่าย Roamer (อดีต)",
+              items: ["Coagulant", "Horse Manure"],
+              monsters: ["-"],
+            },
+            {
+              name: "ค่าย Roamer (อดีต)",
+              items: ["Mini Medal (18/100)", "Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "ค่าย Roamer (อดีต)",
+              items: ["Strong Medicine"],
+              monsters: ["-"],
+            },
+            {
+              name: "Poolside Cave (อดีต - นอกถ้ำ)",
+              items: ["Seed of Strength", "Strong Medicine"],
+              monsters: ["-"],
+            },
+            {
+              name: "Poolside Cave (อดีต - B1)",
+              items: ["Yggdrasil Leaf", "200 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Poolside Cave (อดีต - B2 ลับ)",
+              items: ["Silver Platter", "Mini Medal (19/100)", "Fur Cape"],
+              monsters: ["-"],
+            },
+            {
+              name: "Poolside Cave (อดีต - B3)",
+              items: ["แผ่นศิลาสีเหลือง (Yellow Fragment)", "Magic Water"],
+              monsters: ["-"],
+            },
+            {
+              name: "Poolside Cave (อดีต - 1F กลับ)",
+              items: ["Prayer Ring", "Stellar Fan", "Seed of Resilience"],
+              monsters: ["-"],
+            },
+            {
+              name: "เกาะเล็ก (ปัจจุบัน - ตะวันตก)",
+              items: ["Mini Medal (20/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Dig Site (ปัจจุบัน)",
+              items: ["แผ่นศิลาสีน้ำเงิน (Blue Fragment)", "Mini Medal (21/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 8,
+          title: "8. บูรณะวิหาร",
+          summary:
+            "คืนพลังให้กับ Alltrades Abbey ปราบจอมมาร Cardinal Sin และปลดล็อกระบบอาชีพ",
+          fragments: ["Blue Fragment (Perdition)", "Yellow Fragment (Abbey)", "Silver Fragment (Perdition)", "Yellow Fragment (Jacqui)"],
+          medals: ["Mini Medal #22 - #33"],
+          steps: [
+            {
+              loc: "",
+              action: "ไปที่ Alltrades Abbey (อดีต) และถูกหลอกให้สูญเสียพลัง",
+            },
+            {
+              loc: "",
+              action: "รวบรวมพวกพ้องที่ Pilgrim’s Perdition และบุกผ่าน Western Cave ไปยัง Pit of Silence",
+            },
+            {
+              loc: "",
+              action: "ช่วย High Priestess Jacqueline และกำจัดบอส Cardinal Sin",
+            },
+            {
+              loc: "",
+              action: "รางวัล: ปลดล็อกระบบอาชีพ (Vocations) และได้รับ Career Sphere (เปลี่ยนอาชีพได้ทุกที่)",
+            },
+          ],
+          locations: [
+            {
+              name: "Pilgrim’s Rest (อดีต)",
+              items: ["Mini Medal (22/100)", "Coagulant"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilgrim’s Rest (อดีต)",
+              items: ["Single Phial", "Strong Medicine", "Moonwort Bulb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilgrim’s Perdition (อดีต)",
+              items: ["Medicinal Herb", "Moonwort Bulb", "Mini Medal (23/100)", "1 gold", "Holy Water", "Blue Fragment", "Coagulant"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilgrim’s Perdition (อดีต)",
+              items: ["Chimaera Wing", "Strong Medicine", "Iron Mask", "Knuckledusters"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilgrim’s Perdition (อดีต)",
+              items: ["Seed of Magic", "Silk Robe", "Horse Manure", "Tin Pot", "Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Western Cave (อดีต)",
+              items: ["Magic Water", "Mini Medal (24/100)", "Beastly Bullwhip", "300 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Precipice Pass (อดีต)",
+              items: ["Mini Medal (25/100)", "Strong Medicine", "Medicinal Herb", "Plain Clothes", "Kitty Shield", "Single Phial", "30 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Cave Leading to Dungeon",
+              items: ["Iron Shield", "Seed of Strength", "Chimaera Wing", "Coagulant", "Mini Medal (26/100)", "Magic Water", "Goon Heart", "350 gold", "Holy Water", "Seed of Deftness", "Strong Medicine"],
+              monsters: ["-"],
+            },
+            {
+              name: "Tunnel to Abbey (อดีต)",
+              items: ["Medicinal Herb", "Mini Medal (27/100)", "Single Phial", "Strong Medicine"],
+              monsters: ["-"],
+            },
+            {
+              name: "Tunnel to Abbey (อดีต)",
+              items: ["450 gold", "Cautery Sword", "Holy Lance", "Prayer Ring", "Moonwort Bulb", "Seed of Agility", "Chimaera Wing", "Magic Water"],
+              monsters: ["-"],
+            },
+            {
+              name: "Allblades Arena (อดีต)",
+              items: ["Strong Medicine", "Medicinal Herb", "Single Phial", "Iron Lance", "Fishnet Stockings"],
+              monsters: ["-"],
+            },
+            {
+              name: "Alltrades Abbey (อดีต)",
+              items: ["Lucida Shard", "250 gold", "แผ่นศิลาสีเทา (Grey Fragment)", "Yggdrasil Leaf", "Medicinal Herb", "Strong Medicine", "Moonwort Bulb", "Mini Medal (28/100)", "Chimaera Wing", "แผ่นศิลาสีเหลือง (Yellow Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilgrim’s Perdition (อดีตท้ายบท)",
+              items: ["แผ่นศิลาสีเงิน (Silver Fragment)", "Mini Medal (29/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Alltrades Abbey (ปัจจุบัน)",
+              items: ["300 gold", "Single Phial", "Seed of Resilience", "Medicinal Herb", "Strong Medicine", "Antidotal Herb", "แผ่นศิลาสีเหลือง (Yellow Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilgrim’s Rest (ปัจจุบัน)",
+              items: ["Seed of Sorcery", "Medicinal Herb", "Mini Medal (31/100)", "Strong Medicine"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ruins near Abbey (ปัจจุบัน)",
+              items: ["Mini Medal (32/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 9,
+          title: "9. ความมืดในทะเลทราย",
+          summary:
+            "ปลดล็อกคำสาปของ Al-Balad ช่วยเหลือราชินี Fertiti และตามหาพรมวิเศษ",
+          fragments: ["Blue Fragment (Bravoure)", "Grey Fragment (Temple)", "Blue Fragment (Al-Balad)", "Gold Fragment (Al-Shallal)"],
+          medals: ["Mini Medal #34 - #39"],
+          steps: [
+            {
+              loc: "",
+              action: "เดินทางสู่อดีตของ Al-Balad และ Temple Palace",
+            },
+            {
+              loc: "",
+              action: "ช่วยเหลือ Hadid และตามหา Ancient Skull จาก Dig Site (ปัจจุบัน)",
+            },
+            {
+              loc: "",
+              action: "บุก Likeness of the Great Evil กำจัดบอส Setesh the Punisher",
+            },
+            {
+              loc: "",
+              action: "รับ แผ่นศิลาสีน้ำเงิน (Blue Fragment) และ แผ่นศิลาสีเทา (Grey Fragment) เป็นรางวัล",
+            },
+          ],
+          locations: [
+            {
+              name: "La Bravoure (ปัจจุบัน)",
+              items: ["Single Phial", "Medicinal Herb", "200 gold", "แผ่นศิลาสีน้ำเงิน (Blue Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "La Bravoure (ปัจจุบัน)",
+              items: ["Captain’s Coat", "Strong Medicine", "Garish Garb", "Seed of Deftness", "Mini Medal (34/100)", "Dragon Shield", "Magic Water", "Seed of Sorcery", "Seed of Life"],
+              monsters: ["-"],
+            },
+            {
+              name: "Al-Balad (อดีต)",
+              items: ["Dieamend", "Seed of Magic", "Turban", "Medicinal Herb", "Holy Water", "Strong Medicine", "20 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Temple Palace (อดีต)",
+              items: ["แผ่นศิลาสีเทา (Grey Fragment)", "Horse Manure", "Noble Garb"],
+              monsters: ["-"],
+            },
+            {
+              name: "Al-Balad (อดีต - ท้ายบท)",
+              items: ["Rune Staff", "Mini Medal (35/100)", "แผ่นศิลาสีน้ำเงิน (Blue Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Likeness of Evil (อดีต)",
+              items: ["7 gold", "Single Phial", "Strong Medicine", "Clawcerer Heart", "Mercury’s Bandanna", "Magic Water", "Assassin’s Dagger", "Kamikazee Bracer", "Seed of Agility", "Seed of Deftness"],
+              monsters: ["-"],
+            },
+            {
+              name: "Temple Palace (ปัจจุบัน)",
+              items: ["Noble Garb", "Silk Robe", "Medicinal Herb", "Strong Medicine", "Seed of Magic", "Single Phial", "แผ่นศิลาสีน้ำเงิน (Blue Fragment)", "Mini Medal (36/100)", "Horse Manure"],
+              monsters: ["-"],
+            },
+            {
+              name: "Oasis (ปัจจุบัน)",
+              items: ["Seed of Sorcery", "Strong Medicine", "แผ่นศิลาสีเทา (Grey Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Al-Balad (ปัจจุบัน)",
+              items: ["Single Phial", "Moonwort Bulb", "Strong Medicine", "Coagulant", "Antidotal Herb", "Chimaera Wing", "Trailblazing Bandanna", "Pretty Betsy", "Holy Water", "Magic Water", "Seed of Deftness"],
+              monsters: ["-"],
+            },
+            {
+              name: "Temple Palace (ลับ - อดีต)",
+              items: ["Seed of Life", "Silk Bustier", "Gold Bracer", "Mini Medal (37/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Banks of Nihil (อดีต)",
+              items: ["Strong Medicine", "Medicinal Herb", "Single Phial", "Faerie Foil", "Mini Medal (38/100)", "Moonwort Bulb", "Seed of Resilience"],
+              monsters: ["-"],
+            },
+            {
+              name: "Dig Site (ปัจจุบันท้ายบท)",
+              items: ["Antidotal Herb", "Seed of Agility", "Mini Medal (39/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 10,
+          title: "10. การพบกับไอช่า",
+          summary:
+            "การพบกับ Aishe ทายาทชนเผ่า Roamers และการปลดล็อกพรมวิเศษตัวจริง",
+          fragments: ["Blue Fragment (Aishe)"],
+          medals: ["Mini Medal #40"],
+          steps: [
+            {
+              loc: "",
+              action: "ตามหาเผ่า Roamers ในปัจจุบัน คุยกับ Aishe ที่หน้าผา",
+            },
+            {
+              loc: "",
+              action: "ปราบบอสที่หน้าผาเพื่อรับ แผ่นศิลาสีน้ำเงิน (Blue Fragment) และ Aishe จะร่วมทีม",
+            },
+            {
+              loc: "",
+              action: "ระบบ Moonlighting: สวมใส่อาชีพหลักและอาชีพเสริมเพื่อรับความสามารถได้พร้อมกัน",
+            },
+          ],
+          locations: [
+            {
+              name: "ค่าย Roamer (ปัจจุบัน)",
+              items: ["Mini Medal (40/100)", "Coagulant", "Strong Medicine", "Single Phial", "Medicinal Herb", "Lunar Fan", "Seed of Agility"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 11,
+          title: "11. เกาะใต้บาดาล",
+          summary:
+            "กอบกู้เมือง Wetlock จากน้ำท่วมใหญ่ด้วยการสู้กับ Gracos ใต้ทะเล",
+          fragments: ["Grey Fragment (Hardlypool)", "Red Fragment (Tower)", "Grey Fragment (Wetlock)", "Green Fragment (Tomb)", "Grey Fragment (Palazzo)", "Turquoise Fragment (Serpent)", "Red Fragment (Wetlock Present)"],
+          medals: ["Mini Medal #41 - #50"],
+          steps: [
+            {
+              loc: "",
+              action: "เดินทางสู่อดีตของ Hardlypool, Spilton-on-Sea และ Wetlock",
+            },
+            {
+              loc: "",
+              action: "แก้ไขปัญหาน้ำท่วมโดยบุก Highendreigh Tower และ Sunken Citadel",
+            },
+            {
+              loc: "",
+              action: "ปราบ Gracos เพื่อปลดปล่อยเมือง และรับ Mermaid Moon",
+            },
+            {
+              loc: "",
+              action: "พาหนะใหม่: รับ Flying Carpet (พรมวิเศษ) ในห้องลับใต้ดินที่ La Bravoure",
+            },
+          ],
+          locations: [
+            {
+              name: "Hardlypool (อดีต)",
+              items: ["Strong Medicine", "Seed of Life", "Horse Manure", "Antidotal Herb", "แผ่นศิลาสีเทา (Grey Fragment)", "100 gold", "Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Hardlypool Tunnel (อดีต)",
+              items: ["Seed of Life", "Icicle Dirk", "Ice Shield"],
+              monsters: ["-"],
+            },
+            {
+              name: "Spilton (อดีต)",
+              items: ["Seed of Agility", "60 gold", "Medicinal Herb", "Strong Medicine"],
+              monsters: ["-"],
+            },
+            {
+              name: "Wetlock (อดีต)",
+              items: ["Coagulant", "Strong Medicine", "Seed of Deftness", "Medicinal Herb", "150 gold", "Seed of Strength", "Single Phial", "Chimaera Wing", "Mini Medal (41/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Highendreigh Tower (อดีต)",
+              items: ["Mini Medal (42/100)", "Magic Water", "Pillager’s Helmet", "Medicinal Herb", "Single Phial", "Strong Medicine", "Moonwort Bulb", "Antidotal Herb", "Holy Water", "Seed of Magic"],
+              monsters: ["-"],
+            },
+            {
+              name: "Wetlock (อดีต - ท้ายบท)",
+              items: ["Mini Medal (43/100)", "แผ่นศิลาสีเทา (Grey Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "La Bravoure (ปัจจุบันลับ)",
+              items: ["Mini Medal (44/100)", "Ferocious Fangs", "Seed of Magic"],
+              monsters: ["-"],
+            },
+            {
+              name: "Tombe des Heros",
+              items: ["แผ่นศิลาสีเขียว (Green Fragment)", "Mini Medal (45/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Palazzo di Bulgio",
+              items: ["Seed of Resilience", "Seed of Sorcery", "Seed of Strength", "แผ่นศิลาสีเทา (Grey Fragment)", "Medicinal Herb", "Strong Medicine", "Chimaera Wing", "Seed of Magic", "Mini Medal (46/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Wetlock (ปัจจุบัน)",
+              items: ["Horse Manure", "Coagulant", "Single Phial", "Strong Medicine", "Seed of Life", "Ruby of Protection", "Magic Water", "Mini Medal (50/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Highendreigh (ปัจจุบัน)",
+              items: ["Seed of Life", "Slime Crown", "400 gold", "Dieamend", "Horse Manure", "Coagulant", "Medicinal Herb", "Single Phial", "Seed of Sorcery", "Strong Medicine", "Seed of Proficiency", "Elfin Elixir", "Pillager’s Platemail"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 12,
+          title: "12. การพบกับเซอร์เมอร์วิน",
+          summary:
+            "การปลุก Sir Mervyn อัศวินในตำนานจากหอคอยที่สูงที่สุด",
+          fragments: ["Red Fragment (Mervyn)", "Silver Fragment (Gracos V)"],
+          medals: ["Mini Medal #51, #52, #53"],
+          steps: [
+            {
+              loc: "",
+              action: "ตามหา Bulgio เพื่อขอใช้ Sizzling Stone",
+            },
+            {
+              loc: "",
+              action: "บุก The Tallest Tower (ปัจจุบัน) เพื่อปลุกชีพ Sir Mervyn",
+            },
+            {
+              loc: "",
+              action: "ตัวละครใหม่: Sir Mervyn เข้าร่วมปาร์ตี้ (เริ่มต้นด้วยอาชีพ Chevalier)",
+            },
+          ],
+          locations: [
+            {
+              name: "The Tallest Tower (1F)",
+              items: ["Strong Medicine", "Single Phial", "Mercury’s Bandanna", "Seed of Therapeusis"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tallest Tower (2F-3F)",
+              items: ["Medicinal Herb", "Seed of Sorcery", "Seed of Agility", "Mini Medal (51/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tallest Tower (4F-5F)",
+              items: ["Strong Medicine", "Single Phial", "Seed of Strength", "Seed of Resilience"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tallest Tower (7F E)",
+              items: ["500 gold", "Seed of Deftness", "Dragon Claws", "Magic Water"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tallest Tower (7F W)",
+              items: ["Seed of Magic", "Kerplunk Bracer", "Yggdrasil Dew", "Staff of Sentencing", "Pretty Betsy", "Ruby of Protection", "Mini Medal (52/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Tallest Tower (9F)",
+              items: ["Seed of Life"],
+              monsters: ["-"],
+            },
+            {
+              name: "Dig Site (ปัจจุบัน)",
+              items: ["Magic Water", "Mini Medal (53/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 13,
+          title: "13. ร่องรอยแห่งความรัก",
+          summary:
+            "ปริศนาและความแค้นใน Greenthumb Gardens และจุดกำเนิดของ Wilted Heart",
+          fragments: ["Missing Fragment (Greenthumb)"],
+          medals: ["Mini Medal #54, #55"],
+          steps: [
+            {
+              loc: "",
+              action: "ไปที่ Greenthumb Gardens (อดีต) ช่วยเหลือกิจการสวนดอกไม้และกำจัด Rainiac",
+            },
+            {
+              loc: "",
+              action: "ทำเควสเนื้อเรื่องระหว่าง Carraway, Dill และ Cayenne",
+            },
+            {
+              loc: "",
+              action: "รวบรวม Mini Medal (54/100) และ Mini Medal (55/100) ตามลำดับเหตุการณ์",
+            },
+          ],
+          locations: [
+            {
+              name: "Greenthumb (อดีต 1)",
+              items: ["Seed of Strength", "100 gold", "Silk Robe", "Strong Medicine", "Single Phial", "Medicinal Herb", "Seed of Deftness", "Hardwood Headwear", "Wayfarer’s Clothes", "Garish Garb", "Fishnet Stockings"],
+              monsters: ["-"],
+            },
+            {
+              name: "Wilted Heart (ปัจจุบัน)",
+              items: ["Seed of Magic", "Seed of Life", "Mini Medal (54/100)", "Horse Manure", "Hardwood Headwear", "Medicinal Herb", "Strong Medicine", "Single Phial", "Garter", "300 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Regrette-Rien (ปัจจุบัน)",
+              items: ["Seed of Therapeusis", "Magic Water", "Medicinal Herb", "Strong Medicine", "Holy Water", "Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Greenthumb (อดีต 2)",
+              items: ["Pretty Betsy", "Single Phial", "Seed of Life", "Silk Robe", "Medicinal Herb", "Wayfarer’s Clothes", "Coagulant"],
+              monsters: ["-"],
+            },
+            {
+              name: "Wilted Heart (อดีต)",
+              items: ["Seed of Deftness", "Seed of Magic", "Strong Medicine", "Moonwort Bulb", "Seed of Strength", "Single Phial", "Scholar’s Specs", "Medicinal Herb", "Slime Earrings"],
+              monsters: ["-"],
+            },
+            {
+              name: "Mountain Path (อดีต)",
+              items: ["Seed of Sorcery", "Seed of Agility", "Dieamend", "Mini Medal (55/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 14,
+          title: "14. เวทมนตร์และความวุ่นวาย",
+          summary:
+            "ปราบจอมเวทย์ Hybris ใน Hubble และการจากลาชั่วคราวของ มาริเบล",
+          fragments: ["Green Fragment (Falls)", "Green Fragment (Inquisitory)", "Grey Fragment (Grand)", "Green Fragment (Euphonia)"],
+          medals: ["Mini Medal #56, #57"],
+          steps: [
+            {
+              loc: "",
+              action: "ไปที่ Hubble (อดีต) ทำเควสช่วยเหลือเมืองและปราสาทจากเหตุการณ์เวทมนตร์",
+            },
+            {
+              loc: "",
+              action: "บุก Falls Hollow เพื่อหา Starshard",
+            },
+            {
+              loc: "",
+              action: "ปราบเจ้าหญิง Hybris ที่กลายเป็นบอส และเรียนรู้ท่า Great Leveller",
+            },
+          ],
+          locations: [
+            {
+              name: "Rucker Castle (อดีต)",
+              items: ["Seed of Strength", "Mini Medal (56/100)", "Strong Medicine", "Single Phial", "50 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Hubble (อดีต)",
+              items: ["Medicinal Herb", "Horse Manure", "Pretty Betsy", "Wayfarer’s Clothes", "Magic Water", "Single Phial", "Coagulant", "Strong Medicine", "Garish Garb", "200 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Hubble Castle (อดีต)",
+              items: ["Single Phial", "Seed of Sorcery", "Strong Medicine", "Medicinal Herb", "Holy Water", "Coagulant", "Bow Tie", "Silk Tuxedo", "Magic Water", "Princess’s Robe", "Seed of Therapeusis", "Seed of Resilience"],
+              monsters: ["-"],
+            },
+            {
+              name: "Falls Hollow (อดีต)",
+              items: ["Dieamend", "Very Devil Heart", "700 gold", "Falcon Knife Earrings", "แผ่นศิลาสีเขียว (Green Fragment)", "Seed of Life", "Strong Medicine"],
+              monsters: ["-"],
+            },
+            {
+              name: "Hubble (อดีตท้ายบท)",
+              items: ["Single Phial", "แผ่นศิลาสีเขียว (Green Fragment)", "Magic Water", "Seed of Magic", "Strong Medicine", "Coagulant"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 15,
+          title: "15. คำสัญญากับมาริเบล",
+          summary:
+            "ดูแล มาริเบล ที่ป่วยและเตรียมตัวรับมือกับภัยมืดที่กำลังคืบคลาม",
+          fragments: ["-"],
+          medals: ["-"],
+          steps: [
+            {
+              loc: "Pilchard Bay",
+              action: "คุยกับครอบครัว มาริเบล และสัญญาว่าจะกลับมา",
+            },
+            {
+              loc: "Hubble (ปัจจุบัน)",
+              action: "สำรวจ Hubble เพื่อตามหาเบาะแสและเก็บไอเทมที่เหลือ",
+            },
+          ],
+          locations: [
+            {
+              name: "Pilchard Bay",
+              items: ["-"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 16,
+          title: "16. มอนสเตอร์และนักบวช",
+          summary:
+            "ปริศนานักบวชที่ Vogograd และคดีโหวตไล่ชาวบ้านออกจากเมือง",
+          fragments: ["Worn Stone Tablet"],
+          medals: ["Mini Medal #58 - #62"],
+          steps: [
+            {
+              loc: "",
+              action: "ไปที่ Vogograd (อดีต) แก้ไขความเข้าใจผิดเรื่องมอนสเตอร์และบาทหลวง",
+            },
+            {
+              loc: "",
+              action: "บุก Mount Gora เพื่อกำจัดบอส Gasputin",
+            },
+            {
+              loc: "",
+              action: "ใน Vogograd (ปัจจุบัน) เก็บ Mini Medal ชุดใหญ่ (58-62/100) ที่ป้ายหลุมศพ NW",
+            },
+          ],
+          locations: [
+            {
+              name: "Vogograd (อดีต)",
+              items: ["Seed of Sorcery", "Dieamend", "Coagulant", "Seed of Resilience", "Horse Manure", "Medicinal Herb", "Strong Medicine", "Single Phial"],
+              monsters: ["-"],
+            },
+            {
+              name: "Mount Gora (อดีต)",
+              items: ["Cobra Claws", "Prayer Ring", "Seed of Life", "Ogre Shield", "500 gold", "Elfin Elixir", "Dread Dagger", "Seed of Therapeusis"],
+              monsters: ["-"],
+            },
+            {
+              name: "Vogograd (ปัจจุบัน)",
+              items: ["Seed of Agility", "Plain Clothes", "Strong Medicine", "Seed of Strength", "Single Phial", "150 gold", "Seed of Deftness", "Holy Water", "Medicinal Herb", "Magic Water", "Leather Hat", "Mini Medal (58", "59", "60", "61", "62/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 17,
+          title: "17. ชะตากรรมของธาตุลม",
+          summary:
+            "รวบรวมเครื่องรางธาตุลมใน Aeolus Vale และการปลดล็อก Skystone",
+          fragments: ["Blue Fragment (Sanctum)"],
+          medals: ["Mini Medal #63, #64"],
+          steps: [
+            {
+              loc: "",
+              action: "ไปที่ Aeolus Vale (อดีต) เพื่อช่วยเหลือชนเผ่าแห่งลม",
+            },
+            {
+              loc: "",
+              action: "บุก Sullied Sanctum และ Sanctum of the Cirrus เพื่อปราบ Cumulus Vex",
+            },
+            {
+              loc: "",
+              action: "รวบรวม แผ่นศิลาสีน้ำเงิน (Blue Fragment) ทั้งในอดีตและปัจจุบัน",
+            },
+          ],
+          locations: [
+            {
+              name: "Aeolus Vale (อดีต)",
+              items: ["Seed of Agility", "Seed of Life", "Magic Water", "Medicinal Herb", "Coagulant", "แผ่นศิลาสีน้ำเงิน (Blue Fragment)", "Strong Medicine", "Chimaera Wing", "Platinum Lance", "Seed of Therapeusis", "200 gold", "Mini Medal (63/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Custodians’ Camp",
+              items: ["Medicinal Herb", "Mini Medal (64/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Sullied Sanctum",
+              items: ["400 gold", "Magic Water", "Yggdrasil Leaf", "Seed of Resilience", "Lightning Staff", "Silver Mail", "Seed of Sorcery", "Seed of Magic"],
+              monsters: ["-"],
+            },
+            {
+              name: "Sanctum (อดีต)",
+              items: ["Magic Water", "Strong Medicine", "Moonwort Bulb", "Antidotal Herb", "Medicinal Herb", "Single Phial", "Dieamend", "Windbraker", "Seed of Strength", "Seed of Magic", "Falcon Blade"],
+              monsters: ["-"],
+            },
+            {
+              name: "Aeolus Vale (ปัจจุบัน)",
+              items: ["Pretty Betsy", "Seed of Agility", "Seed of Therapeusis", "Single Phial", "300 gold", "Seed of Deftness", "Strong Medicine", "Seed of Sorcery"],
+              monsters: ["-"],
+            },
+            {
+              name: "Sanctum (ปัจจุบัน)",
+              items: ["Strong Medicine", "Single Phial", "Medicinal Herb", "Agility Ring", "Seed of Resilience", "Magic Water", "แผ่นศิลาสีน้ำเงิน (Blue Fragment)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 18,
+          title: "18. คำสาปขั้นสุดยอด",
+          summary:
+            "การรวบรวมเครื่องรางธาตุไฟและดิน และการได้รับยานบิน Skystone",
+          fragments: ["Black Fragment (Beacon)", "Turquoise Fragment (Buccanham)", "Black Fragment (Arrival)", "Grey Fragment (Divine)"],
+          medals: ["Mini Medal #66, #67, #68"],
+          steps: [
+            {
+              loc: "",
+              action: "เดินทางสู่ Buccanham (อดีต) เพื่อแก้คำสาปของเมือง",
+            },
+            {
+              loc: "",
+              action: "บุก Den of the Dwarves เพื่อหา Glowmoss และปราบ Mossferatu",
+            },
+            {
+              loc: "",
+              action: "ไปที่ The Beacon เพื่อจุดไฟศักดิ์สิทธิ์และปราบ Togrus Maximus",
+            },
+            {
+              loc: "",
+              action: "รับ แผ่นศิลาสีเทา (Grey Fragment) และ แผ่นศิลาสีเทอร์ควอยซ์ (Turquoise Fragment)",
+            },
+          ],
+          locations: [
+            {
+              name: "Buccanham (อดีต)",
+              items: ["Pretty Betsy", "Medicinal Herb", "Strong Medicine", "Pirate Hat", "Captain’s Coat", "100 gold"],
+              monsters: ["-"],
+            },
+            {
+              name: "Den of Dwarves",
+              items: ["Single Phial", "Seed of Life", "Dieamend"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Beacon (อดีต)",
+              items: ["Single Phial", "แผ่นศิลาสีดำ (Black Fragment)", "Magic Water", "Seed of Magic", "Yggdrasil Leaf", "Yggdrasil Dew", "Mini Medal (65/100)", "Solar Fan", "Seed of Agility", "Magic Armour", "Aurora Blade", "Elfin Elixir"],
+              monsters: ["-"],
+            },
+            {
+              name: "Buccanham (ท้ายบท)",
+              items: ["Sea Serpent Sabre", "แผ่นศิลาสีเทอร์ควอยซ์ (Turquoise Fragment) x2", "Siren Sword", "Seed of Resilience", "Seed of Strength"],
+              monsters: ["-"],
+            },
+            {
+              name: "Buccanham (ปัจจุบัน)",
+              items: ["VIP Pass", "Smart Suit", "Seed of Strength", "Mini Medal (66/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "The Beacon (ปัจจุบัน)",
+              items: ["Chimaera Wing", "Single Phial", "Strong Medicine", "Antidotal Herb", "Magic Water", "Seed of Deftness", "Seed of Sorcery", "Dieamend", "Kamikazee Bracer", "Seed of Resilience"],
+              monsters: ["-"],
+            },
+            {
+              name: "Buccanham Palace",
+              items: ["Trailblazing Bandanna", "Single Phial", "300 gold", "Mini Medal (67/100)", "Strong Medicine", "Magic Water"],
+              monsters: ["-"],
+            },
+            {
+              name: "Altar of Arrival",
+              items: ["แผ่นศิลาสีดำ (Black Fragment)", "Mini Medal (68/100)", "Seed of Therapeusis"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 19,
+          title: "19. ปราบราชาปีศาจ",
+          summary:
+            "ศึกตัดสินที่ Malign Shrine กับจอมมาร Orgodemir ในร่างแรก",
+          fragments: ["Black Fragment (Strange)"],
+          medals: ["Mini Medal #69"],
+          steps: [
+            {
+              loc: "",
+              action: "ไปที่ Malign Shrine (อดีต) ผ่านทาง Dig Site",
+            },
+            {
+              loc: "",
+              action: "บุกผ่านชั้นต่างๆ เพื่อปะทะกับ Demon King Orgodemir ครั้งแรก",
+            },
+            {
+              loc: "",
+              action: "การต่อสู้มี 2 Phases (แนะนำให้เตรียมการฟื้นฟูให้พร้อม)",
+            },
+          ],
+          locations: [
+            {
+              name: "Strange Shrine",
+              items: ["Seed of Deftness", "Mini Medal (69/100)", "แผ่นศิลาสีดำ (Black Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Malign Shrine",
+              items: ["Dieamend", "Sunderbolt Blade", "Hypothermion Heart", "Dark Robe", "Time Being Heart"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 20,
+          title: "20. การปลุกพระผู้สร้าง",
+          summary:
+            "ปลุกจิตวิญญาณทั้ง 4 เพื่อเปิดทางสู่ปราสาทจอมมารที่แท้จริง",
+          fragments: ["Gold Fragment (Path)"],
+          medals: ["Mini Medal #70 - #73"],
+          steps: [
+            {
+              loc: "",
+              action: "ทำภารกิจฟื้นฟูพลังทั่วโลก: Estard, Hubble, Roamers",
+            },
+            {
+              loc: "",
+              action: "บุก Poolside Cave (ปัจจุบัน) เพื่อรับ Vestment of Virtue",
+            },
+            {
+              loc: "",
+              action: "เตรียมตัวเข้าสู่ Cathedral of Light เพื่อร่วมพิธีปลุกชีพพระเจ้า",
+            },
+          ],
+          locations: [
+            {
+              name: "Poolside Cave (ปัจจุบัน)",
+              items: ["Seed of Therapeusis", "Magic Water", "Seed of Sorcery", "Seed of Strength", "Dieamend"],
+              monsters: ["-"],
+            },
+            {
+              name: "Cathedral of Light",
+              items: ["Seed of Life", "Glass Slippers", "Magic Water", "Seed of Agility", "Ultimate Key", "Haywire Helm", "Mini Medal (70/100)", "Gold Bracer", "Silk Bustier"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Castle (ท้ายบท)",
+              items: ["Platinum Shield", "Kingsblade", "Mini Medal (71/100)", "Pallium Regale", "Mini Medal (72/100)", "Seed of Resilience"],
+              monsters: ["-"],
+            },
+            {
+              name: "Estard Underground",
+              items: ["แผ่นศิลาสีทอง (Gold Fragment)", "Seed of Strength"],
+              monsters: ["-"],
+            },
+            {
+              name: "Pilchard Bay (ท้ายบท)",
+              items: ["Mini Medal (73/100)", "Seed of Life"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 21,
+          title: "21. ปลุกวิญญาณแห่งไฟ",
+          summary:
+            "ปลุกวิญญาณอัคคีที่ Burnmount และรับ Fire Amulet",
+          fragments: ["Conflagration Key"],
+          medals: ["Mini Medal #74 - #77"],
+          steps: [
+            {
+              loc: "Beacon",
+              action: "Mervyn สู้บอส Smothers ฉายเดี่ยว",
+            },
+            {
+              loc: "Emberdale",
+              action: "ใช้ Conflagration Key เปิดทางสู่ภูเขาไฟ",
+            },
+            {
+              loc: "Burnmount",
+              action: "สู้ Fire Spirit เพื่อรับ Fire Amulet",
+            },
+          ],
+          locations: [
+            {
+              name: "Beacon (Mervyn Solo)",
+              items: ["Mini Medal (74/100)", "Sacred Armour", "Seed of Strength", "Dieamend", "Togre Heart", "Seed of Agility", "Seed of Magic", "Wight Watchman Heart", "Mini Medal (75/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Emberdale (ปัจจุบัน)",
+              items: ["Mini Medal (76/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Burnmount (ปัจจุบัน)",
+              items: ["Fire Blade", "1500 gold", "Seed of Agility", "Magma Staff", "Mini Medal (77/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 22,
+          title: "22. คืนชีพบัญญัติแห่งดิน",
+          summary:
+            "สำรวจพีระมิดลับที่ Likeness และปลุกวิญญาณปฐพี",
+          fragments: ["Grey Fragment (Sea Dragon)"],
+          medals: ["Mini Medal #78 - #81"],
+          steps: [
+            {
+              loc: "The Sea Dragon",
+              action: "เก็บ Grey Fragment และ Mini Medal #78",
+            },
+            {
+              loc: "Temple Palace",
+              action: "สู้มอนสเตอร์เพื่อชิง Royal Key",
+            },
+            {
+              loc: "Hidden Pyramid",
+              action: "รวบรวมหินธาตุ 4 ชิ้นเพื่อปลุกวิญญาณปฐพี",
+            },
+          ],
+          locations: [
+            {
+              name: "Sea Dragon (เรือ)",
+              items: ["Captain’s Coat", "500 gold", "Seed of Deftness", "Magic Water", "4500 gold", "แผ่นศิลาสีเทา (Grey Fragment)", "Mini Medal (78/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Al-Balad (ปัจจุบัน)",
+              items: ["Mini Medal (79/100)", "Royal Mail", "Mini Medal (80/100)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Hidden Pyramid",
+              items: ["2000 gold", "Mini Medal (81/100)", "Dieamend", "Double-Edged Sword", "Skeleton Swordsman Heart", "Divine Bustier", "Shield of Shame"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 23,
+          title: "23. ปลุกวิญญาณแห่งลม",
+          summary:
+            "พิชิตหอคอย Ventus และ Multipleximus Maximus เพื่อปลุกวิญญาณวายุ",
+          fragments: ["Multipleximus Key"],
+          medals: ["Mini Medal #82 - #84"],
+          steps: [
+            {
+              loc: "Ventus Tower",
+              action: "ขึ้นสู่ยอดหอคอยเพื่อวาร์ปไป Villa Priores",
+            },
+            {
+              loc: "Multipleximus Maximus",
+              action: "แก้ปริศนาหมุนฉากและสู้บอส Macho Picchu",
+            },
+            {
+              loc: "Sanctum of the Cirrus",
+              action: "วาง Cirrus Surplice เพื่อรับ Wind Amulet",
+            },
+          ],
+          locations: [
+            {
+              name: "Aeolus Vale (ปัจจุบัน)",
+              items: ["Mini Medal (82/100)", "Special Medicine", "Seed of Life"],
+              monsters: ["-"],
+            },
+            {
+              name: "Ventus Tower",
+              items: ["Special Medicine", "Seed of Resilience", "Magic Water", "Seed of Sorcery", "700 gold", "Tempest Shield", "Infanticore Heart", "Mini Medal (83/100)", "Dieamend", "Staff of Resurrection"],
+              monsters: ["-"],
+            },
+            {
+              name: "Villa Priores",
+              items: ["Mini Medal (84/100)", "Pretty Betsy", "Agility Ring", "Seed of Agility"],
+              monsters: ["-"],
+            },
+            {
+              name: "Multipleximus",
+              items: ["Shimmering Dress", "Seed of Strength", "Mercury’s Bandanna", "1000 gold", "Notso Macho Heart", "Cirrus Surplice"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 24,
+          title: "24. เมืองที่แย่ที่สุด",
+          summary:
+            "แก้คำสาปในเมือง Nottagen และเก็บตกเศษศิลา Gold Fragment",
+          fragments: ["Gold Fragment (Coral)", "Gold Fragment (อดีต)"],
+          medals: ["Mini Medal #85 - #90"],
+          steps: [
+            {
+              loc: "",
+              action: "ไปที่ Nottagen (อดีต) ช่วยเมืองจากการโจมตีของมอนสเตอร์และรากไม้",
+            },
+            {
+              loc: "",
+              action: "บุก Nottagen Cavern กำจัดบอส Malign Vine",
+            },
+            {
+              loc: "",
+              action: "ตัดสินใจช่วย Rocky (มอนสเตอร์สัตว์เลี้ยง) เพื่อให้เมืองกลับมาสงบสุขในปัจจุบัน",
+            },
+          ],
+          locations: [
+            {
+              name: "Sunken Citadel",
+              items: ["Mini Medal (85/100)", "Yggdrasil Dew", "แผ่นศิลาสีเงิน (Silver Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Hubble Castle",
+              items: ["Seed of Strength", "Mini Medal (86/100)", "Seed of Magic", "Seed of Sorcery"],
+              monsters: ["-"],
+            },
+            {
+              name: "Coral Cave",
+              items: ["Watermaul Wand", "Mini Medal (87/100)", "แผ่นศิลาสีทอง (Gold Fragment) x2"],
+              monsters: ["-"],
+            },
+            {
+              name: "Nottagen (อดีต)",
+              items: ["Strong Medicine", "Seed of Magic", "Special Medicine", "50 gold", "Dieamend"],
+              monsters: ["-"],
+            },
+            {
+              name: "Nottagen Cavern",
+              items: ["Pretty Betsy", "Demon Spear", "Yggdrasil Dew", "Mini Medal (88/100)", "Seed of Agility", "Spiked Armour", "Seed of Deftness"],
+              monsters: ["-"],
+            },
+            {
+              name: "Nottagen (ปัจจุบัน)",
+              items: ["Pretty Betsy", "Mini Medal (89/100)", "Dieamend", "Seed of Agility", "Mini Medal (90/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 25,
+          title: "25. เดจาวู",
+          summary:
+            "การกลับมาของ Kiefer ชั่วคราวในฐานะนักรบจากอดีต",
+          fragments: ["Curious Fragment"],
+          medals: ["Mini Medal #91"],
+          steps: [
+            {
+              loc: "",
+              action: "ไปที่ Altar of the Almighty (ปัจจุบัน) เพื่อใช้แผ่นศิลาพิเศษ",
+            },
+            {
+              loc: "",
+              action: "เดินทางสู่ Rucker Region (อดีต) ช่วยเหลือ Kiefer ในวัยหนุ่ม",
+            },
+            {
+              loc: "",
+              action: "ปราบ Marshal Lourgh และรับพรจาก Kiefer ก่อนเขากลับสู่ยุคสมัยของเขา",
+            },
+          ],
+          locations: [
+            {
+              name: "Rucker Castle (อดีต)",
+              items: ["50 gold", "Full Plate Armour", "Steel Helmet", "Dieamend", "Saviour’s Staff"],
+              monsters: ["-"],
+            },
+            {
+              name: "Exposure Enclosure",
+              items: ["Mini Medal (91/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 26,
+          title: "26. ศึกตัดสินกับราชาปีศาจ",
+          summary:
+            "ศึกตัดสินสุดท้ายกับจอมมาร Orgodemir ใน Cathedral of Blight",
+          fragments: ["-"],
+          medals: ["Mini Medal #92 - #94"],
+          steps: [
+            {
+              loc: "",
+              action: "บุก Cathedral of Blight (ปราสาทลอยฟ้า) โดยใช้ Skystone",
+            },
+            {
+              loc: "",
+              action: "สำรวจดันเจี้ยนย่อย 4 ธาตุภายใน (Hellfire, Whitewater, Whirlwind, Chasm)",
+            },
+            {
+              loc: "",
+              action: "ศึกตัดสิน: ปราบ Orgodemir (มีทั้งหมด 4 Phases)",
+            },
+          ],
+          locations: [
+            {
+              name: "Blight (ภายนอก)",
+              items: ["Seed of Sorcery", "Pretty Betsy"],
+              monsters: ["-"],
+            },
+            {
+              name: "Blight (ภายใน)",
+              items: ["Mini Medal (92/100)", "Orichcalcum Fangs", "Seed of Resilience", "Dieamend", "Hela’s Armour", "Sword of Ruin", "Headsman’s Axe"],
+              monsters: ["-"],
+            },
+            {
+              name: "Elemental Area",
+              items: ["Pyros Helm", "Mini Medal (93/100)", "Okeanos Sword", "Aeras Shield", "Gaia Armour", "Mini Medal (94/100)"],
+              monsters: ["-"],
+            },
+          ],
+        },
+        {
+          id: 27,
+          title: "27. หลังจบเกม",
+          summary:
+            "พิชิตดันเจี้ยนลับ ท้าทายพระเจ้า และรวบรวม Mini Medal จนครบ 100 เหรียญ",
+          fragments: ["Silver Fragment (Estard)", "Gold Fragment (Almighty)", "Gold Fragment (Arena)"],
+          medals: ["Mini Medal #95 - #100"],
+          steps: [
+            {
+              loc: "",
+              action: "เก็บ แผ่นศิลาสีเงิน (Silver Fragment) จากบ่อน้ำใน Estard (หลังจบเกม)",
+            },
+            {
+              loc: "",
+              action: "บุกดันเจี้ยนลับ \"Another World\" และ \"Yet Another World\"",
+            },
+            {
+              loc: "",
+              action: "ปราบ The Almighty และ Xenlon",
+            },
+          ],
+          locations: [
+            {
+              name: "Estard (บ่อน้ำ - หลังจบเกม)",
+              items: ["แผ่นศิลาสีเงิน (Silver Fragment)"],
+              monsters: ["-"],
+            },
+            {
+              name: "Another World",
+              items: ["Supernova Sword", "Gold Fragment"],
+              monsters: ["The Almighty"],
+            },
+            {
+              name: "Yet Another World",
+              items: ["Numen Heart"],
+              monsters: ["Xenlon", "The 4 Spirits (Rematch)"],
+            },
+            {
+              name: "Buccanham Arena (Bronze Cup)",
+              items: ["Falcon Blade"],
+              monsters: ["-"],
+            },
+            {
+              name: "Buccanham Arena (Silver Cup)",
+              items: ["Dragonsbane"],
+              monsters: ["-"],
+            },
+            {
+              name: "Buccanham Arena (Gold Cup)",
+              items: ["Gringham Whip"],
+              monsters: ["-"],
+            },
+            {
+              name: "Buccanham Arena (Testy Road)",
+              items: ["Metal King Goomerang", "Gold Fragment"],
+              monsters: ["-"],
+            },
+            {
+              name: "Buccanham Arena (Simmering Road)",
+              items: ["Metal King Armour"],
+              monsters: ["-"],
+            },
+            {
+              name: "Buccanham Arena (Fuming Road)",
+              items: ["Staff of Eternity"],
+              monsters: ["-"],
+            },
+            {
+              name: "Buccanham Arena (Furious Road)",
+              items: ["Hypernova Sword"],
+              monsters: ["-"],
+            },
+            {
+              name: "Lucky Panel (Post-Game Rank 4)",
+              items: ["Elevating Shoes", "Flame Shield", "Fire Blade", "Metal Goomerang", "Metal Slime Shield", "Thinking Cap"],
+              monsters: ["-"],
+            },
+          ],
+        },
+      ];
+
+      function renderChapterTabs(activeId) {
+        const container = document.getElementById("chapter-tabs");
+        container.innerHTML = walkthroughData
+          .map((ch) => {
+            const isActive = ch.id === activeId;
+            return `
+                <button onclick="updateWalkthrough(${ch.id})" role="tab" aria-selected="${isActive}" class="px-6 py-2 text-sm font-medium transition-all duration-300 min-w-fit ${isActive ? "active bg-white shadow-sm rounded-lg text-zinc-900" : "text-zinc-500 hover:text-zinc-800"}">
+                    บทที่ ${ch.id}
+                </button>
+            `;
+          })
+          .join("");
+      }
+
+      function updateWalkthrough(chId) {
+        const ch = walkthroughData.find((c) => c.id === chId);
+        if (!ch) return;
+
+        renderChapterTabs(chId);
+
+        const container = document.getElementById("walkthrough-display");
+        container.innerHTML = `
+          <div class="walkthrough-grid dashboard-fade-in">
+            <!-- Left Sidebar: Key Points -->
+            <div class="bg-zinc-50/50 p-8 border-r border-gray-100 space-y-10">
+              <div>
+                <h4 class="label-caps mb-4 flex items-center">
+                  <span class="material-symbols-outlined text-[16px] mr-2">auto_awesome</span>
+                  Chapter Overview
+                </h4>
+                <p class="text-zinc-600 font-medium leading-relaxed">${ch.summary}</p>
+              </div>
+
+              <div class="space-y-6">
+                <h4 class="label-caps mb-4 flex items-center">
+                  <span class="material-symbols-outlined text-[16px] mr-2">diamond</span>
+                  Key Collection
+                </h4>
+                
+                <div class="space-y-4">
+                  <div>
+                    <div class="text-xs font-bold text-blue-600 mb-2 uppercase tracking-wide">Fragments</div>
+                    <div class="flex flex-wrap gap-2 text-sm text-zinc-500">
+                      ${ch.fragments.map((f) => `<span class="bg-white px-2 py-1 rounded border border-gray-100 shadow-sm">${f}</span>`).join("")}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <div class="text-xs font-bold text-green-600 mb-2 uppercase tracking-wide">Mini Medals</div>
+                    <div class="flex flex-wrap gap-2 text-sm text-zinc-500">
+                      ${ch.medals.map((m) => `<span class="bg-white px-2 py-1 rounded border border-gray-100 shadow-sm">${m}</span>`).join("")}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="p-8 md:p-10 space-y-12 bg-white">
+              <!-- Timeline -->
+              <div>
+                <h4 class="label-caps mb-8 flex items-center">
+                  <span class="material-symbols-outlined text-[16px] mr-2">swords</span>
+                  Story Progression
+                </h4>
+                <div class="space-y-6">
+                  ${ch.steps
+                    .map(
+                      (s) => `
+                    <div class="timeline-item relative flex items-start">
+                      <div class="timeline-dot"></div>
+                      <div>
+                        ${s.loc ? `<div class="text-xs font-black text-blue-600 uppercase tracking-wider mb-1">${s.loc}</div>` : ""}
+                        <div class="text-base font-bold text-zinc-900">${s.action}</div>
+                      </div>
+                    </div>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+
+              <!-- Highlights -->
+              <div>
+                <h4 class="label-caps mb-8 flex items-center">
+                  <span class="material-symbols-outlined text-[16px] mr-2">category</span>
+                  Location Highlights
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  ${(function() {
+                    // Level-1 group: by name prefix (before first '(')
+                    const groups = new Map();
+                    ch.locations.forEach(loc => {
+                      const pi = loc.name.indexOf('(');
+                      const key = pi >= 0 ? loc.name.slice(0, pi).trim() : loc.name;
+                      const sub = pi >= 0 ? loc.name.slice(pi + 1).replace(')', '').trim() : '';
+                      if (!groups.has(key)) groups.set(key, new Map());
+                      const subMap = groups.get(key);
+                      if (!subMap.has(sub)) subMap.set(sub, []);
+                      subMap.get(sub).push(...loc.items);
+                    });
+                    return [...groups.entries()].map(([name, subMap]) => `
+                      <div class="location-card">
+                        <h5 class="text-sm font-black text-zinc-900 uppercase tracking-wider mb-3 border-b border-gray-50 pb-2">${name}</h5>
+                        <div class="space-y-3">
+                          ${[...subMap.entries()].map(([sub, items]) => `
+                            <div>
+                              ${sub ? `<p class="text-[10px] font-bold text-zinc-400 uppercase tracking-wide mb-1">${sub}</p>` : ''}
+                              <div class="flex flex-wrap gap-1.5">
+                                ${items.map(i => `<span class="bg-zinc-50 px-2 py-0.5 rounded text-xs text-zinc-600 font-medium">${i}</span>`).join('')}
+                              </div>
+                            </div>
+                          `).join('')}
+                        </div>
+                      </div>
+                    `).join('');
+                  })()}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // --- Init ---
+      document.addEventListener("DOMContentLoaded", () => {
+        renderAttributes();
+        updateDashboard("hero");
+        initComparison();
+        renderChapterTabs(1);
+        updateWalkthrough(1);
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        const closeMobileMenu = () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          menuBtn.setAttribute("aria-expanded", "false");
+        };
+
+        menuBtn.addEventListener("click", () => {
+          const isOpen = mobileMenu.classList.contains("flex");
+          if (isOpen) {
+            closeMobileMenu();
+          } else {
+            mobileMenu.classList.remove("hidden");
+            mobileMenu.classList.add("flex");
+            menuBtn.setAttribute("aria-expanded", "true");
+          }
+        });
+
+        // Navbar Active State Logic (throttled with rAF)
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav .hidden a");
+        let scrollTicking = false;
+
+        const updateNav = () => {
+          let current = "";
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (window.pageYOffset >= sectionTop - 150) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navLinks.forEach((link) => {
+            const isActive = link.getAttribute("href") === `#${current}`;
+            link.classList.toggle("text-blue-600", isActive);
+            link.classList.toggle("text-zinc-500", !isActive);
+            // WCAG 4.1.2 – aria-current on active nav link
+            if (isActive) {
+              link.setAttribute("aria-current", "page");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        };
+
+        // Back-to-top button
+        const backToTopBtn = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+          // Close mobile menu on scroll
+          if (mobileMenu.classList.contains("flex")) {
+            closeMobileMenu();
+          }
+          // Back-to-top visibility (show after scrolling 400px)
+          backToTopBtn.classList.toggle("visible", window.scrollY > 400);
+
+          if (!scrollTicking) {
+            requestAnimationFrame(() => {
+              updateNav();
+              scrollTicking = false;
+            });
+            scrollTicking = true;
+          }
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // Close menu on link click
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", closeMobileMenu);
+        });
+
+        updateNav();
+      });
+    </script>
+  </body>
 </html>
