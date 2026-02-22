@@ -79,8 +79,11 @@
         background-color: var(--apple-bg);
         color: var(--zinc-900);
         letter-spacing: 0;
-        line-height: 1.5;
+        line-height: 1.75; /* Thai script needs more breathing room */
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
       }
       .mesh-gradient {
         background-image: linear-gradient(
@@ -149,7 +152,7 @@
         min-height: 44px; /* WCAG 2.5.5 touch target */
         border-radius: 12px;
         font-size: 0.875rem;
-        font-weight: 400;
+        font-weight: 500;
         transition: all 0.3s ease;
         color: var(--zinc-500);
         cursor: pointer;
@@ -271,10 +274,11 @@
       /* Reusable label style */
       .label-caps {
         font-size: 0.75rem; /* 12px */
-        font-weight: 900;
+        font-weight: 700;
         color: #9ca3af;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.12em;
+        line-height: 1;
       }
 
       /* ── Skip navigation link (WCAG 2.4.1) ────────────────── */
@@ -465,7 +469,7 @@
         คู่มือ Dragon Quest VII Reimagined
       </h1>
       <p
-        class="text-lg md:text-xl max-w-2xl mx-auto text-zinc-600 font-normal leading-relaxed px-4"
+        class="text-lg md:text-xl max-w-2xl mx-auto text-zinc-500 font-light leading-loose px-4"
       >
         เจาะลึกข้อมูลสเตตัส เส้นทางอาชีพ อุปกรณ์ระดับตำนาน กลยุทธ์การเล่น
         และบทสรุปเนื้อเรื่องฉบับสมบูรณ์ เพื่อการผจญภัยที่ไร้ขีดจำกัด
@@ -476,10 +480,10 @@
       <!-- Section 1: Attribute Encyclopedia -->
       <section id="attributes">
         <div class="mb-12 text-center">
-          <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+          <h2 class="text-4xl font-bold text-zinc-900 tracking-tight">
             คุณสมบัติพื้นฐาน (Core Attributes)
           </h2>
-          <p class="text-zinc-500 mt-2 font-normal">
+          <p class="text-zinc-500 mt-3 font-light leading-relaxed">
             ค่าพลังพื้นฐานที่มีผลต่อการประสิทธิภาพการต่อสู้
           </p>
         </div>
@@ -496,10 +500,10 @@
       <section id="characters" class="card-apple overflow-hidden">
         <div class="p-8 md:p-12 border-b border-gray-100">
           <div class="max-w-2xl mx-auto text-center mb-6">
-            <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+            <h2 class="text-4xl font-bold text-zinc-900 tracking-tight">
               วิเคราะห์เจาะลึกตัวละคร (Deep Analysis)
             </h2>
-            <p class="text-zinc-500 mt-3 font-normal">
+            <p class="text-zinc-500 mt-3 font-light leading-relaxed">
               การวิเคราะห์ตัวละครและเส้นทางการพัฒนาสายอาชีพอย่างละเอียด
             </p>
           </div>
@@ -658,10 +662,10 @@
             class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12"
           >
             <div>
-              <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+              <h2 class="text-4xl font-bold text-zinc-900 tracking-tight">
                 อันดับค่าพลัง (Stat Ranking)
               </h2>
-              <p class="text-zinc-500 mt-1 font-normal">
+              <p class="text-zinc-500 mt-1 font-light leading-relaxed">
                 การเปรียบเทียบศักยภาพตัวละครในด้านต่างๆ
               </p>
             </div>
@@ -692,10 +696,10 @@
       <section id="walkthrough" class="card-apple overflow-hidden">
         <div class="p-8 md:p-12 border-b border-gray-100">
           <div class="max-w-2xl mx-auto text-center mb-8">
-            <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+            <h2 class="text-4xl font-bold text-zinc-900 tracking-tight">
               บทสรุปเนื้อเรื่อง (Walkthrough Summary)
             </h2>
-            <p class="text-zinc-500 mt-3 font-normal">
+            <p class="text-zinc-500 mt-3 font-light leading-relaxed">
               เจาะลึกเนื้อหา บทที่ 1 จนถึงฉากจบ พร้อมตำแหน่ง Fragment
               และไอเทมสำคัญ
             </p>
@@ -720,10 +724,10 @@
       <!-- Section 4: Strategy & Tips -->
       <section id="strategy">
         <div class="mb-12 text-center">
-          <h2 class="text-4xl font-bold text-zinc-900 tracking-normal">
+          <h2 class="text-4xl font-bold text-zinc-900 tracking-tight">
             ทริคเสริมเพื่อความไร้เทียมทาน
           </h2>
-          <p class="text-zinc-500 mt-2 font-normal">
+          <p class="text-zinc-500 mt-2 font-light leading-relaxed">
             กลยุทธ์ขั้นสูงสำหรับการเพิ่มประสิทธิภาพทีมและการผ่านด่านยากๆ
           </p>
         </div>
@@ -741,7 +745,7 @@
                 >auto_awesome</span
               >
             </div>
-            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+            <h3 class="font-bold text-2xl text-zinc-900 mb-4 tracking-tight">
               Monster Legacies
             </h3>
             <p class="text-zinc-600 leading-relaxed font-medium">
@@ -761,7 +765,7 @@
             >
               <span class="material-symbols-outlined text-[28px]">cyclone</span>
             </div>
-            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+            <h3 class="font-bold text-2xl text-zinc-900 mb-4 tracking-tight">
               Efficient Farming
             </h3>
             <p class="text-zinc-600 leading-relaxed font-medium">
@@ -782,7 +786,7 @@
             >
               <span class="material-symbols-outlined text-[28px]">groups</span>
             </div>
-            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+            <h3 class="font-bold text-2xl text-zinc-900 mb-4 tracking-tight">
               Formation of the Gods
             </h3>
             <p class="text-zinc-600 leading-relaxed font-medium">
@@ -802,7 +806,7 @@
             >
               <span class="material-symbols-outlined text-[28px]">timer</span>
             </div>
-            <h3 class="font-black text-2xl text-zinc-900 mb-4 tracking-normal">
+            <h3 class="font-bold text-2xl text-zinc-900 mb-4 tracking-tight">
               Initiative Mastery
             </h3>
             <p class="text-zinc-600 leading-relaxed font-medium">
@@ -1153,8 +1157,8 @@
                     <div class="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none" style="background-color: ${attr.color}"></div>
                     <div class="flex flex-col items-center text-center relative z-10">
                         <span class="material-symbols-outlined text-3xl mb-4 transition duration-300 transform group-hover:scale-105" style="color: ${attr.color}">${attr.icon}</span>
-                        <h3 class="font-semibold text-zinc-900 mb-1 text-sm tracking-normal">${attr.name}</h3>
-                        <p class="text-xs text-zinc-500 font-normal leading-snug">${attr.desc}</p>
+                        <h3 class="font-semibold text-zinc-900 mb-1 text-sm tracking-wide">${attr.name}</h3>
+                        <p class="text-xs text-zinc-500 font-normal leading-normal">${attr.desc}</p>
                     </div>
                 </div>
             `,
@@ -3657,7 +3661,7 @@
                       <div class="timeline-dot"></div>
                       <div>
                         ${s.loc ? `<div class="text-xs font-black text-blue-600 uppercase tracking-wider mb-1">${s.loc}</div>` : ""}
-                        <div class="text-base font-bold text-zinc-900">${s.action}</div>
+                        <div class="text-base font-semibold text-zinc-900">${s.action}</div>
                       </div>
                     </div>
                   `,
